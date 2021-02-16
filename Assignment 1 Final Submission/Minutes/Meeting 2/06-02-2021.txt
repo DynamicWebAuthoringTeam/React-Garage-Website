@@ -1,0 +1,26 @@
+06-02-2021 Meeting 2
+
+Attendence (3/4)
+1.Adam    yes
+2.Michael yes
+3.Patrick yes
+4.Lewis   no
+
+
+Aggreed Work to be Completed for 06/02/21
+1. Adam    - Wireframes + Logo 
+2. Michael - Wireframes
+3. Patrick - Wireframes 
+4. Lewis   - ???
+
+
+Work to Complete for Next Meeting
+
+Task: Annotate and explain final Wireframes
+
+1. Adam    -  Home.png
+2. Michael -  Car Listing.png, Car Details.png,
+3. Patrick -  Part Details.png
+4. Lewis   -  Part Listing.png
+
+Note Video 3.75 per person if you start early
