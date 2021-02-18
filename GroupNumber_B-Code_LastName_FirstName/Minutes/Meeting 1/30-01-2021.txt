@@ -1,0 +1,29 @@
+Garage car sales Topic
+
+todo for next week
+Design Brief Document – 20 marks
+Prototype Wireframes – 10 marks
+
+Probably use Visio, paint or paint.net
+
+Introduction  - Michael  
+Target Industry/Audience - Adam
+Objectivies/Project Purpose - Patrick 
+Corporate Identity – Logo, Font, Colours, etc. - Everyone/whoever can draw or steal a logo
+Competitors - Lewis 
+
+Group will each make 4-5 wireframes for a Garage car sales.
+
+Everyone will do there wireframe designs
+
+Pages:
+home (big nice picture, key sales, good deals, booking)
+Cars For Sale List Page (all cars for sale, price, manufactor, color etc)
+Single Car Detail Page Page (page with all car details)
+Parts (other random stuff for sale like parts)
+about/contact/random/stuff/Map (signup to email thing)
+
+
+
+
+
