@@ -1,58 +1,56 @@
 import './App.css';
-import React from 'react';
+
+//React Imports
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+//BootStrap Imports
+import { Container, Carousel, Row, Column, Button, Alert, Breadcrumb, Card, Form, Col } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+//Light Mode and Dark Mode Imports
+import { ThemeProvider} from "styled-components";
+import { useDarkMode } from "./component/ColorSchemes/useDarkMode"
+import { GlobalStyles } from "./component/ColorSchemes/GlobalStyles";
+import { lightTheme, darkTheme } from "./component/ColorSchemes/Themes"
+import Toggle from "./component/ColorSchemes/Toggler"
+
+//Home Made Component imports
 import NavigationBar from './component/NavigationBar';
 import Home from './component/page/Home';
 import CarListing from './component/page/CarListing';
-import { Carousel, Container } from 'react-bootstrap'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+//Awesome Font Imports
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAdjust } from '@fortawesome/free-solid-svg-icons'
+
+
 function App() {
+
+  //TODO 3 lines have been copied
+  const [theme, themeToggler, mountedComponent] = useDarkMode();
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  if(!mountedComponent) return <div/>
+
   return (
-    <Router>
-      <NavigationBar />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/carlisting' exact component={CarListing} />
-        <Route path='/home' exact component={Home} />
-        <Route path='/home' exact component={Home} />
-      </Switch>
-    </Router>
-          <Carousel>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=373940"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
-              alt="Second slide"
-            />
-        
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
-              alt="Third slide"
-            />
-        
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
+
+    //TODO -- ThemeProvider,GlobalStyles,Toggle - HAS ALL BEEN COPIED WILL NEED RE-WORKED/RENAMED
+    <ThemeProvider theme={themeMode}>
+      <>
+      <GlobalStyles/>
+      <Router>
+        <NavigationBar />
+        <Toggle theme={theme} toggleTheme={themeToggler} />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/carlisting' exact component={CarListing} />
+          <Route path='/home' exact component={Home} />
+          <Route path='/home' exact component={Home} />
+        </Switch>
+      </Router>
+      </>
+    </ThemeProvider>
   );
 }
 

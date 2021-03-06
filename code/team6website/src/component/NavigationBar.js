@@ -1,16 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { 
     Navbar, Nav, NavDropdown, Dropdown,
     FormControl, Form, Button,
     Container, Row, Column, Col,
 } from 'react-bootstrap'
+// import ReactDOM from 'react-dom'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faAdjust } from '@fortawesome/free-solid-svg-icons'
 
 function NavigationBar() {
     return (
         <>
         <Nav className="justify-content-end" activeKey="/home">
-            <Nav.Item>
+        <Nav.Item>
+            <Nav.Link eventKey="theme">
+            {/* <FontAwesomeIcon icon={faAdjust} /> */}
+            </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
             <Nav.Link eventKey="login">
                 Login/Sign Up
             </Nav.Link>

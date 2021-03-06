@@ -1,13 +1,17 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel, Container } from 'react-bootstrap'
-
+import HomeCarouselCar from '../HomeCarouselCar';
 
 function Home() {
     return (
-        <Container>
-            </Container>
+        <>
+            {/* Cars Carouse */}
+            <HomeCarouselCar/>
+            
+            {/* Parts Carouse */}
+            <HomeCarouselCar/>
+        </>
     )
+
 }
 
 export default Home
