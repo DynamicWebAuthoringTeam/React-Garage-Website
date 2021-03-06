@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { 
-    Navbar, Nav, NavDropdown, 
+    Navbar, Nav, NavDropdown, Dropdown,
     FormControl, Form, Button,
     Container, Row, Column, Col,
 } from 'react-bootstrap'
@@ -20,10 +19,20 @@ function NavigationBar() {
         <Container>
             <Row>
                 <Col></Col>
-                <Col>
+                <Col xs={5}>
                     <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-success">Search</Button>
+                    <Dropdown inline>
+                    <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                        Type
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item>Search Car</Dropdown.Item>
+                        <Dropdown.Item>Search Part</Dropdown.Item>
+                    </Dropdown.Menu>
+                    </Dropdown>
+                    
+                    <FormControl inline type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button inline variant="primary">Search</Button>
                     </Form>
                 </Col>
                 <Col></Col>
@@ -34,16 +43,16 @@ function NavigationBar() {
             <Nav.Link href="/home">Active</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link eventKey="/CarListing">Cars for Sale</Nav.Link>
+            <Nav.Link href="/carlisting" eventKey="/carlisting">Cars for Sale</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link eventKey="/PartListing">Parts for Sale</Nav.Link>
+            <Nav.Link href="/partlisting" eventKey="/partlisting">Parts for Sale</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link eventKey="/Contact">Contact</Nav.Link>
+            <Nav.Link href="/contract"eventKey="/contract">Contact</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link eventKey="Find Us">Find Us</Nav.Link>
+            <Nav.Link href="/findus" eventKey="findus">Find Us</Nav.Link>
         </Nav.Item>
         </Nav>
       </>

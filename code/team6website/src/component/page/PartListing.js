@@ -2,9 +2,9 @@ import React from 'react'
 
 function PartListing() {
     return (
-        <div>
-            
-        </div>
+        <>
+
+        </>
     )
 }
 

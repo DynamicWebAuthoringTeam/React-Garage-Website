@@ -1,10 +1,10 @@
 import React from 'react'
-
+import CarCards from '../CarCards'
 function CarListing() {
     return (
-        <div>
-            
-        </div>
+        <>
+            <CarCards/>
+        </>
     )
 }
 
