@@ -5,8 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 //Whole Library
 import { Container, Carousel, Row, Column, Button, Alert, Breadcrumb, Card, Form, Col } from 'react-bootstrap'
 
-
-
 function App() {
   return (
     <div className="App">
