@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //BootStrap Imports
-import { Container, Carousel, Row, Column, Button, Alert, Breadcrumb, Card, Form, Col } from 'react-bootstrap'
+import { Container, Carousel, Dropdown, FormControl, Row, Column, Button, Alert, Breadcrumb, Card, Form, Col, NavItem, Nav, Navbar } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Light Mode and Dark Mode Imports
@@ -35,18 +35,49 @@ function App() {
 
   return (
 
-    //TODO -- ThemeProvider,GlobalStyles,Toggle - HAS ALL BEEN COPIED WILL NEED RE-WORKED/RENAMED
+    //Allows for the changing from dark to light themes
     <ThemeProvider theme={themeMode}>
       <>
+
+      {
+        /* Allows for injection of CSS between dark and light theme */
+      }
       <GlobalStyles/>
+
+      {
+        /* React default router */
+      }
       <Router>
-        <NavigationBar />
-        <Toggle theme={theme} toggleTheme={themeToggler} />
+
+      {
+        /* Dark/light theme'button/nav', using nav as it has very easy to use 'sticky' functionality which is ideal here */
+      }
+      <Navbar sticky="top" className="justify-content-between">
+          <Navbar.Brand href="/home">SpeedFixSales</Navbar.Brand>
+          <Form inline>
+            <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
+            <Button type="submit">Search</Button>
+          </Form>
+          <NavItem>
+            <Toggle theme={theme} toggleTheme={themeToggler} />
+        </NavItem>
+      </Navbar>
+
+      {
+        /* NavigationBar is a traditional tab navigation */
+      }
+      <NavigationBar />
+
+        {
+          /* Defines which 'Page' to load into the main body for each of the urls */
+        }
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/carlisting' exact component={CarListing} />
-          <Route path='/home' exact component={Home} />
-          <Route path='/home' exact component={Home} />
+          <Route path='/'            exact component={Home} />
+          <Route path='/home'        exact component={Home} />
+          <Route path='/carlisting'  exact component={CarListing} />
+          <Route path='/partlisting' exact component={CarListing} />
+          <Route path='/contact'     exact component={CarListing} />
+          <Route path='/findus'      exact component={CarListing} />
         </Switch>
       </Router>
       </>
