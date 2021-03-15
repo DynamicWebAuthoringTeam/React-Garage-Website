@@ -23,7 +23,7 @@ function NavigationBar() {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav variant="tabs" defaultActiveKey="/home" fill style={{width: "100%"}}>
                 <Nav.Item>
-                    <Nav.Link href="/home">Home</Nav.Link>
+                    <Nav.Link href="/home" eventKey="/home">Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link href="/carlisting" eventKey="/carlisting">Cars for Sale</Nav.Link>

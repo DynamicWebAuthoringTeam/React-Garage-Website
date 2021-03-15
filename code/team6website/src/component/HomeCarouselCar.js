@@ -4,7 +4,6 @@ import './HomeCarouselCar.css';
 
 function HomeCarouselCar() {
     return (
-        <Container className="home-carousel-wrapper">
             <Carousel>
                 <Carousel.Item>
                     <img className="d-block w-100" src="https://www.topgear.com/sites/default/files/styles/16x9_1280w/public/images/news-article/2015/12/6f112bbafabd5ed6981333d03eb25d7f/172858197156680a0ce3aca.jpg?itok=sAZQJRvS" alt="First slide"/>
@@ -30,7 +29,6 @@ function HomeCarouselCar() {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-        </Container>
     )
 }
 

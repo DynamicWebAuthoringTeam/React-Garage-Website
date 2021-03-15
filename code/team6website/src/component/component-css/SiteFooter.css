@@ -1,0 +1,11 @@
+.footer-wrapper {
+    width: 100%;
+    columns: black;
+    background-color: royalblue;
+}
+
+.footer-column {
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+}

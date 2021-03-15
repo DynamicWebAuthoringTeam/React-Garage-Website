@@ -2,7 +2,7 @@
 //TODO -- THIS HAS ALL BEEN COPIED WILL NEED RE-WORKED changes var to black/white etc
 export const lightTheme = {
     body: '#FFF',
-    text: '#0066ff',
+    text: 'royalblue',
     toggleBorder: '#FFF',
     background: '#363537'
 }

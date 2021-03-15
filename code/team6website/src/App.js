@@ -19,6 +19,7 @@ import Toggle from "./component/ColorSchemes/Toggler"
 import NavigationBar from './component/NavigationBar';
 import Home from './component/page/Home';
 import CarListing from './component/page/CarListing';
+import SiteFooter from './component/SiteFooter';
 
 //Awesome Font Imports
 import ReactDOM from 'react-dom'
@@ -50,21 +51,24 @@ function App() {
       <Router>
 
       {
-        /* Dark/light theme'button/nav', using nav as it has very easy to use 'sticky' functionality which is ideal here */
+        /* Brand Name, Logo, Searchbar and dark/light swtich and login/register */
       }
-      <Navbar sticky="top" className="justify-content-between">
+      <Navbar sticky="top" className="justify-content-between nav-bar">
           <Navbar.Brand href="/home">SpeedFixSales</Navbar.Brand>
           <Form inline>
             <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
             <Button type="submit">Search</Button>
           </Form>
           <NavItem>
+            <Navbar.Text>
+              Signed in as: <a href="/login">Mark Otto</a>
+            </Navbar.Text>
             <Toggle theme={theme} toggleTheme={themeToggler} />
-        </NavItem>
+          </NavItem>
       </Navbar>
 
       {
-        /* NavigationBar is a traditional tab navigation */
+        /* The NavigationBar is a traditional tab navigation */
       }
       <NavigationBar />
 
@@ -80,6 +84,7 @@ function App() {
           <Route path='/findus'      exact component={CarListing} />
         </Switch>
       </Router>
+      <SiteFooter></SiteFooter>
       </>
     </ThemeProvider>
   );
