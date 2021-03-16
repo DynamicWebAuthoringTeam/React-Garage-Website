@@ -1,24 +1,23 @@
 import React from 'react';  
+import Media from 'react-media';
 import { 
-    Navbar, Nav, NavDropdown
+    Navbar, Nav, NavDropdown, Form, FormControl, Button, Container, Row, Col
 } from 'react-bootstrap'
+import './component-css/NavigationBar.css';
 
 function NavigationBar() {
     return (
         <>
+        
         <Navbar fill collapseOnSelect expand="lg" >
 
             {/* Required */}
-            {/* Empty div is required here, as when on mobile device, Navbar.Collapse below will be aligned right, as  
+            {/* Empty <div></div> is required here, as when on mobile device, Navbar.Collapse below will be aligned right, as  
                 Navbar component directly above contains '2 divs':
                     1. <div></div> 
                     2.  <Navbar.Collapse>
-            */}
-            <div>
+            */}<div></div>
 
-            </div>
-            {/* Required */}
-            
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav variant="tabs" defaultActiveKey="/home" fill style={{width: "100%"}}>
@@ -46,7 +45,28 @@ function NavigationBar() {
                 </Nav.Item>
                 </Nav>
             </Navbar.Collapse>
+            
         </Navbar>
+        <Media query="(max-width: 987px)">
+                    { matches =>
+                                matches ? (
+                                    <Container fluid>
+                                    <Form>
+                                      <FormControl fluid type="text" placeholder="Search" className=" mr-sm-2" />
+                                        <Row>
+                                            <Col></Col>
+                                            <Col>
+                                                <Button type="submit" className="collapsed-search-button">Search</Button>
+                                            </Col>
+                                            <Col></Col>
+                                      </Row>
+                                    </Form>
+                                    </Container>
+                                  ) : (
+                                        <div></div>
+                                  )
+                    }
+                </Media>
       </>
     )
 }

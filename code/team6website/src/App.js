@@ -3,9 +3,9 @@ import './App.css';
 //React Imports
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import Media from 'react-media';
 //BootStrap Imports
-import { Container, Carousel, Dropdown, FormControl, Row, Column, Button, Alert, Breadcrumb, Card, Form, Col, NavItem, Nav, Navbar } from 'react-bootstrap'
+import { Container, Carousel, Dropdown, FormControl, Row, Col, Button, Alert, Breadcrumb, Card, Form, NavItem, Nav, Navbar } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Light Mode and Dark Mode Imports
@@ -25,6 +25,7 @@ import SiteFooter from './component/SiteFooter';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAdjust } from '@fortawesome/free-solid-svg-icons'
+
 
 
 function App() {
@@ -52,13 +53,24 @@ function App() {
 
       {
         /* Brand Name, Logo, Searchbar and dark/light swtich and login/register */
+        // TODO NEEDS MEDIA QUERY for mobile views/react version of
       }
+
       <Navbar sticky="top" className="justify-content-between nav-bar">
           <Navbar.Brand href="/home">SpeedFixSales</Navbar.Brand>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
-            <Button type="submit">Search</Button>
-          </Form>
+          {/* Hides search bar and its button for mobile devices is replaced by the one rendered in 'NavigationBar.js' */}
+          <Media query="(max-width: 987px)">
+                    { matches =>
+                                matches ? (
+                                    <div></div>
+                                  ) : (
+                                    <Form inline>
+                                      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                                      <Button type="submit">Search</Button>
+                                    </Form>
+                                  )
+                    }
+          </Media>
           <NavItem>
             <Navbar.Text>
               Signed in as: <a href="/login">Mark Otto</a>

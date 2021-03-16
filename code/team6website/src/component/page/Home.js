@@ -1,22 +1,24 @@
+
+//React Imports
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
+//Home-made Components
 import HomeCarouselCar from '../HomeCarouselCar';
-import './css/Home.css';
-import { 
-    Container, Row, Col, Card, Button
-} from 'react-bootstrap'
 
+// CSS Imports
+import './page-css/Home.css';
 
 function Home() {
     return (
         <>
-            {/* Cars Carouse */}
+            {/* Cars Carousel */}
             <Container className="home-carousel-wrapper">
                 <h1 className="home-header">Featured Cars</h1>
                 <HomeCarouselCar/>
             </Container>
             
-            {/* Parts Carouse */}
+            {/* TODO Parts Carousel, either abstract Carousel to take input or make separate component for Parts */}
             <Container className="home-carousel-wrapper">
                 <h1 className="home-header">Featured Parts</h1>
                 <HomeCarouselCar/>

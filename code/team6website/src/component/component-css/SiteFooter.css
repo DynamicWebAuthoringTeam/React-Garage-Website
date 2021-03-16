@@ -2,6 +2,8 @@
     width: 100%;
     columns: black;
     background-color: royalblue;
+    color: black;
+    border-style: solid;
 }
 
 .footer-column {
