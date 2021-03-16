@@ -2,6 +2,9 @@
   text-align: center;
 }
 
+.search-bar {
+  width: 90%;
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
