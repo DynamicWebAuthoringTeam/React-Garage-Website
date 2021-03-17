@@ -1,44 +1,34 @@
-import React from 'react';
-import { parse } from 'query-string';
+import React, { Alert } from 'react';
 import queryString from 'query-string';
+import  { Redirect } from 'react-router-dom'
 
 class Products extends React.Component {
   state = {
-    products: []
-  };
-
-  async componentDidMount() {
-    const { location: { search } } = this.props;
-    const { page, pageSize } = search;
-    // const products = await api.getProducts(`/products?page=${page}&pageSize=${pageSize}`);
-    console.log(page)
-    console.log(pageSize)
-    const products = {
-      name : "hey"
-    };
-    this.setState({
-      products,
-    });
+    id: void 0
   }
 
   render() {
-    console.log(this.props.location.search)
+    const queryStrings = this.props.location.search;
+    const queryStringValues = queryString.parse(queryStrings);
 
-    const UrlQueryStrings = this.props.location.search;
-    const queryValues = queryString.parse(UrlQueryStrings);
+    const id = queryStringValues.id
 
-    console.log(queryValues.filter); // Gives "top"
-    console.log(queryValues.origin); // Gives "im"
+    //If not a positive int, redirect to listing page as car with this 'id' will not exist.
+    if (id < 1 || id == null || isNaN(id)) {
+      return(
+         <Redirect to='/carlisting'  />
+      )
+    }
+
+    //Check if the id exist, extract data from public and render it into the page.
 
     return(
       <React.Fragment>
         {<div>
-          <h1>yo</h1>
-         {this.props.location.search}
-         <h1></h1>
-         {queryValues.filter}
-         <h1></h1>
-         {queryValues.origin}
+          <h1>DETAILS</h1>
+          <p>id of car: {id}</p>
+          <p>make of car: {id}</p>
+          <p>model of car: {id}</p>
           </div>}
       </React.Fragment>
     )
