@@ -1,0 +1,12 @@
+{
+    "make" : "",
+    "model" : "",
+    "year" : "",
+    "price": "",
+    "miles": "",
+    "primaryImage": "url-primary-image",
+    "otherImages" : [
+        "url1",
+        "url1"
+    ]
+}

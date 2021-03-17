@@ -2,10 +2,11 @@ import './App.css';
 
 //React Imports
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Component } from 'react-router-dom';
+
 import Media from 'react-media';
 //BootStrap Imports
-import { Container, Carousel, Dropdown, FormControl, Row, Col, Button, Alert, Breadcrumb, Card, Form, NavItem, Nav, Navbar } from 'react-bootstrap'
+import { FormControl, Button, Form, NavItem, Navbar } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Light Mode and Dark Mode Imports
@@ -17,8 +18,17 @@ import Toggle from "./component/ColorSchemes/Toggler"
 
 //Home Made Component imports
 import NavigationBar from './component/NavigationBar';
+
+//Page Imports
 import Home from './component/page/Home';
 import CarListing from './component/page/CarListing';
+import PartListing from './component/page/PartListing';
+import SingleCar from './component/page/SingleCar';
+import SinglePart from './component/page/SinglePart';
+import FindUs from './component/page/FindUs';
+import Contact from './component/page/Contact';
+import Products from './component/page/Products';
+import ProductDetail from './component/page/ProductDetail';
 import SiteFooter from './component/SiteFooter';
 
 //Awesome Font Imports
@@ -30,12 +40,15 @@ import { faAdjust } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
 
+
   //TODO 3 lines have been copied
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
   if(!mountedComponent) return <div/>
 
+
   return (
+
 
     //Allows for the changing from dark to light themes
     <ThemeProvider theme={themeMode}>
@@ -51,13 +64,10 @@ function App() {
       }
       <Router>
 
-      {
-        /* Brand Name, Logo, Searchbar and dark/light swtich and login/register */
-        // TODO NEEDS MEDIA QUERY for mobile views/react version of
-      }
-
       <Navbar sticky="top" className="justify-content-between nav-bar">
+
           <Navbar.Brand href="/home">SpeedFixSales</Navbar.Brand>
+
           {/* Hides search bar and its button for mobile devices is replaced by the one rendered in 'NavigationBar.js' */}
           <Media query="(max-width: 987px)">
                     { matches =>
@@ -71,12 +81,17 @@ function App() {
                                   )
                     }
           </Media>
+
           <NavItem>
+
             <Navbar.Text>
               Signed in as: <a href="/login">Mark Otto</a>
             </Navbar.Text>
+
             <Toggle theme={theme} toggleTheme={themeToggler} />
+
           </NavItem>
+
       </Navbar>
 
       {
@@ -91,9 +106,15 @@ function App() {
           <Route path='/'            exact component={Home} />
           <Route path='/home'        exact component={Home} />
           <Route path='/carlisting'  exact component={CarListing} />
-          <Route path='/partlisting' exact component={CarListing} />
-          <Route path='/contact'     exact component={CarListing} />
-          <Route path='/findus'      exact component={CarListing} />
+          <Route path='/partlisting' exact component={PartListing} />
+          <Route path='/contact'     exact component={Contact} />
+          <Route path='/findus'      exact component={FindUs} />
+          <Route exact path='/products' component={Products}/>
+          <Route path='/products/:id' component={ProductDetail}/>
+          {/* Work out how to select which json too use on these pages with image info etc, and use a query param to pass the id */}
+          {/* see /public/single-car-data/1.json */}
+          <Route path='/singlecar'   exact component={SingleCar} /> 
+          <Route path='/singlepart'  exact component={SinglePart} />
         </Switch>
       </Router>
       <SiteFooter></SiteFooter>
