@@ -9,6 +9,10 @@ import {
 function CarCards() {
     return (
         <>
+        <Button variant="primary" onClick={event =>  window.location.href='/singlecar?id=1'}>1</Button>
+        <Button variant="primary" onClick={event =>  window.location.href='/singlecar?id=2'}>2</Button>
+        <Button variant="primary" onClick={event =>  window.location.href='/singlecar?id=2'}>3</Button>
+        <Button variant="primary" onClick={event =>  window.location.href='/singlecar?id=2'}>4</Button>
         <Container>
             <Row>
                 <Col md>

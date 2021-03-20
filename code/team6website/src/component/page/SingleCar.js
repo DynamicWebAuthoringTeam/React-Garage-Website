@@ -7,6 +7,8 @@ import { Row, Col, Container, Image, Table, Card } from 'react-bootstrap'
 import queryString from 'query-string';
 import { singleCarsData } from '../../data/single-cars-data';
 
+import MyComponent from '../GoogleMaps'
+
 //CSS Imports
 import './page-css/SingleCar.css';
 
@@ -25,7 +27,7 @@ class SingleCar extends React.Component {
         <Redirect to='/carlisting' />
       )
     }
-
+    
     return (
       <>
         <Row className="row-wrapper">
@@ -33,7 +35,7 @@ class SingleCar extends React.Component {
             <Container className="main-column-container">
 
               {/* Primary Car Image */}
-              <Image className='main-image' src="https://picsum.photos/200/50" fluid rounded />
+              <Image className='main-image' src={carData.primaryImage} fluid rounded />
 
               {/* Key Details */}
               <Card className="key-details-wrapper">
@@ -122,7 +124,7 @@ class SingleCar extends React.Component {
               {/* Seller Contact Info */}
               <p>Seller Contact Info</p>
               {/* Google Api Maps Location */}
-              <p>Google Api Maps Location</p>
+              <MyComponent></MyComponent>
             </Container>
           </Col>
         </Row>

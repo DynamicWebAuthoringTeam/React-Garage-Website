@@ -2,7 +2,7 @@ import './App.css';
 
 //React Imports
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Component } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Media from 'react-media';
 //BootStrap Imports
@@ -95,14 +95,16 @@ function App() {
           /* Defines which 'Page' to load into the main body for each of the urls */
         }
         <Switch>
-          <Route path='/'            exact component={Home} />
           <Route path='/home'        exact component={Home} />
           <Route path='/carlisting'  exact component={CarListing} />
           <Route path='/partlisting' exact component={PartListing} />
           <Route path='/contact'     exact component={Contact} />
           <Route path='/findus'      exact component={FindUs} />
-          <Route exact path='/singlecar' component={SingleCar}/>
+          <Route path='/singlecar'   exact component={SingleCar}/>
           <Route path='/singlepart'  exact component={SinglePart} />
+
+          {/* If no match is made from the above urls match to Home */}
+          <Route path='/' component={Home} />
         </Switch>
       </Router>
       {/* <SiteFooter></SiteFooter> */}
