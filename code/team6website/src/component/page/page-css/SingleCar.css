@@ -1,0 +1,35 @@
+.row-wrapper {
+    height: 70vh;
+}
+
+.main-column {
+    background-color: lightgray;
+}
+
+.main-image {
+    width: 100%;
+    height: 40%;
+}
+
+.main-column-container {
+    padding-top: 1%;
+    padding-bottom: 0.25%;
+    background-color: lightslategray;
+}
+
+.key-details-wrapper {
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.title-red {
+    color: red;
+}
+
+.key-details-row {
+    margin-bottom: 1%;
+}
+
+.sidebar-column {
+    background-color: lightseagreen;
+}

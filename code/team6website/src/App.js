@@ -36,19 +36,13 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAdjust } from '@fortawesome/free-solid-svg-icons'
 
-
-
 function App() {
-
-
   //TODO 3 lines have been copied
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
   if(!mountedComponent) return <div/>
 
-
   return (
-
 
     //Allows for the changing from dark to light themes
     <ThemeProvider theme={themeMode}>
@@ -117,7 +111,7 @@ function App() {
           <Route path='/singlepart'  exact component={SinglePart} />
         </Switch>
       </Router>
-      <SiteFooter></SiteFooter>
+      {/* <SiteFooter></SiteFooter> */}
       </>
     </ThemeProvider>
   );

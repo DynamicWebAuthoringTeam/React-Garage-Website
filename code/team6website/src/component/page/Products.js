@@ -1,38 +1,134 @@
-import React, { Alert } from 'react';
+
+//React Imports
+import React from 'react';
+import { Redirect } from 'react-router-dom'
+import { Row, Col, Container, Image, Table, Card } from 'react-bootstrap'
+
 import queryString from 'query-string';
-import  { Redirect } from 'react-router-dom'
+import { singleCarsData } from '../../data/single-cars-data';
+
+//CSS Imports
+import './page-css/SingleCar.css';
 
 class Products extends React.Component {
-  state = {
-    id: void 0
-  }
-
   render() {
-    const queryStrings = this.props.location.search;
-    const queryStringValues = queryString.parse(queryStrings);
 
-    const id = queryStringValues.id
+    //Collect any query param and their value with 'id'
+    const id = queryString.parse(this.props.location.search).id;
 
-    //If not a positive int, redirect to listing page as car with this 'id' will not exist.
-    if (id < 1 || id == null || isNaN(id)) {
-      return(
-         <Redirect to='/carlisting'  />
+    //Find car data by the given id in the query param
+    const carData = singleCarsData.find(car => car.id === id)
+
+    //Check if a car exists for the given id, if not redirect to /carlisting
+    if (carData == null) {
+      return (
+        <Redirect to='/carlisting' />
       )
     }
 
-    //Check if the id exist, extract data from public and render it into the page.
+    return (
+      <>
+        <Row className="row-wrapper">
+          <Col sm={9} className="main-column">
+            <Container className="main-column-container">
 
-    return(
-      <React.Fragment>
-        {<div>
-          <h1>DETAILS</h1>
-          <p>id of car: {id}</p>
-          <p>make of car: {id}</p>
-          <p>model of car: {id}</p>
-          </div>}
-      </React.Fragment>
+              {/* Primary Car Image */}
+              <Image className='main-image' src="https://picsum.photos/200/50" fluid rounded />
+
+              {/* Key Details */}
+              <Card className="key-details-wrapper">
+                <Card.Header as="h5">Key Details</Card.Header>
+                <Card.Body>
+                  <Row className="key-details-row">
+                    <Col md>
+                      <Card>
+                        {<Card.Header as="h5">Manufacturer</Card.Header>}
+                        <Card.Body>
+                          {<Card.Title>{carData.make}</Card.Title>}
+                          {<Card.Text>The Manufacturer of this car.</Card.Text>}
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                    <Col md>
+                      <Card>
+                        {<Card.Header as="h5">Model & Year</Card.Header>}
+                        <Card.Body>
+                          {<Card.Title>{carData.model} - {carData.year}</Card.Title>}
+                          {<Card.Text>The Model and the specifc year.</Card.Text>}
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  </Row>
+                  <Row className="key-details-row">
+                    <Col md>
+                      <Card>
+                        {<Card.Header className="title-red" as="h5">Asking Price £</Card.Header>}
+                        <Card.Body>
+                          {<Card.Title>£{carData.price}</Card.Title>}
+                          {<Card.Text>The price is Great British Pounds</Card.Text>}
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                    <Col md>
+                      <Card>
+                        {<Card.Header as="h5">Milage and State</Card.Header>}
+                        <Card.Body>
+                          {<Card.Title> Milage: {carData.miles} miles</Card.Title>}
+                          <Card.Text>
+                            The number of miles the car has driven.
+                          </Card.Text>
+                          {<Card.Title className="title-red"> State of Repair: POOR</Card.Title>}
+                          <Card.Text>
+                            And the general state of repair the car is in asessed by a SpeedFixSales Employee.
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  </Row>
+                  <blockquote className="blockquote mb-0">
+                    <footer className="blockquote-footer">
+                      See full car spec below for more details.
+                    </footer>
+                  </blockquote>
+                </Card.Body>
+              </Card>
+
+              {/* Full Car Spec */}
+              <Card className="key-details-wrapper">
+                <Card.Header as="h5">Full Car Specification</Card.Header>
+                <Card.Body>
+                  {
+                    <div>
+                      {/* Loop through 'otherImages' urls */}
+                      {
+                        carData.otherImages.map((data, key) => {
+                          return (
+                            <div key={key}>
+                              {data}
+                            </div>
+                          );
+                        })
+                      }
+                    </div>
+                  }
+                </Card.Body>
+              </Card>
+            </Container>
+          </Col>
+          <Col sm={3} className="sidebar-column">
+            <Container>
+              {/* other Car Image */}
+              <p>other Car Image</p>
+              {/* Seller Contact Info */}
+              <p>Seller Contact Info</p>
+              {/* Google Api Maps Location */}
+              <p>Google Api Maps Location</p>
+            </Container>
+          </Col>
+        </Row>
+      </>
     )
   }
 }
 
-  export default Products;
+export default Products;
