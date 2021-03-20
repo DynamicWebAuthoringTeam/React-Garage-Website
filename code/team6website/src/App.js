@@ -27,8 +27,6 @@ import SingleCar from './component/page/SingleCar';
 import SinglePart from './component/page/SinglePart';
 import FindUs from './component/page/FindUs';
 import Contact from './component/page/Contact';
-import Products from './component/page/Products';
-import ProductDetail from './component/page/ProductDetail';
 import SiteFooter from './component/SiteFooter';
 
 //Awesome Font Imports
@@ -103,11 +101,7 @@ function App() {
           <Route path='/partlisting' exact component={PartListing} />
           <Route path='/contact'     exact component={Contact} />
           <Route path='/findus'      exact component={FindUs} />
-          <Route exact path='/products' component={Products}/>
-          <Route path='/products/:id' component={ProductDetail}/>
-          {/* Work out how to select which json too use on these pages with image info etc, and use a query param to pass the id */}
-          {/* see /public/single-car-data/1.json */}
-          <Route path='/singlecar'   exact component={SingleCar} /> 
+          <Route exact path='/singlecar' component={SingleCar}/>
           <Route path='/singlepart'  exact component={SinglePart} />
         </Switch>
       </Router>
