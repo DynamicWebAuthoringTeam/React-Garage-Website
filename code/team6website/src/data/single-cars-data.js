@@ -13,7 +13,12 @@ export const singleCarsData = [
             "url/123",
             "url/1234"
         ],
-        location:"https://www.google.co.uk/maps/place/Belfast/@54.5949981,-6.0667162,11z/data=!3m1!4b1!4m5!3m4!1s0x4860fffdd7d08a3b:0x2e57162cefc7c531!8m2!3d54.5972855!4d-5.9301174"
+        lat:"54.588632",
+        long:"-5.924312",
+        sellerName: "John Smith",
+        sellerMobile: "555-1234",
+        sellerAddress: "123 fake street",
+        sellerNotes: "ring the blue door bell when our arrive",
     },
     {
         id : "2",
@@ -27,7 +32,13 @@ export const singleCarsData = [
             "1",
             "2"
         ],
-        location:""
+        lat:"54.588632",
+        long:"-5.924312",
+        sellerName: "John Smith",
+        sellerMobile: "555-1234",
+        sellerEmail: "JohnSmith@gmail.com",
+        sellerAddress: "123 fake street",
+        sellerNotes: "go up the gravel path",
     },
     {
         id : "3",
@@ -41,7 +52,13 @@ export const singleCarsData = [
             "1",
             "2"
         ],
-        location:""
+        lat:"54.588632",
+        long:"-5.924312",
+        sellerName: "John Smith",
+        sellerMobile: "555-1234",
+        sellerEmail: "JohnSmith@gmail.com",
+        sellerAddress: "123 fake street",
+        sellerNotes: "I am only available on mondays",
     },
     {
         id : "4",
@@ -55,6 +72,11 @@ export const singleCarsData = [
             "1",
             "2"
         ],
-        location:""
+        lat:"54.588632",
+        long:"-5.924312",
+        sellerName: "John Smith",
+        sellerMobile: "555-1234",
+        sellerAddress: "123 fake street",
+        sellerNotes: "I am only available at the weekend",
     }
 ];

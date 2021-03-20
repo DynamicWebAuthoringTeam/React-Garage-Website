@@ -36,18 +36,9 @@
  
  function MyComponent() {
    return (
-     <LoadScript
-       googleMapsApiKey='AIzaSyCJualtIlFiU6Jz-wRrIdbPwlDmBYvLKu0'
-     >
-       <GoogleMap
-         mapContainerStyle={containerStyle}
-         center={coords}
-         zoom={16}
-       >
-         { /* Child components, such as markers, info windows, etc. */ }
-         <>
-            <Marker onLoad={onLoad} position={coords}/>
-         </>
+     <LoadScript googleMapsApiKey='AIzaSyCJualtIlFiU6Jz-wRrIdbPwlDmBYvLKu0'>
+       <GoogleMap mapContainerStyle={containerStyle} center={coords} zoom={16}>
+         <> <Marker onLoad={onLoad} position={coords}/> </>
        </GoogleMap>
      </LoadScript>
    )

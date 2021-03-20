@@ -120,11 +120,29 @@ class SingleCar extends React.Component {
           <Col sm={3} className="sidebar-column">
             <Container>
               {/* other Car Image */}
-              <p>other Car Image</p>
+              <Card>
+                <Card.Header as="h5">Other Images of this car</Card.Header>
+                <Card.Body>
+                </Card.Body>
+              </Card>
               {/* Seller Contact Info */}
-              <p>Seller Contact Info</p>
+              <Card>
+                <Card.Header as="h5">Seller Information</Card.Header>
+                <Card.Body>
+                  <Card.Title>{carData.sellerName}</Card.Title>
+                  <Card.Text>Mobile: {carData.sellerMobile}</Card.Text>
+                  <Card.Text>Email: {carData.sellerEmail}</Card.Text>
+                  <Card.Text>Seller Notes: {carData.sellerNotes}</Card.Text>
+                </Card.Body>
+              </Card>
               {/* Google Api Maps Location */}
-              <MyComponent></MyComponent>
+              <Card>
+                <Card.Header as="h5">Car Location</Card.Header>
+                <Card.Body>
+                  <Card.Text>Address: {carData.sellerAddress}</Card.Text>
+                  <MyComponent></MyComponent>
+                </Card.Body>
+              </Card>
             </Container>
           </Col>
         </Row>
