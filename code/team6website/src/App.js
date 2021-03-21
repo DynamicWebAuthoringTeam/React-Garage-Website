@@ -75,13 +75,10 @@ function App() {
           </Media>
 
           <NavItem>
-
             <Navbar.Text>
               Signed in as: <a href="/login">Mark Otto</a>
             </Navbar.Text>
-
             <Toggle theme={theme} toggleTheme={themeToggler} />
-
           </NavItem>
 
       </Navbar>

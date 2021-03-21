@@ -2,8 +2,11 @@
     height: 70vh;
 }
 
+/* main column section */
 .main-column {
-    background-color: lightgray;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: rgb(221, 212, 212);
 }
 
 .main-image {
@@ -14,9 +17,21 @@
 .main-column-container {
     padding-top: 1%;
     padding-bottom: 0.25%;
-    background-color: lightslategray;
+    border-radius: 3px;
+    background-color: whitesmoke;
 }
 
+/* sidebar section */
+.sidebar-column {
+    background-color: whitesmoke;
+}
+
+.side-bar-item-wrapper{
+ margin-top: 2.5%;
+}
+
+
+/* MISC */
 .key-details-wrapper {
     margin-bottom: 1%;
     margin-top: 1%;
@@ -28,8 +43,4 @@
 
 .key-details-row {
     margin-bottom: 1%;
-}
-
-.sidebar-column {
-    background-color: lightseagreen;
 }

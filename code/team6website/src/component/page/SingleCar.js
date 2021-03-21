@@ -1,8 +1,7 @@
-
 //React Imports
 import React from 'react';
 import { Redirect } from 'react-router-dom'
-import { Row, Col, Container, Image, Table, Card } from 'react-bootstrap'
+import { Row, Col, Container, Image, Table, Card, Carousel } from 'react-bootstrap'
 
 import queryString from 'query-string';
 import { singleCarsData } from '../../data/single-cars-data';
@@ -30,8 +29,12 @@ class SingleCar extends React.Component {
     
     return (
       <>
+        {/* Whole page is wrapped in a row with 2x Columns, a main column and a sidebar column */}
         <Row className="row-wrapper">
-          <Col sm={9} className="main-column">
+
+          {/* This Main Column */}
+          <Col lg={7} className="main-column">
+
             <Container className="main-column-container">
 
               {/* Primary Car Image */}
@@ -47,7 +50,7 @@ class SingleCar extends React.Component {
                         {<Card.Header as="h5">Manufacturer</Card.Header>}
                         <Card.Body>
                           {<Card.Title>{carData.make}</Card.Title>}
-                          {<Card.Text>The Manufacturer of this car.</Card.Text>}
+                          {<Card.Text> - The Manufacturer of this car.</Card.Text>}
                         </Card.Body>
                       </Card>
                     </Col>
@@ -56,7 +59,7 @@ class SingleCar extends React.Component {
                         {<Card.Header as="h5">Model & Year</Card.Header>}
                         <Card.Body>
                           {<Card.Title>{carData.model} - {carData.year}</Card.Title>}
-                          {<Card.Text>The Model and the specifc year.</Card.Text>}
+                          {<Card.Text> - The Model and the specifc year.</Card.Text>}
                         </Card.Body>
                       </Card>
                     </Col>
@@ -67,7 +70,7 @@ class SingleCar extends React.Component {
                         {<Card.Header className="title-red" as="h5">Asking Price £</Card.Header>}
                         <Card.Body>
                           {<Card.Title>£{carData.price}</Card.Title>}
-                          {<Card.Text>The price is Great British Pounds</Card.Text>}
+                          {<Card.Text> - The price is Great British Pounds</Card.Text>}
                         </Card.Body>
                       </Card>
                     </Col>
@@ -77,11 +80,11 @@ class SingleCar extends React.Component {
                         <Card.Body>
                           {<Card.Title> Milage: {carData.miles} miles</Card.Title>}
                           <Card.Text>
-                            The number of miles the car has driven.
+                            - The number of miles the car has driven.
                           </Card.Text>
-                          {<Card.Title className="title-red"> State of Repair: POOR</Card.Title>}
+                          {<Card.Title className="title-red"> State of Repair: {carData.condition}</Card.Title>}
                           <Card.Text>
-                            And the general state of repair the car is in asessed by a SpeedFixSales Employee.
+                            - State of repair the car is in asessed by a SpeedFixSales Employee.
                           </Card.Text>
                         </Card.Body>
                       </Card>
@@ -99,35 +102,47 @@ class SingleCar extends React.Component {
               <Card className="key-details-wrapper">
                 <Card.Header as="h5">Full Car Specification</Card.Header>
                 <Card.Body>
-                  {
-                    <div>
-                      {/* Loop through 'otherImages' urls */}
+                {
+                  carData.fullSpec.map((data, key) => {
+                    return (
+                      <div key={key}>
+                        {data}  
+                      </div>
+                    );
+                  })
+                }
+                </Card.Body>
+              </Card>
+
+            </Container>
+          </Col>
+
+          {/* Sidebar Column */}
+          <Col lg={5} className="sidebar-column">
+
+            <Container>
+
+              {/* other Car images */}
+              <Card className="side-bar-item-wrapper">
+                <Card.Header as="h5">Other Images of this car</Card.Header>
+                <Card.Body>
+                    <Carousel>
+                      {/* Loop through 'otherImages' and create a Carousel.Item for each image found*/}
                       {
                         carData.otherImages.map((data, key) => {
                           return (
-                            <div key={key}>
-                              {data}
-                            </div>
+                            <Carousel.Item key={key}>
+                              <img className="d-block w-100" src={data}/>
+                            </Carousel.Item>
                           );
                         })
                       }
-                    </div>
-                  }
+                    </Carousel>
                 </Card.Body>
               </Card>
-            </Container>
-          </Col>
-          <Col sm={3} className="sidebar-column">
-            <Container>
-              {/* other Car Image */}
-              <Card>
-                <Card.Header as="h5">Other Images of this car</Card.Header>
-                <Card.Body>
-                </Card.Body>
-              </Card>
+
               {/* Seller Contact Info */}
-              <Card>
-                
+              <Card className="side-bar-item-wrapper">
                 <Card.Header as="h5">Seller Information</Card.Header>
                 <Card.Body>
                   <Card.Title>{carData.sellerName}</Card.Title>
@@ -136,8 +151,9 @@ class SingleCar extends React.Component {
                   <Card.Text>Seller Notes: {carData.sellerNotes}</Card.Text>
                 </Card.Body>
               </Card>
+
               {/* Google Api Maps Location */}
-              <Card>
+              <Card className="side-bar-item-wrapper">
                 <Card.Header as="h5">Car Location</Card.Header>
                 <Card.Body>
                   <Card.Text>Address: {carData.sellerAddress}</Card.Text>

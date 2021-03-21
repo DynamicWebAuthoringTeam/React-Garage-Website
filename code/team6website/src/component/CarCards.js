@@ -1,82 +1,39 @@
-import React from 'react'
-import { 
-    Container, Row, Col, Card, Button
-} from 'react-bootstrap'
-
-
-// All <Col> component here with in each row should have 'md' example: <Col md>
-// Might be able to move all this into css
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Button} from 'react-bootstrap'
+import { singleCarsData } from '../data/single-cars-data';
+import './component-css/CarCards.css';
 function CarCards() {
     return (
         <>
-        <Button variant="primary" onClick={event =>  window.location.href='/singlecar?id=1'}>1</Button>
-        <Button variant="primary" onClick={event =>  window.location.href='/singlecar?id=2'}>2</Button>
-        <Button variant="primary" onClick={event =>  window.location.href='/singlecar?id=2'}>3</Button>
-        <Button variant="primary" onClick={event =>  window.location.href='/singlecar?id=2'}>4</Button>
-        <Container>
-            <Row>
-                <Col md>
-                    <Card className="mb-3" style={{color: "#000"}}>
-                    <Card.Img src="https://picsum.photos/200/50"></Card.Img>
-                    <Card.Body>
-                        <Card.Title>Card Example</Card.Title>
-                        <Card.Text>
-                        This is a example of react bootstrap cards
-                        </Card.Text>
-                        <Button variant="primary">Read More</Button>
-                    </Card.Body>
-                    </Card></Col>
-                    <Col md>
-                        <Card className="mb-3" style={{color: "#000"}}>
-                <Card.Img src="https://picsum.photos/200/50"></Card.Img>
-                <Card.Body>
-                    <Card.Title>Card Example</Card.Title>
-                    <Card.Text>
-                    This is a example of react bootstrap cards
-                    </Card.Text>
-                    <Button variant="primary">Read More</Button>
-                </Card.Body>
-                </Card></Col>
-                    </Row>
-                    <Row>
-                <Col md>
-                    <Card className="mb-3" style={{color: "#000"}}>
-                    <Card.Img src="https://picsum.photos/200/50"></Card.Img>
-                    <Card.Body>
-                        <Card.Title>Card Example</Card.Title>
-                        <Card.Text>
-                        This is a example of react bootstrap cards
-                        </Card.Text>
-                        <Button variant="primary">Read More</Button>
-                    </Card.Body>
-                    </Card>
-                </Col>
-                <Col md>
-                    <Card className="mb-3" style={{color: "#000"}}>
-                    <Card.Img src="https://picsum.photos/200/50"></Card.Img>
-                    <Card.Body>
-                        <Card.Title>Card Example</Card.Title>
-                        <Card.Text>
-                        This is a example of react bootstrap cards
-                        </Card.Text>
-                        <Button variant="primary">Read More</Button>
-                    </Card.Body>
-                    </Card>
-                </Col>
-                <Col md>
-                    <Card className="mb-3" style={{color: "#000"}}>
-                        <Card.Img src="https://picsum.photos/200/50"></Card.Img>
-                        <Card.Body>
-                            <Card.Title>Card Example</Card.Title>
-                            <Card.Text>
-                            This is a example of react bootstrap cards
-                            </Card.Text>
-                        <Button variant="primary">Read More</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
+            {/* TODO 
+                1. need to center this row on the page  
+                2. Make all image the same dimensions
+            */}
+
+            <Row className="row-wrapper">
+                {
+                    singleCarsData.map((car, key) => {
+                        return (
+                            <Col lg="4">
+                                <Card key={key} className="mb-3" style={{color: "#000"}}>
+                                    <Card.Img src={car.primaryImage}></Card.Img>
+                                    <Card.Body>
+                                        <Card.Title>{car.make} {key} {car.model}</Card.Title>
+                                        <Card.Text>
+                                        This is a example of react bootstrap cards
+                                        </Card.Text>
+                                            {
+                                                <Button variant="primary" onClick={event => window.location.href="/singlecar?id=" + car.id}>
+                                                    Read More
+                                                </Button>
+                                            }
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        );
+                        })
+                }
             </Row>
-        </Container>
         </>
     )
 }

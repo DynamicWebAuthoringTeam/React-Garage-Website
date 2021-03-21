@@ -6,6 +6,7 @@ function SiteFooter() {
     //TODO MEDIA QUERY FOR MOBILE/REACT VERSION
     return (
         <>
+        <div>
             <Row className="footer-wrapper">
                     <Col sm className="footer-column">
                         <Container>
@@ -22,6 +23,7 @@ function SiteFooter() {
                         </Container>
                     </Col>
                 </Row>
+            </div>
         </>
     )
 }
