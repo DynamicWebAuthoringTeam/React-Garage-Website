@@ -127,6 +127,7 @@ class SingleCar extends React.Component {
               </Card>
               {/* Seller Contact Info */}
               <Card>
+                
                 <Card.Header as="h5">Seller Information</Card.Header>
                 <Card.Body>
                   <Card.Title>{carData.sellerName}</Card.Title>
