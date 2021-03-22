@@ -14,7 +14,11 @@
 }
 
 .nav-bar {
-  background-color: white;
+  background-color: #4232a8;
+}
+
+.brand {
+  color: red;
 }
 
 .App-header {

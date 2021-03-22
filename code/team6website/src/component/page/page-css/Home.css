@@ -7,4 +7,8 @@
 .home-header{
     text-align: center;
     margin-bottom: 2%;
+    color: black;
+    font-family: noto sans;
+    font-weight: bold;
+    font-style: oblique;
 }

@@ -58,13 +58,13 @@ function App() {
 
       <Navbar sticky="top" className="justify-content-between nav-bar">
 
-          <Navbar.Brand href="/home">SpeedFixSales 
-          {/* <img
-        src="/images/longlong.png"
+          <Navbar.Brand href="/home">Speed Fix Sales 
+          {<img
+        src="/images/logolong.png"
         width="100px"
         height="30px"
         className="d-inline-block align-top"
-      /> */}
+      />}
           </Navbar.Brand>
 
           {/* Hides search bar and its button for mobile devices is replaced by the one rendered in 'NavigationBar.js' */}
