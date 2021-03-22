@@ -29,11 +29,6 @@ import FindUs from './component/page/FindUs';
 import Contact from './component/page/Contact';
 import SiteFooter from './component/SiteFooter';
 
-//Awesome Font Imports
-import ReactDOM from 'react-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAdjust } from '@fortawesome/free-solid-svg-icons'
-
 function App() {
   //TODO 3 lines have been copied
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -59,27 +54,31 @@ function App() {
       <Navbar sticky="top" className="justify-content-between nav-bar">
 
           <Navbar.Brand href="/home">Speed Fix Sales 
-          {<img
-        src="/images/logolong.png"
-        width="100px"
-        height="30px"
-        className="d-inline-block align-top"
-      />}
+          {
+            <img
+              src="/images/logolong.png"
+              width="100px"
+              height="30px"
+              className="d-inline-block align-top"
+            />
+           }
           </Navbar.Brand>
 
-          {/* Hides search bar and its button for mobile devices is replaced by the one rendered in 'NavigationBar.js' */}
-          <Media query="(max-width: 987px)">
-                    { matches =>
-                                matches ? (
-                                    <div></div>
-                                  ) : (
-                                    <Form inline>
-                                      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                                      <Button type="submit">Search</Button>
-                                    </Form>
-                                  )
-                    }
-          </Media>
+            {/* Hides search bar and its button for mobile devices is replaced by the one rendered in 'NavigationBar.js' */}
+            <Media query="(max-width: 987px)">
+                      { matches =>
+                                  matches ? (
+                                    // Render Empty div
+                                      <div></div>
+                                    ) : (
+                                    // Render Search Form
+                                      <Form inline>
+                                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                                        <Button type="submit">Search</Button>
+                                      </Form>
+                                    )
+                      }
+            </Media>
 
           <NavItem>
             <Navbar.Text>
@@ -111,6 +110,7 @@ function App() {
           <Route path='/' component={Home} />
         </Switch>
       </Router>
+      {/* TODO SiteFooter currently broken/ css/ somthing is messed up disabled for now */}
       {/* <SiteFooter></SiteFooter> */}
       </>
     </ThemeProvider>
