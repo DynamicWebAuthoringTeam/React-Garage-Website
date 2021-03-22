@@ -1,7 +1,6 @@
+// React Imports
 import React from 'react'
 import { func, string } from 'prop-types';
-import styled from "styled-components"
-import ReactDOM from 'react-dom'
 
 //Awesome Font Imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

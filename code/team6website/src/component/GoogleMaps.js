@@ -34,7 +34,7 @@
     console.log('marker: ', marker)
   }
  
- function MyComponent() {
+ function GoogleMapsLibraryComponent() {
    return (
      <LoadScript googleMapsApiKey='AIzaSyCJualtIlFiU6Jz-wRrIdbPwlDmBYvLKu0'>
        <GoogleMap mapContainerStyle={containerStyle} center={coords} zoom={16}>
@@ -44,4 +44,4 @@
    )
  }
  
- export default React.memo(MyComponent)
+ export default React.memo(GoogleMapsLibraryComponent)

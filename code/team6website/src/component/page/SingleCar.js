@@ -1,12 +1,15 @@
-//React Imports
+//React, Boostrap Imports
 import React from 'react';
 import { Redirect } from 'react-router-dom'
-import { Row, Col, Container, Image, Table, Card, Carousel } from 'react-bootstrap'
+import { Row, Col, Container, Image, Card, Carousel } from 'react-bootstrap'
 
 import queryString from 'query-string';
+
+//Car Data Import
 import { singleCarsData } from '../../data/single-cars-data';
 
-import MyComponent from '../GoogleMaps'
+//Google Maps 3rd party Library Library
+import GoogleMapsLibraryComponent from '../GoogleMaps'
 
 //CSS Imports
 import './page-css/SingleCar.css';
@@ -38,8 +41,10 @@ class SingleCar extends React.Component {
             <Container className="main-column-container">
 
               {/* Primary Car Image */}
-              <Image className='main-image' src={carData.primaryImage} fluid rounded />
-
+              <Card className="main-image-card">
+                  <Image className='main-image' src={carData.primaryImage} fluid rounded />
+              </Card>
+              
               {/* Key Details */}
               <Card className="key-details-wrapper">
                 <Card.Header as="h5">Key Details</Card.Header>
@@ -157,7 +162,7 @@ class SingleCar extends React.Component {
                 <Card.Header as="h5">Car Location</Card.Header>
                 <Card.Body>
                   <Card.Text>Address: {carData.sellerAddress}</Card.Text>
-                  <MyComponent></MyComponent>
+                  <GoogleMapsLibraryComponent></GoogleMapsLibraryComponent>
                 </Card.Body>
               </Card>
             </Container>

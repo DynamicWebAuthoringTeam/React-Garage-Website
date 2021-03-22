@@ -20,21 +20,21 @@ function NavigationBar() {
 
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav variant="tabs" defaultActiveKey="/home" fill style={{width: "100%"}}>
+                <Nav variant="tabs" className="tab-color" defaultActiveKey="/home" fill style={{width: "100%"}}>
                 <Nav.Item>
-                    <Nav.Link href="/home" eventKey="/home">Home</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/home" eventKey="/home">Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/carlisting" eventKey="/carlisting">Cars for Sale</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/carlisting" eventKey="/carlisting">Cars for Sale</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/partlisting" eventKey="/partlisting">Parts for Sale</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/partlisting" eventKey="/partlisting">Parts for Sale</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/contact"eventKey="/contact">Contact</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/contact"eventKey="/contact">Contact</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/findus" eventKey="findus">Find Us</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/findus" eventKey="findus">Find Us</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                     <NavDropdown title="Misc" id="collasible-nav-dropdown">
@@ -49,23 +49,23 @@ function NavigationBar() {
         </Navbar>
         <Media query="(max-width: 987px)">
                     { matches =>
-                                matches ? (
-                                    <Container fluid>
-                                    <Form>
-                                      <FormControl fluid type="text" placeholder="Search" className=" mr-sm-2" />
-                                        <Row>
-                                            <Col></Col>
-                                            <Col>
-                                                <Button type="submit" className="collapsed-search-button">Search</Button>
-                                            </Col>
-                                            <Col></Col>
-                                      </Row>
-                                    </Form>
-                                    </Container>
-                                  ) : (
-                                        <div></div>
-                                  )
-                    }
+                            matches ? (
+                                <Container fluid>
+                                <Form>
+                                    <FormControl fluid type="text" placeholder="Search" className=" mr-sm-2" />
+                                    <Row>
+                                        <Col></Col>
+                                        <Col>
+                                            <Button type="submit" className="collapsed-search-button">Search</Button>
+                                        </Col>
+                                        <Col></Col>
+                                    </Row>
+                                </Form>
+                                </Container>
+                                ) : (
+                                    <div></div>
+                                )
+                }
                 </Media>
       </>
     )
