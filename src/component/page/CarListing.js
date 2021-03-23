@@ -3,7 +3,6 @@ import {Row, Col, Card, Button } from 'react-bootstrap'
 import { singleCarsData } from '../../data/single-cars-data';
 import '../component-css/CarCards.css';
 
-//This Function will render the CarListing page at /carlisting
 function CarListing() {
     return (
         <>

@@ -2,19 +2,20 @@ import './App.css';
 
 //React Imports
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { BrowserRouter as Router,Switch, Route } from 'react-router-dom';
 
 import Media from 'react-media';
 //BootStrap Imports
-import { FormControl, Button, Form, NavItem, Navbar } from 'react-bootstrap'
+import { FormControl, Button, Form, NavItem, Navbar, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Light Mode and Dark Mode Imports
-import { ThemeProvider} from "styled-components";
-import { useDarkMode } from "./component/ColorSchemes/useDarkMode"
-import { GlobalStyles } from "./component/ColorSchemes/GlobalStyles";
-import { lightTheme, darkTheme } from "./component/ColorSchemes/Themes"
-import Toggle from "./component/ColorSchemes/Toggler"
+// import { ThemeProvider} from "styled-components";
+// import { useDarkMode } from "./component/ColorSchemes/useDarkMode"
+// import { GlobalStyles } from "./component/ColorSchemes/GlobalStyles";
+// import { lightTheme, darkTheme } from "./component/ColorSchemes/Themes"
+// import Toggle from "./component/ColorSchemes/Toggler"
 
 //Home Made Component imports
 import NavigationBar from './component/NavigationBar';
@@ -31,25 +32,25 @@ import SiteFooter from './component/SiteFooter';
 
 function App() {
   //TODO 3 lines have been copied
-  const [theme, themeToggler, mountedComponent] = useDarkMode();
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
-  if(!mountedComponent) return <div/>
+  // const [theme, themeToggler, mountedComponent] = useDarkMode();
+  // const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  // if(!mountedComponent) return <div/>
 
   return (
 
     //Allows for the changing from dark to light themes
-    <ThemeProvider theme={themeMode}>
+    // <ThemeProvider theme={themeMode}>
       <>
 
       {
         /* Allows for injection of CSS between dark and light theme */
       }
-      <GlobalStyles/>
+      {/* <GlobalStyles/> */}
 
       {
         /* React default router */
       }
-      <Router>
+      {/* <Router> */}
 
       <Navbar sticky="top" className="justify-content-between nav-bar">
 
@@ -84,7 +85,7 @@ function App() {
             <Navbar.Text>
               Signed in as: <a href="/login">Mark Otto</a>
             </Navbar.Text>
-            <Toggle theme={theme} toggleTheme={themeToggler} />
+            {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
           </NavItem>
 
       </Navbar>
@@ -97,6 +98,7 @@ function App() {
         {
           /* Defines which 'Page' to load into the main body for each of the urls */
         }
+      <Router>
         <Switch>
           <Route path='/home'        component={Home} />
           <Route path='/carlisting'  component={CarListing} />
@@ -113,7 +115,7 @@ function App() {
       {/* TODO SiteFooter currently broken/ css/ somthing is messed up disabled for now */}
       {/* <SiteFooter></SiteFooter> */}
       </>
-    </ThemeProvider>
+    /*{ </ThemeProvider> }*/
   );
 }
 
