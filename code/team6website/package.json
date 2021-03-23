@@ -1,5 +1,4 @@
 {
-  "homepage": "http://DynamicWebAuthoringTeam.github.io/Assignment/code/team6website",
   "name": "team6website",
   "version": "0.1.0",
   "private": true,
@@ -28,8 +27,6 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "predeploy": "npm install && npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
