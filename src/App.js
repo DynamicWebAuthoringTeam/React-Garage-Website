@@ -93,12 +93,12 @@ function App() {
       {
         /* The NavigationBar is a traditional tab navigation */
       }
-      <NavigationBar />
+      <HashRouter basename="/Assignment">
+        <NavigationBar />
 
         {
           /* Defines which 'Page' to load into the main body for each of the urls */
         }
-      <HashRouter basename='/Assignment/#/'>
         <Switch>
           <Route exact path='/'            component={Home} />
           <Route exact path='/carlisting'  component={CarListing} />
