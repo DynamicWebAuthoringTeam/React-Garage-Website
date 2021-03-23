@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 import { HashRouter, Route, Switch, Link } from "react-router-dom";
 import Media from 'react-media';
 //BootStrap Imports
-import { FormControl, Button, Form, NavItem, Navbar, Nav } from 'react-bootstrap'
+import { FormControl, Button, Form, NavItem, Navbar } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Light Mode and Dark Mode Imports
@@ -98,7 +98,7 @@ function App() {
         {
           /* Defines which 'Page' to load into the main body for each of the urls */
         }
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename='/Assignment/'>
         <Switch>
           <Route exact path='/'            component={Home} />
           <Route exact path='/carlisting'  component={CarListing} />
