@@ -98,13 +98,13 @@ function App() {
           /* Defines which 'Page' to load into the main body for each of the urls */
         }
         <Switch>
-          <Route path='/home'        exact component={Home} />
-          <Route path='/carlisting'  exact component={CarListing} />
-          <Route path='/partlisting' exact component={PartListing} />
-          <Route path='/contact'     exact component={Contact} />
-          <Route path='/findus'      exact component={FindUs} />
-          <Route path='/singlecar'   exact component={SingleCar}/>
-          <Route path='/singlepart'  exact component={SinglePart} />
+          <Route path='/home'        component={Home} />
+          <Route path='/carlisting'  component={CarListing} />
+          <Route path='/partlisting' component={PartListing} />
+          <Route path='/contact'     component={Contact} />
+          <Route path='/findus'      component={FindUs} />
+          <Route path='/singlecar'   component={SingleCar}/>
+          <Route path='/singlepart'  component={SinglePart} />
 
           {/* If no match is made from the above urls match to Home */}
           <Route path='/' component={Home} />
