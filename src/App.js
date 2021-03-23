@@ -4,7 +4,7 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 
 // import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { HashRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route, Switch, Link } from "react-router-dom";
 import Media from 'react-media';
 //BootStrap Imports
 import { FormControl, Button, Form, NavItem, Navbar, Nav } from 'react-bootstrap'
