@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Assignment/static/css/main.ca311c2f.chunk.css",
-    "main.js": "/Assignment/static/js/main.4a8ad024.chunk.js",
-    "main.js.map": "/Assignment/static/js/main.4a8ad024.chunk.js.map",
-    "runtime-main.js": "/Assignment/static/js/runtime-main.14deab7f.js",
-    "runtime-main.js.map": "/Assignment/static/js/runtime-main.14deab7f.js.map",
-    "static/css/2.4c97ca4f.chunk.css": "/Assignment/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.b5434154.chunk.js": "/Assignment/static/js/2.b5434154.chunk.js",
-    "static/js/2.b5434154.chunk.js.map": "/Assignment/static/js/2.b5434154.chunk.js.map",
-    "index.html": "/Assignment/index.html",
-    "static/css/2.4c97ca4f.chunk.css.map": "/Assignment/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.ca311c2f.chunk.css.map": "/Assignment/static/css/main.ca311c2f.chunk.css.map",
-    "static/js/2.b5434154.chunk.js.LICENSE.txt": "/Assignment/static/js/2.b5434154.chunk.js.LICENSE.txt"
+    "main.css": "/Assignment/code/team6website/static/css/main.ca311c2f.chunk.css",
+    "main.js": "/Assignment/code/team6website/static/js/main.4a8ad024.chunk.js",
+    "main.js.map": "/Assignment/code/team6website/static/js/main.4a8ad024.chunk.js.map",
+    "runtime-main.js": "/Assignment/code/team6website/static/js/runtime-main.be32e9a7.js",
+    "runtime-main.js.map": "/Assignment/code/team6website/static/js/runtime-main.be32e9a7.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/Assignment/code/team6website/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.19ea2a0e.chunk.js": "/Assignment/code/team6website/static/js/2.19ea2a0e.chunk.js",
+    "static/js/2.19ea2a0e.chunk.js.map": "/Assignment/code/team6website/static/js/2.19ea2a0e.chunk.js.map",
+    "index.html": "/Assignment/code/team6website/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/Assignment/code/team6website/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.ca311c2f.chunk.css.map": "/Assignment/code/team6website/static/css/main.ca311c2f.chunk.css.map",
+    "static/js/2.19ea2a0e.chunk.js.LICENSE.txt": "/Assignment/code/team6website/static/js/2.19ea2a0e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.14deab7f.js",
+    "static/js/runtime-main.be32e9a7.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.b5434154.chunk.js",
+    "static/js/2.19ea2a0e.chunk.js",
     "static/css/main.ca311c2f.chunk.css",
     "static/js/main.4a8ad024.chunk.js"
   ]
