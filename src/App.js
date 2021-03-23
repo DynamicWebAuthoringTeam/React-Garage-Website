@@ -98,7 +98,7 @@ function App() {
         {
           /* Defines which 'Page' to load into the main body for each of the urls */
         }
-      <Router>
+      <Router basename="/Assignment">
         <Switch>
           <Route path='/home'        component={Home} />
           <Route path='/carlisting'  component={CarListing} />
