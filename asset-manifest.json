@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Assignment/code/team6website/static/css/main.ca311c2f.chunk.css",
-    "main.js": "/Assignment/code/team6website/static/js/main.87bce7c8.chunk.js",
-    "main.js.map": "/Assignment/code/team6website/static/js/main.87bce7c8.chunk.js.map",
-    "runtime-main.js": "/Assignment/code/team6website/static/js/runtime-main.be32e9a7.js",
-    "runtime-main.js.map": "/Assignment/code/team6website/static/js/runtime-main.be32e9a7.js.map",
-    "static/css/2.4c97ca4f.chunk.css": "/Assignment/code/team6website/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.19ea2a0e.chunk.js": "/Assignment/code/team6website/static/js/2.19ea2a0e.chunk.js",
-    "static/js/2.19ea2a0e.chunk.js.map": "/Assignment/code/team6website/static/js/2.19ea2a0e.chunk.js.map",
-    "index.html": "/Assignment/code/team6website/index.html",
-    "static/css/2.4c97ca4f.chunk.css.map": "/Assignment/code/team6website/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.ca311c2f.chunk.css.map": "/Assignment/code/team6website/static/css/main.ca311c2f.chunk.css.map",
-    "static/js/2.19ea2a0e.chunk.js.LICENSE.txt": "/Assignment/code/team6website/static/js/2.19ea2a0e.chunk.js.LICENSE.txt"
+    "main.css": "/DynamicWebAuthoringTeam/Assignment/static/css/main.ca311c2f.chunk.css",
+    "main.js": "/DynamicWebAuthoringTeam/Assignment/static/js/main.27e1da5c.chunk.js",
+    "main.js.map": "/DynamicWebAuthoringTeam/Assignment/static/js/main.27e1da5c.chunk.js.map",
+    "runtime-main.js": "/DynamicWebAuthoringTeam/Assignment/static/js/runtime-main.169d3c13.js",
+    "runtime-main.js.map": "/DynamicWebAuthoringTeam/Assignment/static/js/runtime-main.169d3c13.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/DynamicWebAuthoringTeam/Assignment/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.82db8ec6.chunk.js": "/DynamicWebAuthoringTeam/Assignment/static/js/2.82db8ec6.chunk.js",
+    "static/js/2.82db8ec6.chunk.js.map": "/DynamicWebAuthoringTeam/Assignment/static/js/2.82db8ec6.chunk.js.map",
+    "index.html": "/DynamicWebAuthoringTeam/Assignment/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/DynamicWebAuthoringTeam/Assignment/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.ca311c2f.chunk.css.map": "/DynamicWebAuthoringTeam/Assignment/static/css/main.ca311c2f.chunk.css.map",
+    "static/js/2.82db8ec6.chunk.js.LICENSE.txt": "/DynamicWebAuthoringTeam/Assignment/static/js/2.82db8ec6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.be32e9a7.js",
+    "static/js/runtime-main.169d3c13.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.19ea2a0e.chunk.js",
+    "static/js/2.82db8ec6.chunk.js",
     "static/css/main.ca311c2f.chunk.css",
-    "static/js/main.87bce7c8.chunk.js"
+    "static/js/main.27e1da5c.chunk.js"
   ]
 }
