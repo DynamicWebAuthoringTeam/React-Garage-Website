@@ -93,7 +93,7 @@ function App() {
       {
         /* The NavigationBar is a traditional tab navigation */
       }
-      <HashRouter basename="/Assignment/">
+      <HashRouter>
         <NavigationBar />
 
         {
