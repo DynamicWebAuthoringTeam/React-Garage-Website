@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Assignment/code/team6website/static/css/main.ca311c2f.chunk.css",
-    "main.js": "/Assignment/code/team6website/static/js/main.4a8ad024.chunk.js",
-    "main.js.map": "/Assignment/code/team6website/static/js/main.4a8ad024.chunk.js.map",
+    "main.js": "/Assignment/code/team6website/static/js/main.87bce7c8.chunk.js",
+    "main.js.map": "/Assignment/code/team6website/static/js/main.87bce7c8.chunk.js.map",
     "runtime-main.js": "/Assignment/code/team6website/static/js/runtime-main.be32e9a7.js",
     "runtime-main.js.map": "/Assignment/code/team6website/static/js/runtime-main.be32e9a7.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/Assignment/code/team6website/static/css/2.4c97ca4f.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.19ea2a0e.chunk.js",
     "static/css/main.ca311c2f.chunk.css",
-    "static/js/main.4a8ad024.chunk.js"
+    "static/js/main.87bce7c8.chunk.js"
   ]
 }
