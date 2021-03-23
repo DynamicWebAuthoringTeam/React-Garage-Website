@@ -20,21 +20,21 @@ function NavigationBar() {
 
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav variant="tabs" className="tab-color" defaultActiveKey="/Assignment/#/" fill style={{width: "100%"}}>
+                <Nav variant="tabs" className="tab-color" defaultActiveKey="/" fill style={{width: "100%"}}>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/Assignment/#/" eventKey="/home">Home</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/" eventKey="/home">Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/Assignment/#/carlisting" eventKey="/carlisting">Cars for Sale</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/carlisting" eventKey="/carlisting">Cars for Sale</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/Assignment/#/partlisting" eventKey="/partlisting">Parts for Sale</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/partlisting" eventKey="/partlisting">Parts for Sale</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/Assignment/#/contact"eventKey="/contact">Contact</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/contact"eventKey="/contact">Contact</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/Assignment/#/findus" eventKey="findus">Find Us</Nav.Link>
+                    <Nav.Link className="nav-link-text" href="/findus" eventKey="findus">Find Us</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                     <NavDropdown title="Misc" id="collasible-nav-dropdown">

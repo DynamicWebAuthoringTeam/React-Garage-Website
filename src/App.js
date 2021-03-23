@@ -3,8 +3,8 @@ import './App.css';
 //React Imports
 import React, { useState, useEffect } from "react";
 
-// import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { HashRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+// import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Media from 'react-media';
 //BootStrap Imports
 import { FormControl, Button, Form, NavItem, Navbar } from 'react-bootstrap'
@@ -50,11 +50,11 @@ function App() {
       {
         /* React default router */
       }
-      {/* <Router> */}
+      <Router>
 
       <Navbar sticky="top" className="justify-content-between nav-bar">
 
-          <Navbar.Brand href="/#/">Speed Fix Sales 
+          <Navbar.Brand href="/">Speed Fix Sales 
           {
             <img
               src="/images/logolong.png"
@@ -83,7 +83,7 @@ function App() {
 
           <NavItem>
             <Navbar.Text>
-              Signed in as: <a href="/#/login">Mark Otto</a>
+              Signed in as: <a href="/login">Mark Otto</a>
             </Navbar.Text>
             {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
           </NavItem>
@@ -93,7 +93,6 @@ function App() {
       {
         /* The NavigationBar is a traditional tab navigation */
       }
-      <HashRouter>
         <NavigationBar />
 
         {
@@ -111,7 +110,7 @@ function App() {
           {/* If no match is made from the above urls match to Home */}
           {/* <Route path='/' component={Home} /> */}
         </Switch>
-      </HashRouter>
+      </Router>
       {/* TODO SiteFooter currently broken/ css/ somthing is messed up disabled for now */}
       {/* <SiteFooter></SiteFooter> */}
       </>
