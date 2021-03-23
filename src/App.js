@@ -3,8 +3,8 @@ import './App.css';
 //React Imports
 import React, { useState, useEffect } from "react";
 
-import { BrowserRouter as Router,Switch, Route } from 'react-router-dom';
-
+// import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Route, Link } from "react-router-dom";
 import Media from 'react-media';
 //BootStrap Imports
 import { FormControl, Button, Form, NavItem, Navbar, Nav } from 'react-bootstrap'
@@ -98,7 +98,7 @@ function App() {
         {
           /* Defines which 'Page' to load into the main body for each of the urls */
         }
-      <Router basename="/Assignment">
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path='/home'        component={Home} />
           <Route path='/carlisting'  component={CarListing} />
@@ -111,7 +111,7 @@ function App() {
           {/* If no match is made from the above urls match to Home */}
           <Route path='/' component={Home} />
         </Switch>
-      </Router>
+      </HashRouter>
       {/* TODO SiteFooter currently broken/ css/ somthing is messed up disabled for now */}
       {/* <SiteFooter></SiteFooter> */}
       </>
