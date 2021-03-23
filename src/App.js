@@ -98,7 +98,7 @@ function App() {
         {
           /* Defines which 'Page' to load into the main body for each of the urls */
         }
-      <HashRouter basename='/Assignment/'>
+      <HashRouter basename='/Assignment/#/'>
         <Switch>
           <Route exact path='/'            component={Home} />
           <Route exact path='/carlisting'  component={CarListing} />
