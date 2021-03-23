@@ -54,7 +54,7 @@ function App() {
 
       <Navbar sticky="top" className="justify-content-between nav-bar">
 
-          <Navbar.Brand href="/home">Speed Fix Sales 
+          <Navbar.Brand href="/#/">Speed Fix Sales 
           {
             <img
               src="/images/logolong.png"
@@ -83,7 +83,7 @@ function App() {
 
           <NavItem>
             <Navbar.Text>
-              Signed in as: <a href="/login">Mark Otto</a>
+              Signed in as: <a href="/#/login">Mark Otto</a>
             </Navbar.Text>
             {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
           </NavItem>
@@ -93,7 +93,7 @@ function App() {
       {
         /* The NavigationBar is a traditional tab navigation */
       }
-      <HashRouter basename="/Assignment">
+      <HashRouter basename="/Assignment/">
         <NavigationBar />
 
         {
