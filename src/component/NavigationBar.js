@@ -4,8 +4,13 @@ import {
     Navbar, Nav, NavDropdown, Form, FormControl, Button, Container, Row, Col
 } from 'react-bootstrap'
 import './component-css/NavigationBar.css';
+import { NavLink, useRouteMatch } from 'react-router-dom';
+import { useState } from 'react';
 
 function NavigationBar() {
+
+    const [key, setKey] = useState('/home');
+
     return (
         <>
         
@@ -22,19 +27,19 @@ function NavigationBar() {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav variant="tabs" className="tab-color" defaultActiveKey="/" fill style={{width: "100%"}}>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/" eventKey="/home">Home</Nav.Link>
+                    <Nav.Link className="nav-link-text" eventKey="/home" as={NavLink} to="/home">Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/carlisting" eventKey="/carlisting">Cars for Sale</Nav.Link>
+                    <Nav.Link className="nav-link-text" eventKey="/carlisting" as={NavLink} to="/carlisting">Cars for Sale</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/partlisting" eventKey="/partlisting">Parts for Sale</Nav.Link>
+                    <Nav.Link className="nav-link-text" eventKey="/partlisting" as={NavLink} to="/partlisting">Parts for Sale</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/contact"eventKey="/contact">Contact</Nav.Link>
+                    <Nav.Link className="nav-link-text" eventKey="/contact" as={NavLink} to="/contact">Contact</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="nav-link-text" href="/findus" eventKey="findus">Find Us</Nav.Link>
+                    <Nav.Link className="nav-link-text" eventKey="/findus" as={NavLink} to="/findus">Find Us</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                     <NavDropdown title="Misc" id="collasible-nav-dropdown">

@@ -95,23 +95,18 @@ function App() {
       }
         <NavigationBar />
 
-        {
-          /* Defines which 'Page' to load into the main body for each of the urls */
-        }
+        { /* Defines which 'Page' to load into the main body for each of the urls */ }
         <Switch>
-          <Route exact path='/'            component={Home} />
-          <Route exact path='/carlisting'  component={CarListing} />
-          <Route exact path='/partlisting' component={PartListing} />
-          <Route exact path='/contact'     component={Contact} />
-          <Route exact path='/findus'      component={FindUs} />
-          <Route exact path='/singlecar'   component={SingleCar}/>
-          <Route exact path='/singlepart'  component={SinglePart} />
-
-          {/* If no match is made from the above urls match to Home */}
-          {/* <Route path='/' component={Home} /> */}
+          <Route exact path='/'      component={Home} />
+          <Route path='/home'        component={Home} />
+          <Route path='/carlisting'  component={CarListing} />
+          <Route path='/partlisting' component={PartListing} />
+          <Route path='/contact'     component={Contact} />
+          <Route path='/findus'      component={FindUs} />
+          <Route path='/singlecar'   component={SingleCar}/>
+          <Route path='/singlepart'  component={SinglePart} />
         </Switch>
       </Router>
-      {/* TODO SiteFooter currently broken/ css/ somthing is messed up disabled for now */}
       {/* <SiteFooter></SiteFooter> */}
       </>
     /*{ </ThemeProvider> }*/
