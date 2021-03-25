@@ -29,7 +29,7 @@ export const allPartsData = [
         id: "2",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Kenwood M",
         modelNumber: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/2.png",
