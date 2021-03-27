@@ -1,5 +1,5 @@
 
-import React, { useState} from 'react';
+import React, { useState, RangeSlider} from 'react';
 import {Row, Col, Card, Button, DropdownButton, Dropdown, Form } from 'react-bootstrap'
 import { allPartsData } from '../../data/single-part-data';
 import '../component-css/CarCards.css';
@@ -8,25 +8,50 @@ import Media from 'react-media';
  function PartListing() {
 
     //State Variables
+    // const [ rangeLowerBound, setRangeLowerBound ] = React.useState(0);
+    // const [ rangeHigherBound, setRangeHigherBound] = React.useState(100000000);
+    const [ value, setValue ] = React.useState(0);
+    const [ value2, setValue2 ] = React.useState(9999);
+
     const [filterdParts, setFilterParts] = useState(allPartsData);
     const [count, setCount] = useState(0);
-    const [inputFilter, setInputFilter] = useState({
-        id: 0,
-        make: 0,
-        model: 0,
-        name: 0
-    });
+    const [inputFilter, setInputFilter] = useState('None');
+
+    // const SliderWithLabel = () => {
+
+    //     const [ value, setValue ] = React.useState(50);
+      
+    //     return (
+    //       <Form>
+    //         <Form.Group>
+    //           <Form.Label>
+    //             My Label
+    //           </Form.Label>
+    //           <RangeSlider
+    //             value={value}
+    //             onChange={e => setValue(e.target.value)}
+    //           />
+    //         </Form.Group>
+    //       </Form>
+    //     );
+      
+    //   };
 
 
     return (
         <div>
+            {/* {SliderWithLabel} */}
             <Form>
             <Form.Row>
+            <DropdownButton id="dropdown-basic-button" title={` Filter: ${inputFilter} `}>
+                <Dropdown.Item onClick={ () => {setInputFilter('None')}}>None</Dropdown.Item>
+                <Dropdown.Item onClick={ () => {setInputFilter('id')}}>Id</Dropdown.Item>
+                <Dropdown.Item onClick={ () => {setInputFilter('make')}}>Make</Dropdown.Item>
+                <Dropdown.Item onClick={ () => {setInputFilter('model')}}>Model</Dropdown.Item>
+
+            </DropdownButton>
                 <Col xs={7}>
-                    <Form.Control placeholder="Make" />
-                </Col>
-                <Col>
-                    <Form.Control placeholder="Model" />
+                    <Form.Control placeholder="add a filter" />
                 </Col>
                 <Col>
                     <Form.Control placeholder="Name" />
@@ -34,17 +59,31 @@ import Media from 'react-media';
             </Form.Row>
             </Form>
             <Form>
-            <Form.Group controlId="formBasicRange">
-                <Form.Label>Price $</Form.Label>
-                <Form.Control type="range" />
+            <Form.Group controlId="rangefilter" as={Row}>
+                <Col>
+                    <Row>
+                        <Col xs="9">
+                            <Form.Control type="range" value={value} onChange={e => setValue(e.target.value)} min={0} max={9999}  />
+                        </Col>
+                        <Col xs="3">
+                            <Form.Control value={value}/>
+                            {/* <Form.Label>Upper Price Bound ${value}</Form.Label> */}
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Form.Control type="range" value={value2} onChange={e => setValue2(e.target.value)} min={0} max={9999}  />
+                        </Col>
+                        <Col>
+                            <Form.Control value={value2}/>
+                            {/* <Form.Label>Upper Price Bound ${value2}</Form.Label> */}
+                        </Col>
+                    </Row>
+                    </Col>
             </Form.Group>
             </Form>
-            <p> Current filter {inputFilter.make} times </p>
-            <DropdownButton id="dropdown-basic-button" title="Select Filter">
-                <Dropdown.Item onClick={ () => {setInputFilter('id')}}>Id</Dropdown.Item>
-                <Dropdown.Item onClick={ () => {setInputFilter('make')}}>Make</Dropdown.Item>
-                <Dropdown.Item onClick={ () => {setInputFilter('model')}}>Model</Dropdown.Item>
-            </DropdownButton>
+        
+            <p> Current filter {inputFilter} times </p>
         <p> You clicked {count} times </p>
         <button onClick={ () => {
             setFilterParts(
