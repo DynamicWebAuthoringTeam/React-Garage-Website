@@ -18,17 +18,16 @@ function PartListing() {
     const [upperPrice, setUpperPrice] = useState(9999);
 
     //Filter display toggle
-    const [filterDisplay, setFilterDisplay] = useState(true);
+    const [filterDisplay, setFilterDisplay] = useState(false);
 
     //Function to filter the variable used to populate all the show cards.
     function applyFilter() {
-
         setFilterParts(
             allPartsData.filter(part =>
                 !part.name.toLowerCase().indexOf(nameFilter.toLowerCase()) &&
                 !part.model.toLowerCase().indexOf(modelFilter.toLowerCase()) &&
                 !part.make.toLowerCase().indexOf(makeFilter.toLowerCase()) &&
-                ((Number(upperPrice) > Number(part.price)) && ( Number(part.price) > Number(lowerPrice)))
+                ((Number(upperPrice) > Number(part.price)) && (Number(part.price) > Number(lowerPrice)))
             )
         )
     }
@@ -57,7 +56,7 @@ function PartListing() {
                             <Col lg="4">
                                 <Form.Control
                                     placeholder="add a name filter.."
-                                    onChange={e => { setNameFilter(e.target.value); applyFilter() }}
+                                    onChange={item => { setNameFilter(item.target.value); applyFilter() }}
                                 />
                             </Col>
                         </Row>
@@ -66,7 +65,7 @@ function PartListing() {
                             <Col lg="4">
                                 <Form.Control
                                     placeholder="add a make filter.."
-                                    onChange={e => { setMakeFilter(e.target.value); applyFilter() }}
+                                    onChange={item => { setMakeFilter(item.target.value); applyFilter() }}
                                 />
                             </Col>
                         </Row>
@@ -75,7 +74,7 @@ function PartListing() {
                             <Col lg="4">
                                 <Form.Control
                                     placeholder="add a model filter.."
-                                    onChange={e => { setModelFilter(e.target.value); applyFilter() }}
+                                    onChange={item => { setModelFilter(item.target.value); applyFilter() }}
                                 />
                             </Col>
                         </Row>
@@ -91,12 +90,12 @@ function PartListing() {
                                         <Form.Control value={lowerPrice} />
                                     </Col>
                                     <Col>
-                                        <Form.Control 
-                                            type="range" 
+                                        <Form.Control
+                                            type="range"
                                             value={lowerPrice}
                                             onChange={e => { setLowerPrice(e.target.value); applyFilter() }}
                                             min={0} max={9999} />
-                            </Col>
+                                    </Col>
                                 </Row>
                                 <Row>
                                     <Col lg="1">
@@ -106,9 +105,9 @@ function PartListing() {
                                         <Form.Control value={upperPrice} />
                                     </Col>
                                     <Col>
-                                        <Form.Control 
-                                            type="range" 
-                                            value={upperPrice} 
+                                        <Form.Control
+                                            type="range"
+                                            value={upperPrice}
                                             onChange={e => { setUpperPrice(e.target.value); applyFilter() }}
                                             min={0} max={9999} />
                                     </Col>
@@ -150,7 +149,6 @@ function PartListing() {
                 }
             </Row>
         </div>
-
     );
 }
 

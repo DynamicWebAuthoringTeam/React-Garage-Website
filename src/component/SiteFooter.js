@@ -3,12 +3,10 @@ import {Container, Form, Navbar, Button, FormControl, Col, Row} from 'react-boot
 import './component-css/SiteFooter.css';
 function SiteFooter() {
 
-    //TODO MEDIA QUERY FOR MOBILE/REACT VERSION
     return (
         <>
-        <div>
             <Row className="footer-wrapper">
-                    <Col sm className="footer-column">
+                    <Col sm="5" className="footer-column">
                         <Container>
                             <Form inline>
                             <h3>Newsletter signup</h3>
@@ -17,13 +15,12 @@ function SiteFooter() {
                             </Form>
                         </Container>
                     </Col>
-                    <Col sm className="footer-column">
+                    <Col sm="5" className="footer-column">
                         <Container>
                             TEXT
                         </Container>
                     </Col>
                 </Row>
-            </div>
         </>
     )
 }

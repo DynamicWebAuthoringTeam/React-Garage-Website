@@ -6,6 +6,10 @@
   width: 90%;
 }
 
+.app-alert-button {
+  margin: 9px;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

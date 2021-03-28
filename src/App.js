@@ -6,8 +6,9 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Media from 'react-media';
+
 //BootStrap Imports
-import { FormControl, Button, Form, NavItem, Navbar } from 'react-bootstrap'
+import { FormControl, Button, Form, NavItem, Navbar, Alert, Container } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Light Mode and Dark Mode Imports
@@ -19,6 +20,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Home Made Component imports
 import NavigationBar from './component/NavigationBar';
+import Context from './component/DataContext';
 
 //Page Imports
 import Home from './component/page/Home';
@@ -30,7 +32,20 @@ import FindUs from './component/page/FindUs';
 import Contact from './component/page/Contact';
 import SiteFooter from './component/SiteFooter';
 
+class LoginStatus extends React.Component {
+  static contextType = Context.UserContext;
+  render(){
+    if(this.context != null){
+      return <NavItem><Navbar.Text>Signed in as:{this.context}</Navbar.Text></NavItem>;
+    } else {
+      return <NavItem><Navbar.Text><a href="/login">Sign in</a></Navbar.Text></NavItem>;
+    }
+  }
+}
+
 function App() {
+  //Global State
+
   //TODO 3 lines have been copied
   // const [theme, themeToggler, mountedComponent] = useDarkMode();
   // const themeMode = theme === 'light' ? lightTheme : darkTheme;
@@ -41,7 +56,8 @@ function App() {
     //Allows for the changing from dark to light themes
     // <ThemeProvider theme={themeMode}>
       <>
-
+       <Context.ThemeContext.Provider value="dark">
+    
       {
         /* Allows for injection of CSS between dark and light theme */
       }
@@ -80,20 +96,28 @@ function App() {
                                     )
                       }
             </Media>
-
-          <NavItem>
-            <Navbar.Text>
-              Signed in as: <a href="/login">Mark Otto</a>
-            </Navbar.Text>
-            {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
-          </NavItem>
-
+      <LoginStatus></LoginStatus>
       </Navbar>
 
       {
         /* The NavigationBar is a traditional tab navigation */
       }
         <NavigationBar />
+        <Container>
+            <Alert variant="info">
+            <Alert.Heading>You are not logged in!</Alert.Heading>
+                <p>
+                    Welcome to SpeedFixSales website, we noticed you are not logged in! <br></br>
+                    Please login or register with the buttons below! 
+                </p>
+                <hr />
+                <p className="mb-0">
+                    Click Here to Login/Register
+                </p>
+                <Button className="app-alert-button">Login</Button>
+                <Button className="app-alert-button">Register</Button>
+            </Alert>
+        </Container>
 
         { /* Defines which 'Page' to load into the main body for each of the urls */ }
         <Switch>
@@ -108,8 +132,8 @@ function App() {
         </Switch>
       </Router>
       {/* <SiteFooter></SiteFooter> */}
+      </Context.ThemeContext.Provider>
       </>
-    /*{ </ThemeProvider> }*/
   );
 }
 

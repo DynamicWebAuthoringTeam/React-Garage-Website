@@ -29,7 +29,7 @@ class SingleCar extends React.Component {
         <Redirect to='/carlisting' />
       )
     }
-    
+
     return (
       <>
         {/* Whole page is wrapped in a row with 2x Columns, a main column and a sidebar column */}
@@ -42,9 +42,9 @@ class SingleCar extends React.Component {
 
               {/* Primary Car Image */}
               <Card className="main-image-card">
-                  <Image className='main-image' src={carData.primaryImage} fluid rounded />
+                <Image className='main-image' src={carData.primaryImage} fluid rounded />
               </Card>
-              
+
               {/* Key Details */}
               <Card className="key-details-wrapper">
                 <Card.Header as="h5">Key Details</Card.Header>
@@ -107,15 +107,15 @@ class SingleCar extends React.Component {
               <Card className="key-details-wrapper">
                 <Card.Header as="h5">Full Car Specification</Card.Header>
                 <Card.Body>
-                {
-                  carData.fullSpec.map((data, key) => {
-                    return (
-                      <div key={key}>
-                        {data}  
-                      </div>
-                    );
-                  })
-                }
+                  {
+                    carData.fullSpec.map((data, key) => {
+                      return (
+                        <div key={key}>
+                          {data}
+                        </div>
+                      );
+                    })
+                  }
                 </Card.Body>
               </Card>
 
@@ -131,18 +131,18 @@ class SingleCar extends React.Component {
               <Card className="side-bar-item-wrapper">
                 <Card.Header as="h5">Other Images of this car</Card.Header>
                 <Card.Body>
-                    <Carousel>
-                      {/* Loop through 'otherImages' and create a Carousel.Item for each image found*/}
-                      {
-                        carData.otherImages.map((data, key) => {
-                          return (
-                            <Carousel.Item key={key}>
-                              <img className="d-block w-100" src={data}/>
-                            </Carousel.Item>
-                          );
-                        })
-                      }
-                    </Carousel>
+                  <Carousel>
+                    {/* Loop through 'otherImages' and create a Carousel.Item for each image found*/}
+                    {
+                      carData.otherImages.map((data, key) => {
+                        return (
+                          <Carousel.Item key={key}>
+                            <img className="d-block w-100" src={data} />
+                          </Carousel.Item>
+                        );
+                      })
+                    }
+                  </Carousel>
                 </Card.Body>
               </Card>
 
