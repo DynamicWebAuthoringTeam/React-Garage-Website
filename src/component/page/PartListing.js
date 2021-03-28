@@ -1,5 +1,5 @@
-import React, { useState, RangeSlider } from 'react';
-import { Row, Col, Card, Button, DropdownButton, Dropdown, Form, Container } from 'react-bootstrap'
+import React, { useState } from 'react';
+import { Row, Col, Card, Button, Form, Container } from 'react-bootstrap'
 import { allPartsData } from '../../data/single-part-data';
 import '../component-css/CarCards.css';
 import './page-css/PartListing.css';
@@ -22,13 +22,6 @@ function PartListing() {
 
     //Function to filter the variable used to populate all the show cards.
     function applyFilter() {
-
-        var thing = {
-            make :'ford',
-            model : 'ford',
-            lowerBound:0,
-            upperBound:99999
-        }
 
         setFilterParts(
             allPartsData.filter(part =>
@@ -60,8 +53,8 @@ function PartListing() {
                 <Container className="partlisting-filters-container">
                     <Form>
                         <Row className="part-listing-row-wrapper">
-                            <Col xs="2"><Form.Label>Filter Name: {nameFilter}</Form.Label></Col>
-                            <Col >
+                            <Col lg="2"><Form.Label>Filter Name: {nameFilter}</Form.Label></Col>
+                            <Col lg="4">
                                 <Form.Control
                                     placeholder="add a name filter.."
                                     onChange={e => { setNameFilter(e.target.value); applyFilter() }}
@@ -69,8 +62,8 @@ function PartListing() {
                             </Col>
                         </Row>
                         <Row className="part-listing-row-wrapper">
-                            <Col xs="2"><Form.Label>Filter Make: {makeFilter} </Form.Label></Col>
-                            <Col>
+                            <Col lg="2"><Form.Label>Filter Make: {makeFilter} </Form.Label></Col>
+                            <Col lg="4">
                                 <Form.Control
                                     placeholder="add a make filter.."
                                     onChange={e => { setMakeFilter(e.target.value); applyFilter() }}
@@ -78,8 +71,8 @@ function PartListing() {
                             </Col>
                         </Row>
                         <Row className="part-listing-row-wrapper">
-                            <Col xs="2" ><Form.Label>Filter Model: {modelFilter} </Form.Label></Col>
-                            <Col>
+                            <Col lg="2"><Form.Label>Filter Model: {modelFilter} </Form.Label></Col>
+                            <Col lg="4">
                                 <Form.Control
                                     placeholder="add a model filter.."
                                     onChange={e => { setModelFilter(e.target.value); applyFilter() }}
@@ -91,10 +84,10 @@ function PartListing() {
                         <Form.Group controlId="rangefilter" as={Row}>
                             <Col>
                                 <Row>
-                                    <Col xs="1">
+                                    <Col lg="1">
                                         <Form.Label>Lower $</Form.Label>
                                     </Col>
-                                    <Col xs="1">
+                                    <Col xs="3">
                                         <Form.Control value={lowerPrice} />
                                     </Col>
                                     <Col>
@@ -102,15 +95,14 @@ function PartListing() {
                                             type="range" 
                                             value={lowerPrice}
                                             onChange={e => { setLowerPrice(e.target.value); applyFilter() }}
-                                            min={0} max={9999} 
-                                        />
-                                    </Col>
+                                            min={0} max={9999} />
+                            </Col>
                                 </Row>
                                 <Row>
-                                    <Col xs="1">
+                                    <Col lg="1">
                                         <Form.Label>Upper $</Form.Label>
                                     </Col>
-                                    <Col xs="1">
+                                    <Col xs="3">
                                         <Form.Control value={upperPrice} />
                                     </Col>
                                     <Col>
@@ -118,8 +110,7 @@ function PartListing() {
                                             type="range" 
                                             value={upperPrice} 
                                             onChange={e => { setUpperPrice(e.target.value); applyFilter() }}
-                                            min={0} max={9999} 
-                                        />
+                                            min={0} max={9999} />
                                     </Col>
                                 </Row>
                             </Col>
