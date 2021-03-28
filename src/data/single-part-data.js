@@ -6,7 +6,7 @@ export const allPartsData = [
         make: "Ford Motor Company",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "TMC 1000",
+        model: "TMC 1000",
         description: "Ford Mustang Boss 429 engine",
         primaryImage: "/images/parts/1.jpg",
         otherImages: [
@@ -30,7 +30,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Kenwood M",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/2.png",
         otherImages: [
@@ -54,7 +54,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/3.jpg",
         otherImages: [
@@ -78,7 +78,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/4.jpg",
         otherImages: [
@@ -102,7 +102,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/5.jpg",
         otherImages: [
@@ -126,7 +126,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -150,7 +150,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -174,7 +174,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -198,7 +198,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -222,7 +222,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -246,7 +246,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -270,7 +270,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -294,7 +294,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -319,7 +319,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -344,7 +344,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -368,7 +368,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -392,7 +392,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -416,7 +416,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -440,7 +440,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [
@@ -464,7 +464,7 @@ export const allPartsData = [
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
-        modelNumber: "ABC 8080",
+        model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
         otherImages: [

@@ -1,0 +1,17 @@
+.part-listing-row-wrapper{
+    padding: 1%;
+}
+
+.partlisting-toggler-filters-container{
+    margin: 0;
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 0;
+    padding-right: 0;
+}
+.partlisting-filters-container{
+    padding-left: 2%;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
