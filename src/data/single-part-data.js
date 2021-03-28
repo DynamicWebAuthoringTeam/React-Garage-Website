@@ -3,6 +3,7 @@
 export const allPartsData = [
     {
         id: "1",
+        price: "100",
         make: "Ford Motor Company",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -27,6 +28,7 @@ export const allPartsData = [
     },
     {
         id: "2",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Kenwood M",
@@ -52,6 +54,7 @@ export const allPartsData = [
     {
         id: "3",
         make : "Kenwood",
+        price: "1000",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
         model: "ABC 8080",
@@ -75,6 +78,7 @@ export const allPartsData = [
     },
     {
         id: "4",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -99,6 +103,7 @@ export const allPartsData = [
     },
     {
         id: "5",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -123,6 +128,7 @@ export const allPartsData = [
     },
     {
         id: "6",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -147,6 +153,7 @@ export const allPartsData = [
     },
     {
         id: "7",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -171,6 +178,7 @@ export const allPartsData = [
     },
     {
         id: "8",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -195,6 +203,7 @@ export const allPartsData = [
     },
     {
         id: "9",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -219,6 +228,7 @@ export const allPartsData = [
     },
     {
         id: "10",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -243,6 +253,7 @@ export const allPartsData = [
     },
     {
         id: "11",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -267,6 +278,7 @@ export const allPartsData = [
     },
     {
         id: "12",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -291,6 +303,7 @@ export const allPartsData = [
     },
     {
         id: "13",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -316,6 +329,7 @@ export const allPartsData = [
     ,
     {
         id: "14",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -341,6 +355,7 @@ export const allPartsData = [
     ,
     {
         id: "15",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -365,6 +380,7 @@ export const allPartsData = [
     },
     {
         id: "16",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -389,6 +405,7 @@ export const allPartsData = [
     },
     {
         id: "17",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -413,6 +430,7 @@ export const allPartsData = [
     },
     {
         id: "18",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -437,6 +455,7 @@ export const allPartsData = [
     },
     {
         id: "19",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",
@@ -461,6 +480,7 @@ export const allPartsData = [
     },
     {
         id: "20",
+        price: "1000",
         make : "Kenwood",
         year: "1968–1998",
         name: "Ford Mustang Boss 429 engine",

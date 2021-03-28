@@ -7,7 +7,6 @@ import Media from 'react-media';
 
 function PartListing() {
 
-
     //State of variable that holds all the card parts to render
     const [filterdParts, setFilterParts] = useState(allPartsData);
 
@@ -15,8 +14,8 @@ function PartListing() {
     const [nameFilter, setNameFilter] = useState('');
     const [makeFilter, setMakeFilter] = useState('');
     const [modelFilter, setModelFilter] = useState('');
-    const [value, setValue] = React.useState(0);
-    const [value2, setValue2] = React.useState(9999);
+    const [lowerPrice, setLowerPrice] = useState(0);
+    const [upperPrice, setUpperPrice] = useState(9999);
 
     //Filter display toggle
     const [filterDisplay, setFilterDisplay] = useState(true);
@@ -24,29 +23,30 @@ function PartListing() {
     //Function to filter the variable used to populate all the show cards.
     function applyFilter() {
 
+        var thing = {
+            make :'ford',
+            model : 'ford',
+            lowerBound:0,
+            upperBound:99999
+        }
+
         setFilterParts(
             allPartsData.filter(part =>
                 !part.name.toLowerCase().indexOf(nameFilter.toLowerCase()) &&
                 !part.model.toLowerCase().indexOf(modelFilter.toLowerCase()) &&
-                !part.make.toLowerCase().indexOf(makeFilter.toLowerCase())
+                !part.make.toLowerCase().indexOf(makeFilter.toLowerCase()) &&
+                ((Number(upperPrice) > Number(part.price)) && ( Number(part.price) > Number(lowerPrice)))
             )
         )
     }
-
-    // function filterShowToggle() {
-    //     var x = document.getElementById("filters-div");
-    //     if (x.style.display === "none") {
-    //       x.style.display = "block";
-    //     } else {
-    //       x.style.display = "none";
-    //     }
-    //   }
 
     //TODO work out how to also reset the text of the text boxes
     function resetFilters() {
         setNameFilter('')
         setMakeFilter('')
         setModelFilter('')
+        setLowerPrice(0)
+        setUpperPrice(9999)
         setFilterParts(allPartsData)
     }
 
@@ -95,10 +95,15 @@ function PartListing() {
                                         <Form.Label>Lower $</Form.Label>
                                     </Col>
                                     <Col xs="1">
-                                        <Form.Control value={value} />
+                                        <Form.Control value={lowerPrice} />
                                     </Col>
                                     <Col>
-                                        <Form.Control type="range" value={value} onChange={e => setValue(e.target.value)} min={0} max={9999} />
+                                        <Form.Control 
+                                            type="range" 
+                                            value={lowerPrice}
+                                            onChange={e => { setLowerPrice(e.target.value); applyFilter() }}
+                                            min={0} max={9999} 
+                                        />
                                     </Col>
                                 </Row>
                                 <Row>
@@ -106,10 +111,15 @@ function PartListing() {
                                         <Form.Label>Upper $</Form.Label>
                                     </Col>
                                     <Col xs="1">
-                                        <Form.Control value={value2} />
+                                        <Form.Control value={upperPrice} />
                                     </Col>
                                     <Col>
-                                        <Form.Control type="range" value={value2} onChange={e => setValue2(e.target.value)} min={0} max={9999} />
+                                        <Form.Control 
+                                            type="range" 
+                                            value={upperPrice} 
+                                            onChange={e => { setUpperPrice(e.target.value); applyFilter() }}
+                                            min={0} max={9999} 
+                                        />
                                     </Col>
                                 </Row>
                             </Col>
