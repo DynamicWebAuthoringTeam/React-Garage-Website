@@ -1,7 +1,7 @@
 import './App.css';
 
 //React Imports
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
@@ -20,7 +20,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Home Made Component imports
 import NavigationBar from './component/NavigationBar';
-import Context from './component/DataContext';
+import Context from './component/Context';
+
 
 //Page Imports
 import Home from './component/page/Home';
@@ -30,6 +31,8 @@ import SingleCar from './component/page/SingleCar';
 import SinglePart from './component/page/SinglePart';
 import FindUs from './component/page/FindUs';
 import Contact from './component/page/Contact';
+import Login from './component/page/Login';
+import Register from './component/page/Register';
 import SiteFooter from './component/SiteFooter';
 
 // Yeah this class makes a login component so the user can login.
@@ -46,7 +49,9 @@ class LoginStatus extends React.Component {
 }
 
 function App() {
-  //Global State
+  
+  //https://dev.to/efearas/how-to-usecontext-and-set-value-of-context-in-child-components-in-3-steps-3j9h
+  const [userContext, setUserContext] = useState(null);
 
   //TODO 3 lines have been copied
   // const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -54,11 +59,8 @@ function App() {
   // if(!mountedComponent) return <div/>
 
   return (
-
-    //Allows for the changing from dark to light themes
-    // <ThemeProvider theme={themeMode}>
       <>
-       <Context.ThemeContext.Provider value="dark">
+       <Context.UserContext.Provider value={[userContext, setUserContext]}>
     
       {
         /* Allows for injection of CSS between dark and light theme */
@@ -98,14 +100,19 @@ function App() {
                                     )
                       }
             </Media>
+                      
+      {/* Displays the logged in user in the header bar. */}
+    
       <LoginStatus></LoginStatus>
       </Navbar>
 
       {
         /* The NavigationBar is a traditional tab navigation */
       }
-        <NavigationBar />
+      <NavigationBar />
         
+        {/* An Alert at the top of every page to inform the user they are not logged in */}
+        {/* TODO, work out how to not render if on either of the login to register page, probs could use the url or somthing */}
         <Container>
             <Alert variant="info">
             <Alert.Heading>You are not logged in!</Alert.Heading>
@@ -117,8 +124,8 @@ function App() {
                 <p className="mb-0">
                     Click Here to Login/Register
                 </p>
-                <Button className="app-alert-button">Login</Button>
-                <Button className="app-alert-button">Register</Button>
+                <Button className="app-alert-button" href="/login">Login</Button>
+                <Button className="app-alert-button" href="/register">Register</Button>
             </Alert>
         </Container>
 
@@ -132,10 +139,12 @@ function App() {
           <Route path='/findus'      component={FindUs} />
           <Route path='/singlecar'   component={SingleCar}/>
           <Route path='/singlepart'  component={SinglePart} />
+          <Route path='/login'       component={Login} />
+          <Route path='/register'    component={Register} />
         </Switch>
       </Router>
       {/* <SiteFooter></SiteFooter> */}
-      </Context.ThemeContext.Provider>
+      </Context.UserContext.Provider>
       </>
   );
 }

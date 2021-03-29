@@ -9,9 +9,7 @@ import HomeCarouselCar from '../HomeCarouselCar';
 // CSS Imports
 import './page-css/Home.css';
 
-
 function Home() {
-
     return (
         <>
         
