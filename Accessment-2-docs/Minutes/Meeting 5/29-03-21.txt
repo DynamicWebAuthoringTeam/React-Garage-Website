@@ -1,0 +1,74 @@
+29-03-2021 Meeting 5
+
+Attendence (3/4)
+1.Adam    Yes
+2.Michael  Yes
+3.Patrick  yes
+4.Lewis    no
+
+
+What we need to do
+
+1 . Standards complicent - needs to install libraries to do these checks
+2 . gathering and conditioning data
+3 .  Dynamic interactive design and event handling techniques
+4 . slider to change text size
+5 . set up tabbing stuff
+6 . Make sure all images have ALT + longdesc= “URL to my description”
+7 . Dynamic interactive design and event handling techniques (for
+example, animations, banners, image effects, date/time, form validation, calculator, and
+cookies/LocalStorage) are required.
+
+8. testing process should be documented
+
+9. Background research into technology possibilities. (Note: Use of frameworks are
+permitted providing their are properly referenced and not claimed as own work)
+
+10. Justification of the selected technology.
+
+11. Evidence of a clear implementation and testing process (for example, including
+DOM structure, sitemap, implementation, testing plan, and evaluation
+
+12. • A copy of all your submitted code in an appendix
+
+13 Vido has to have code init
+
+Supporting Documentation – 30 Marks
+Your supporting documentation will be assessed on the following criteria:
+• Thoroughness of background research.
+• Justification of selected technology.
+• Evidence of a clear implementation and testing process.
+• Consideration of performance and optimisation.
+2Website – 60 Marks
+Your website submission will be assessed on the following criteria:
+• Correctness of each solution in terms of its associated specification.
+• Quality of user interaction.
+• Clarity/quality of design.
+• Code quality/standard.
+Video Submission – 10 Marks
+Your video submission will be assessed on the following criteria:
+• Do all group members contribute to the video?
+• Do the website features work as expected?
+• Level of understanding shown of features/code.
+• Professional presentation of the video.
+
+
+
+
+Tasks per presentation
+
+
+< < < Code Pages > > >
+Michael
+Car for Sale, Parts for Sale, Single Car Page, Login
+Background research into technology possibilities.
+
+Lewis
+Contact, Register 
+
+Adam
+Home page, find us page, testing
+
+Patrick
+ - Single Part Page (copy single car page), footer
+ - Standards complicent
