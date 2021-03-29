@@ -32,9 +32,11 @@ import FindUs from './component/page/FindUs';
 import Contact from './component/page/Contact';
 import SiteFooter from './component/SiteFooter';
 
+// Yeah this class makes a login component so the user can login.
 class LoginStatus extends React.Component {
   static contextType = Context.UserContext;
   render(){
+    //if logined display user, else prompt to sign in.
     if(this.context != null){
       return <NavItem><Navbar.Text>Signed in as:{this.context}</Navbar.Text></NavItem>;
     } else {
@@ -103,6 +105,7 @@ function App() {
         /* The NavigationBar is a traditional tab navigation */
       }
         <NavigationBar />
+        
         <Container>
             <Alert variant="info">
             <Alert.Heading>You are not logged in!</Alert.Heading>
