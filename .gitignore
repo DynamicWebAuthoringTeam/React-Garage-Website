@@ -1,1 +1,5 @@
-node_modules
+notes.txt
+/node_modules
+/code/my-app
+/code/responsive-play-ground
+/node_modules
