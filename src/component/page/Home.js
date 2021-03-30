@@ -1,7 +1,7 @@
 
 // React, Bootstrap Imports
 import React from 'react'
-import { Container, Alert, Button } from 'react-bootstrap'
+import { Container} from 'react-bootstrap'
 
 // Home-made Components
 import HomeCarouselCar from '../HomeCarouselCar';
@@ -12,7 +12,6 @@ import './page-css/Home.css';
 function Home() {
     return (
         <>
-        
             {/* Cars Carousel */}
             <Container className="home-carousel-wrapper">
                 <h1 className="home-header">Featured Cars</h1>
