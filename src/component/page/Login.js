@@ -26,7 +26,7 @@ function Login() {
     //Mocking find user from a database.
     function findUser(email) {
         const user = users.filter(user => user.email === email)
-        return user[0] //fix
+        return user[0] //TODO fix is this always the first element?
     }
 
     //Mocking check password against a database.
@@ -35,7 +35,6 @@ function Login() {
     }
 
     //Mocking user authenicate and account info retrival.
-    //TODO set context if successful
     function authenicate(email, givenPassword){
         const optionFoundUser = findUser(email)
         const loginSuccess = checkPassword(optionFoundUser, givenPassword)
@@ -43,10 +42,10 @@ function Login() {
         if(loginSuccess){
             setDisplayInvalidLogin(false)
             setUser(optionFoundUser)
-            return (<Redirect to='/home' />)
+            return loginSuccess
         } else {
             setDisplayInvalidLogin(true)
-            return(<div></div>)
+            return loginSuccess
         }
     }
 
@@ -76,7 +75,7 @@ function Login() {
             <Container>
                 <AlertInvalidLogin></AlertInvalidLogin>
                 <Container>
-                    <Card class="login-card ">
+                    <Card class="login-card">
                         <Container>
                             <Form>
                                 <Form.Row>
@@ -101,11 +100,8 @@ function Login() {
                                 </Form.Row>
                                 <Button 
                                 onClick={event => {
-                                                    if(authenicate(inputEmail, inputPassword)){
-                                                        history.push("/home")
-                                                }
-                                            }   
-                                        }>Login</Button>
+                                    if(authenicate(inputEmail, inputPassword)){history.push("/home")}
+                                    }}>Login</Button>
                             </Form>
                         </Container>
                     </Card>
