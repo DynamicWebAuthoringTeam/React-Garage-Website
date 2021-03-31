@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Media from 'react-media';
 
 //BootStrap Imports
-import { FormControl, Button, Form, NavItem, Navbar, Alert, Container } from 'react-bootstrap'
+import { FormControl, Button, Form, NavItem, Navbar, Alert, Container, Dropdown, DropdownButton, Row } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Home Made Component imports
@@ -33,13 +33,22 @@ function App() {
   const [displayNotLoggedIn, setDisplayNotLoggedIn] = useState(true);
   const [user, setUser] = useState(null);
 
+  //TODO Add styles to make the login/logout now ugly
   class LoginStatus extends React.Component {
     static contextType = Context;
     render() {
       if (this.context[0] === null) {
         return <NavItem><Navbar.Text><a href="/login">Sign in</a></Navbar.Text></NavItem>;
       } else {
-        return <NavItem><Navbar.Text>Signed in as: {this.context[0].firstName}</Navbar.Text></NavItem>;
+        return <NavItem>
+                  <Row> 
+                    <Navbar.Text>Signed in as: </Navbar.Text>
+                    <DropdownButton id="dropdown-basic-button" title={this.context[0].firstName}>
+                    <Dropdown.Item href="">profile</Dropdown.Item>
+                    <Dropdown.Item href="home">logout</Dropdown.Item>
+                    </DropdownButton>
+                  </Row>
+          </NavItem>;
       }
     }
   }
@@ -48,7 +57,7 @@ function App() {
     static contextType = Context;
     render() {
       //Todo fix this hack should only have 1 variable to detect logging in
-      if (!displayNotLoggedIn || (this.context[0] === null)) {
+      if (displayNotLoggedIn && this.context[0] === null) {
         return (
           <Container>
             <Alert variant="info" onClose={ () => setDisplayNotLoggedIn(false) } dismissible>
