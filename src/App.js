@@ -29,14 +29,13 @@ import SiteFooter from './component/SiteFooter';
 import { Context } from "./component/Context.js";
 
 function App() {
-  //TODO probs combines these
-  const [displayNotLoggedIn, setDisplayNotLoggedIn] = useState(true);
+  //TODO combines these and fix hack below
+  const [loggedIn, setloggedIn] = useState(true);
   const [user, setUser] = useState(null);
 
   class LoginStatus extends React.Component {
     static contextType = Context;
     render() {
-      {console.log(this.context)}
       if (this.context[0] === null) {
         return <NavItem><Navbar.Text><a href="/login">Sign in</a></Navbar.Text></NavItem>;
       } else {
@@ -46,11 +45,13 @@ function App() {
   }
 
   class AlertNotLoggedIn extends React.Component {
+    static contextType = Context;
     render() {
-      if (displayNotLoggedIn) {
+      //Todo fix this hack should only have 1 variable to detect logging in
+      if (!loggedIn || (this.context[0] === null)) {
         return (
           <Container>
-            <Alert variant="info" onClose={ () => setDisplayNotLoggedIn(false) } dismissible>
+            <Alert variant="info" onClose={ () => setloggedIn(false) } dismissible>
               <Alert.Heading>You are not logged in!</Alert.Heading>
               <p>
                 Welcome to SpeedFixSales website, we noticed you are not logged in! 
