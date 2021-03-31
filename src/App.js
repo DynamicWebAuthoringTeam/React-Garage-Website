@@ -30,7 +30,7 @@ import { Context } from "./component/Context.js";
 
 function App() {
   //TODO combines these and fix hack below
-  const [loggedIn, setloggedIn] = useState(true);
+  const [displayNotLoggedIn, setDisplayNotLoggedIn] = useState(true);
   const [user, setUser] = useState(null);
 
   class LoginStatus extends React.Component {
@@ -48,10 +48,10 @@ function App() {
     static contextType = Context;
     render() {
       //Todo fix this hack should only have 1 variable to detect logging in
-      if (!loggedIn || (this.context[0] === null)) {
+      if (!displayNotLoggedIn || (this.context[0] === null)) {
         return (
           <Container>
-            <Alert variant="info" onClose={ () => setloggedIn(false) } dismissible>
+            <Alert variant="info" onClose={ () => setDisplayNotLoggedIn(false) } dismissible>
               <Alert.Heading>You are not logged in!</Alert.Heading>
               <p>
                 Welcome to SpeedFixSales website, we noticed you are not logged in! 
