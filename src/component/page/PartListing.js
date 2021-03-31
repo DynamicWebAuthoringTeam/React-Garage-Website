@@ -3,9 +3,11 @@ import { Row, Col, Card, Button, Form, Container } from 'react-bootstrap'
 import { allPartsData } from '../../data/single-part-data';
 import '../component-css/CarCards.css';
 import './page-css/PartListing.css';
+import { useHistory } from "react-router"
 import Media from 'react-media';
 
 function PartListing() {
+    let history = useHistory()
 
     //State of variable that holds all the card parts to render
     const [filterdParts, setFilterParts] = useState(allPartsData);
@@ -137,7 +139,7 @@ function PartListing() {
                                         <Card.Text>Description: {part.description}</Card.Text>
                                         {
                                             //Button will navigation the user to the singleCar page for this car.
-                                            <Button variant="primary" onClick={event => window.location.href = "/singlepart?id=" + part.id}>
+                                            <Button variant="primary" onClick={event => history.push("/singlepart?id=" + part.id )}>
                                                 Read More
                                             </Button>
                                         }

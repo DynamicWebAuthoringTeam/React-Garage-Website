@@ -3,8 +3,11 @@ import { Row, Col, Card, Button, Form, Container } from 'react-bootstrap'
 import { singleCarsData } from '../../data/single-cars-data';
 import './page-css/CarListing.css';
 import '../component-css/CarCards.css';
+import { useHistory } from "react-router"
 
 function CarListing() {
+    let history = useHistory()
+
     //State of variable that holds all the card parts to render
     const [filteredCars, setFilteredCars] = useState(singleCarsData);
     const [filterDisplay, setFilterDisplay] = useState(false);
@@ -192,8 +195,8 @@ function CarListing() {
                                             Year: {car.year}
                                         </Card.Text>
                                         {
-                                            //Button will navigation the user to the singleCar page for this car.
-                                            <Button variant="primary" onClick={event => window.location.href = "/singlecar?id=" + car.id}>
+                                            //Button will navigation the user to the singleCar page for this car. history.push("/singlecar?id=" + car.id)
+                                            <Button variant="primary" onClick={event => history.push("/singlecar?id=" + car.id )}>
                                                 Read More
                                             </Button>
                                         }
