@@ -10,6 +10,13 @@
   margin: 9px;
 }
 
+.app-user-button{
+  
+}
+
+.app-user-controls{
+  margin-right: 1%;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

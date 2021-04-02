@@ -40,11 +40,11 @@ function App() {
       if (this.context[0] === null) {
         return <NavItem><Navbar.Text><a href="/login">Sign in</a></Navbar.Text></NavItem>;
       } else {
-        return <NavItem>
+        return <NavItem className="app-user-controls">
                   <Row> 
                     <Navbar.Text>Signed in as: </Navbar.Text>
-                    <DropdownButton id="dropdown-basic-button" title={this.context[0].firstName}>
-                    <Dropdown.Item href="">profile</Dropdown.Item>
+                    <DropdownButton id="dropdown-basic-button" className="app-user-button" title={this.context[0].firstName}>
+                    <Dropdown.Item href="">view profile</Dropdown.Item>
                     <Dropdown.Item href="home">logout</Dropdown.Item>
                     </DropdownButton>
                   </Row>
