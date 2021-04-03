@@ -3,20 +3,20 @@ export const users = [
         email: "michael@email.com",
         password: "Password123!",
         firstName : "Michael",
-        secondName : "",
-        address: "",
-        city : "",
-        postCode: "",
-        county: ""
+        secondName : "Watters",
+        address: "123 fake street",
+        city : "Belfast",
+        postCode: "bt123 abc",
+        county: "antrim"
     },
     {
         email: "bob@email.com",
         password: "Password123!",
         firstName : "Bob",
         secondName : "Smith",
-        address: "",
-        city : "",
-        postCode: "",
-        county: ""
-    },
+        address: "123 fake street",
+        city : "Belfast",
+        postCode: "bt123 abc",
+        county: "antrim"
+    }
 ]

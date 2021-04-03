@@ -1,14 +1,17 @@
-
 //React Imports
 import React, { useContext, useState } from 'react'
-import { Col, Button, Card, Form, Container, Alert  } from 'react-bootstrap'
+import { Col, Button, Card, Form, Container, Alert, ProgressBar, Nav, NavLink  } from 'react-bootstrap'
 import { Redirect } from 'react-router-dom';
 import { useHistory } from "react-router"
+
 //Import the Mock database.
 import { users } from '../../data/users';
 
 //Import Context.
 import { Context } from "../Context.js";
+
+//Import CSS
+import './page-css/Login.css';
 
 function Login() {
 
@@ -26,7 +29,7 @@ function Login() {
     //Mocking find user from a database.
     function findUser(email) {
         const user = users.filter(user => user.email === email)
-        return user[0] //TODO fix is this always the first element?
+        return user[0]
     }
 
     //Mocking check password against a database.
@@ -49,6 +52,11 @@ function Login() {
         }
     }
 
+    /**
+     * Class AlertInvalidLogin
+     * Renders an invalid input alert if the login is invalid.
+     * Resource Reference: https://react-bootstrap.netlify.app/components/alerts/#dismissing
+     */
     class AlertInvalidLogin extends React.Component { 
         render(){
             if (displayInvalidLogin) {
@@ -62,6 +70,9 @@ function Login() {
                             <p>
                             Please try again, or register here if you do not have an account.
                             </p>
+                            <Button
+                            variant="danger" 
+                            onClick={event => {history.push("/register")}}>Registration</Button>
                         </Alert>
                     </Container>
                 );
@@ -72,11 +83,12 @@ function Login() {
 
     return (
         <>
-            <Container>
+            <Container className="login-outer-container">
                 <AlertInvalidLogin></AlertInvalidLogin>
                 <Container>
-                    <Card class="login-card">
-                        <Container>
+                <h1>Login</h1>
+                    <Card className="login-card-wrapper">
+                        <Container className="login-inner-container-wrapper">
                             <Form>
                                 <Form.Row>
                                     <Form.Group as={Col} controlId="formGridEmail">
@@ -98,6 +110,7 @@ function Login() {
                                         />
                                     </Form.Group>
                                 </Form.Row>
+                                <h6>Dont have an Account? <a href="/register">click here</a></h6>
                                 <Button 
                                 onClick={event => {
                                     if(authenicate(inputEmail, inputPassword)){history.push("/home")}
