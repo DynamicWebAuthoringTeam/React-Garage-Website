@@ -2,8 +2,7 @@ import './App.css';
 
 //React Imports
 import React, { useState } from "react";
-
-import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, NavLink, useLocation, withRouter } from "react-router-dom";
 import Media from 'react-media';
 
 //BootStrap Imports
@@ -42,7 +41,7 @@ function App() {
 
     render() {
       if (this.context[0] === null) {
-        return <NavItem><Navbar.Text ><a href="/login" style={{color:"white"}}>Sign in</a></Navbar.Text></NavItem>;
+        return <NavItem><Navbar.Text style={{color:"white"}} as={NavLink} to="/login" >Sign in</Navbar.Text></NavItem>;
       } else {
         return <NavItem className="app-user-controls">
                   <Row>
@@ -64,10 +63,12 @@ function App() {
   */
   class AlertNotLoggedIn extends React.Component {
     static contextType = Context;
+    
     render() {
 
       //Get current url
       var url = window.location.pathname
+
 
       //display if not logged in, but not when on the login or register parge.
       if (displayNotLoggedIn && this.context[0] === null && url != '/login' && url != '/register' ) {
@@ -82,8 +83,8 @@ function App() {
               </p>
               <hr />
               <p className="mb-0">Click Here to Login/Register</p>
-              <Button variant="info" className="app-alert-button" href="/login">Login</Button>
-              <Button variant="info" className="app-alert-button" href="/register">Register</Button>
+              <Button variant="info" className="app-alert-button" as={NavLink} to="/login">Login</Button>
+              <Button variant="info" className="app-alert-button" as={NavLink} to="/register">Register</Button>
             </Alert>
           </Container>
         );
@@ -99,7 +100,6 @@ function App() {
         Resource Reference: https://reactjs.org/docs/context.html
       */}
       <Context.Provider value={[user, setUser]}>
-
         <Router>
           {/* 
             Class <Navbar></Navbar>
@@ -110,7 +110,6 @@ function App() {
               Speed Fix Sales
               {<img src="/images/logolong.png" alt="SpeedFixSales Logo" width="100px" height="30px" className="d-inline-block align-top"/>}
             </Navbar.Brand>
-
             {/* Hides search bar and its button for mobile devices is replaced by the one rendered in 'NavigationBar.js' */}
             <Media query="(max-width: 987px)">
               {isMatch =>

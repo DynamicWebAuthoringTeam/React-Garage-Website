@@ -5,7 +5,10 @@
 .login-card-wrapper{
     margin-top: 2%;
 }
-
+.login-dont-have-account{
+    margin-left: 0;
+    padding-left: 0;
+}
 .login-inner-container-wrapper{
     margin-top: 2%;
     padding-left: 3%;

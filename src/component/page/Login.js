@@ -1,7 +1,7 @@
 //React Imports
 import React, { useContext, useState } from 'react'
-import { Col, Button, Card, Form, Container, Alert, ProgressBar, Nav, NavLink  } from 'react-bootstrap'
-import { Redirect } from 'react-router-dom';
+import { Col, Button, Card, Form, Container, Alert, ProgressBar, Nav  } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom';
 import { useHistory } from "react-router"
 
 //Import the Mock database.
@@ -14,9 +14,10 @@ import { Context } from "../Context.js";
 import './page-css/Login.css';
 
 function Login() {
-
     //History allows for navigation
     let history = useHistory()
+
+    console.log(users)
 
     //create user state from Context
     const [user, setUser] = useContext(Context);
@@ -110,11 +111,12 @@ function Login() {
                                         />
                                     </Form.Group>
                                 </Form.Row>
-                                <h6>Dont have an Account? <a href="/register">click here</a></h6>
+                                <Form.Label className="login-dont-have-account" as={NavLink} to='/register'><h6>Dont have an Account? Click here to register.</h6></Form.Label>
                                 <Button 
                                 onClick={event => {
-                                    if(authenicate(inputEmail, inputPassword)){history.push("/home")}
-                                    }}>Login</Button>
+                                    if(authenicate(inputEmail, inputPassword)){
+                                        history.push("/home")
+                                    }}}>Login</Button>
                             </Form>
                         </Container>
                     </Card>
