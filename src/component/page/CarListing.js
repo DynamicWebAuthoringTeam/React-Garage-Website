@@ -26,7 +26,7 @@ function CarListing() {
 
     //Year Bounds
     const [lowerYear, setLowerYear] = useState(1900);
-    const [upperYear, setUpperYear] = useState(2021);
+    const [upperYear, setUpperYear] = useState(2030);
 
     //Function to filter the variable used to populate all the show cards.
     function applyFilter() {
@@ -34,9 +34,9 @@ function CarListing() {
             singleCarsData.filter(car =>
                 !car.model.toLowerCase().indexOf(modelFilter.toLowerCase()) &&
                 !car.make.toLowerCase().indexOf(makeFilter.toLowerCase()) &&
-                ((Number(upperPrice) > Number(car.price)) && (Number(car.price) > Number(lowerPrice))) &&
-                ((Number(upperMiles) > Number(car.miles)) && (Number(car.miles) > Number(lowerMiles))) &&
-                ((Number(upperYear) > Number(car.year)) && (Number(car.year) > Number(lowerYear)))
+                ((Number(upperPrice) >= Number(car.price)) && (Number(car.price) >= Number(lowerPrice))) &&
+                ((Number(upperMiles) >= Number(car.miles)) && (Number(car.miles) >= Number(lowerMiles))) &&
+                ((Number(upperYear) >= Number(car.year)) && (Number(car.year) >= Number(lowerYear)))
             )
         )
     }
@@ -44,12 +44,12 @@ function CarListing() {
     function resetFilters() {
         setMakeFilter('')
         setModelFilter('')
-        setLowerPrice(0)
-        setUpperPrice(9999)
-        setLowerMiles(0)
-        setUpperMiles(9999)
         setLowerYear(1900)
-        setUpperYear(2021)
+        setUpperYear(2030)
+        setLowerPrice(0)
+        setUpperPrice(999999)
+        setLowerMiles(0)
+        setUpperMiles(999999)
         setFilteredCars(singleCarsData)
     }
 
@@ -96,7 +96,7 @@ function CarListing() {
                                             type="range"
                                             value={lowerYear}
                                             onChange={e => { setLowerYear(e.target.value); applyFilter() }}
-                                            min={1900} max={2021} />
+                                            min={1900} max={2030} />
                                     </Col>
                                 </Row>
                                 <Row>
@@ -111,7 +111,7 @@ function CarListing() {
                                             type="range"
                                             value={upperYear}
                                             onChange={e => { setUpperYear(e.target.value); applyFilter() }}
-                                            min={1900} max={2021} />
+                                            min={1900} max={2030} />
                                     </Col>
                                 </Row>
                                 <Row>
