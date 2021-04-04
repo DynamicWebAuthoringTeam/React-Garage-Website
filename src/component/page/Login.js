@@ -1,6 +1,6 @@
 //React Imports
 import React, { useContext, useState } from 'react'
-import { Col, Button, Card, Form, Container, Alert, ProgressBar, Nav  } from 'react-bootstrap'
+import { Col, Button, Card, Form, Container, Alert, ProgressBar, Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
 import { useHistory } from "react-router"
 
@@ -39,11 +39,11 @@ function Login() {
     }
 
     //Mocking user authenicate and account info retrival.
-    function authenicate(email, givenPassword){
+    function authenicate(email, givenPassword) {
         const optionFoundUser = findUser(email)
         const loginSuccess = checkPassword(optionFoundUser, givenPassword)
 
-        if(loginSuccess){
+        if (loginSuccess) {
             setDisplayInvalidLogin(false)
             setUser(optionFoundUser)
             return loginSuccess
@@ -58,65 +58,66 @@ function Login() {
      * Renders an invalid input alert if the login is invalid.
      * Resource Reference: https://react-bootstrap.netlify.app/components/alerts/#dismissing
      */
-    class AlertInvalidLogin extends React.Component { 
-        render(){
+    class AlertInvalidLogin extends React.Component {
+        render() {
             if (displayInvalidLogin) {
                 return (
                     <Container>
                         <Alert variant="danger" onClose={
                             () => setDisplayInvalidLogin(false)
-                            } dismissible
-                            >
+                        } dismissible
+                        >
                             <Alert.Heading>Sorry! Invalid Login Credentials</Alert.Heading>
                             <p>
-                            Please try again, or register here if you do not have an account.
+                                Please try again, or register here if you do not have an account.
                             </p>
                             <Button
-                            variant="danger" 
-                            onClick={event => {history.push("/register")}}>Registration</Button>
+                                variant="danger"
+                                onClick={event => { history.push("/register") }}>Registration</Button>
                         </Alert>
                     </Container>
                 );
-              }
-              return (<div></div>);
+            }
+            return (<div></div>);
         }
-      }
+    }
 
     return (
         <>
             <Container className="login-outer-container">
                 <AlertInvalidLogin></AlertInvalidLogin>
                 <Container>
-                <h1>Login</h1>
+                    <h1>Login</h1>
                     <Card className="login-card-wrapper">
                         <Container className="login-inner-container-wrapper">
                             <Form>
                                 <Form.Row>
                                     <Form.Group as={Col} controlId="formGridEmail">
                                         <Form.Label>Email</Form.Label>
-                                        <Form.Control 
-                                            type="email" 
-                                            placeholder="Enter email" 
-                                            onChange={e =>{ setInputEmail(e.target.value)}} 
+                                        <Form.Control
+                                            type="email"
+                                            placeholder="Enter email"
+                                            onChange={e => { setInputEmail(e.target.value) }}
                                         />
                                     </Form.Group>
                                 </Form.Row>
                                 <Form.Row>
-                                <Form.Group as={Col} controlId="formGridPassword">
+                                    <Form.Group as={Col} controlId="formGridPassword">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control 
-                                            type="password" 
-                                            placeholder="Password" 
-                                            onChange={e =>{ setInputPassword(e.target.value)}} 
+                                        <Form.Control
+                                            type="password"
+                                            placeholder="Password"
+                                            onChange={e => { setInputPassword(e.target.value) }}
                                         />
                                     </Form.Group>
                                 </Form.Row>
                                 <Form.Label className="login-dont-have-account" as={NavLink} to='/register'><h6>Dont have an Account? Click here to register.</h6></Form.Label>
-                                <Button 
-                                onClick={event => {
-                                    if(authenicate(inputEmail, inputPassword)){
-                                        history.push("/home")
-                                    }}}>Login</Button>
+                                <Button
+                                    onClick={event => {
+                                        if (authenicate(inputEmail, inputPassword)) {
+                                            history.push("/home")
+                                        }
+                                    }}>Login</Button>
                             </Form>
                         </Container>
                     </Card>

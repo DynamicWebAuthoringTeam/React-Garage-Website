@@ -89,7 +89,7 @@ class SingleCar extends React.Component {
                           </Card.Text>
                           {<Card.Title className="title-red"> State of Repair: {carData.condition}</Card.Title>}
                           <Card.Text>
-                            - State of repair the car is in asessed by a SpeedFixSales Employee.
+                            - State of repair the car is in, as assessed by a SpeedFixSales Employee.
                           </Card.Text>
                         </Card.Body>
                       </Card>
@@ -124,9 +124,7 @@ class SingleCar extends React.Component {
 
           {/* Sidebar Column */}
           <Col lg={5} className="sidebar-column">
-
             <Container>
-
               {/* other Car images */}
               <Card className="side-bar-item-wrapper">
                 <Card.Header as="h5">Other Images of this car</Card.Header>
