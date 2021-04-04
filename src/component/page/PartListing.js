@@ -29,7 +29,7 @@ function PartListing() {
                 !part.name.toLowerCase().indexOf(nameFilter.toLowerCase()) &&
                 !part.model.toLowerCase().indexOf(modelFilter.toLowerCase()) &&
                 !part.make.toLowerCase().indexOf(makeFilter.toLowerCase()) &&
-                ((Number(upperPrice) > Number(part.price)) && (Number(part.price) > Number(lowerPrice)))
+                ((Number(upperPrice) >= Number(part.price)) && (Number(part.price) >= Number(lowerPrice)))
             )
         )
     }
