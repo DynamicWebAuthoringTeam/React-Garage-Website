@@ -4,7 +4,6 @@ import { allPartsData } from '../../data/single-part-data';
 import '../component-css/CarCards.css';
 import './page-css/PartListing.css';
 import { useHistory } from "react-router"
-import Media from 'react-media';
 
 function PartListing() {
     let history = useHistory()
@@ -136,7 +135,7 @@ function PartListing() {
                                         <Card.Title>{part.name}</Card.Title>
                                         <Card.Text>Make: {part.make}</Card.Text>
                                         <Card.Text>Model: {part.model}</Card.Text>
-                                        <Card.Text>Description: {part.description}</Card.Text>
+                                        <Card.Text>Price $: {part.price}</Card.Text>
                                         {
                                             //Button will navigation the user to the singleCar page for this car.
                                             <Button variant="primary" onClick={event => history.push("/singlepart?id=" + part.id )}>

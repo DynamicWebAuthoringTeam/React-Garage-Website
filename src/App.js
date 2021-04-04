@@ -65,13 +65,8 @@ function App() {
     static contextType = Context;
     
     render() {
-
-      //Get current url
-      var url = window.location.pathname
-
-
       //display if not logged in, but not when on the login or register parge.
-      if (displayNotLoggedIn && this.context[0] === null && url != '/login' && url != '/register' ) {
+      if (displayNotLoggedIn && this.context[0] === null) {
         return (
           <Container>
             <Alert variant="info" onClose={ () => setDisplayNotLoggedIn(false) } dismissible>
