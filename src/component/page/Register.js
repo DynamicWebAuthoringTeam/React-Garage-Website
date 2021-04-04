@@ -187,7 +187,7 @@ function Register() {
                             <Button variant="primary" type="submit"
                                 onClick={e => {
                                     if (validateRegistration(city, county, address, postcode, password, firstName, secondName, newsLetter, agreeTerms, passwordCheck, email) == true) {
-                                       
+
                                         //Create the new user
                                         var theNewUser = {
                                             city: city,
@@ -208,8 +208,7 @@ function Register() {
                                         //Push to login
                                         history.push("/login")
                                     }
-                                }
-                                }>Submit</Button>
+                                }}>Submit</Button>
                         </Form>
                     </Container>
                 </Card>
