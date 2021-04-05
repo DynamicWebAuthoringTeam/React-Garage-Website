@@ -1,19 +1,23 @@
-
 //React Imports
 import React, { useContext, useState } from 'react'
-import { Col, Button, Card, Form, Container, Alert  } from 'react-bootstrap'
-import { Redirect } from 'react-router-dom';
+import { Col, Button, Card, Form, Container, Alert} from 'react-bootstrap'
+import { NavLink } from 'react-router-dom';
 import { useHistory } from "react-router"
+
 //Import the Mock database.
 import { users } from '../../data/users';
 
 //Import Context.
 import { Context } from "../Context.js";
 
-function Login() {
+//Import CSS
+import './page-css/Login.css';
 
+function Login() {
     //History allows for navigation
     let history = useHistory()
+
+    console.log(users)
 
     //create user state from Context
     const [user, setUser] = useContext(Context);
@@ -26,7 +30,7 @@ function Login() {
     //Mocking find user from a database.
     function findUser(email) {
         const user = users.filter(user => user.email === email)
-        return user[0] //TODO fix is this always the first element?
+        return user[0]
     }
 
     //Mocking check password against a database.
@@ -35,11 +39,11 @@ function Login() {
     }
 
     //Mocking user authenicate and account info retrival.
-    function authenicate(email, givenPassword){
+    function authenicate(email, givenPassword) {
         const optionFoundUser = findUser(email)
         const loginSuccess = checkPassword(optionFoundUser, givenPassword)
 
-        if(loginSuccess){
+        if (loginSuccess) {
             setDisplayInvalidLogin(false)
             setUser(optionFoundUser)
             return loginSuccess
@@ -49,58 +53,70 @@ function Login() {
         }
     }
 
-    class AlertInvalidLogin extends React.Component { 
-        render(){
+    /**
+     * Class AlertInvalidLogin
+     * Renders an invalid input alert if the login is invalid.
+     * Resource Reference: https://react-bootstrap.netlify.app/components/alerts/#dismissing
+     */
+    class AlertInvalidLogin extends React.Component {
+        render() {
             if (displayInvalidLogin) {
                 return (
                     <Container>
                         <Alert variant="danger" onClose={
                             () => setDisplayInvalidLogin(false)
-                            } dismissible
-                            >
+                        } dismissible
+                        >
                             <Alert.Heading>Sorry! Invalid Login Credentials</Alert.Heading>
                             <p>
-                            Please try again, or register here if you do not have an account.
+                                Please try again, or register here if you do not have an account.
                             </p>
+                            <Button
+                                variant="danger"
+                                onClick={event => { history.push("/register") }}>Registration</Button>
                         </Alert>
                     </Container>
                 );
-              }
-              return (<div></div>);
+            }
+            return (<div></div>);
         }
-      }
+    }
 
     return (
         <>
-            <Container>
+            <Container className="login-outer-container">
                 <AlertInvalidLogin></AlertInvalidLogin>
                 <Container>
-                    <Card class="login-card">
-                        <Container>
+                    <h1>Login</h1>
+                    <Card className="login-card-wrapper">
+                        <Container className="login-inner-container-wrapper">
                             <Form>
                                 <Form.Row>
                                     <Form.Group as={Col} controlId="formGridEmail">
                                         <Form.Label>Email</Form.Label>
-                                        <Form.Control 
-                                            type="email" 
-                                            placeholder="Enter email" 
-                                            onChange={e =>{ setInputEmail(e.target.value)}} 
+                                        <Form.Control
+                                            type="email"
+                                            placeholder="Enter email"
+                                            onChange={e => { setInputEmail(e.target.value) }}
                                         />
                                     </Form.Group>
                                 </Form.Row>
                                 <Form.Row>
-                                <Form.Group as={Col} controlId="formGridPassword">
+                                    <Form.Group as={Col} controlId="formGridPassword">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control 
-                                            type="password" 
-                                            placeholder="Password" 
-                                            onChange={e =>{ setInputPassword(e.target.value)}} 
+                                        <Form.Control
+                                            type="password"
+                                            placeholder="Password"
+                                            onChange={e => { setInputPassword(e.target.value) }}
                                         />
                                     </Form.Group>
                                 </Form.Row>
-                                <Button 
-                                onClick={event => {
-                                    if(authenicate(inputEmail, inputPassword)){history.push("/home")}
+                                <Form.Label className="login-dont-have-account" as={NavLink} to='/register'><h6>Dont have an Account? Click here to register.</h6></Form.Label>
+                                <Button
+                                    onClick={event => {
+                                        if (authenicate(inputEmail, inputPassword)) {
+                                            history.push("/home")
+                                        }
                                     }}>Login</Button>
                             </Form>
                         </Container>
