@@ -6,9 +6,9 @@ export const allPartsData = [
         price: "100",
         make: "Ford Motor Company",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "TMC 1000",
-        description: "Ford Mustang Boss 429 engine",
+        description: "Mustang Boss 429 engine",
         primaryImage: "/images/parts/1.jpg",
         otherImages: [
             "/images/cars/1-1.jpg",
@@ -25,6 +25,8 @@ export const allPartsData = [
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
         ],
+        featuredPart: "yes",
+        wasPrice: 120000,
     },
     {
         id: "2",
@@ -50,13 +52,15 @@ export const allPartsData = [
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
         ],
+        featuredPart: "yes",
+        wasPrice: 120000,    
     },
     {
         id: "3",
         make : "Kenwood",
         price: "1000",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/3.jpg",
@@ -75,13 +79,15 @@ export const allPartsData = [
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
         ],
+        featuredPart: "yes",
+        wasPrice: 120000,
     },
     {
         id: "4",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/4.jpg",
@@ -100,13 +106,15 @@ export const allPartsData = [
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
         ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "5",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/5.jpg",
@@ -125,13 +133,15 @@ export const allPartsData = [
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
         ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "6",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -149,14 +159,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "7",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -174,14 +186,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "8",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -199,14 +213,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "9",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -224,14 +240,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "yes",
+        wasPrice: 120000,
     },
     {
         id: "10",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -249,14 +267,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "11",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -274,14 +294,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "12",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -299,14 +321,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "13",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -324,7 +348,9 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     ,
     {
@@ -332,7 +358,7 @@ export const allPartsData = [
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -350,7 +376,9 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     ,
     {
@@ -358,7 +386,7 @@ export const allPartsData = [
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -376,14 +404,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "16",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -401,14 +431,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "17",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -426,14 +458,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "18",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -451,14 +485,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     },
     {
         id: "19",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -476,14 +512,16 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "yes",
+        wasPrice: 120000,
     },
     {
         id: "20",
         price: "1000",
         make : "Kenwood",
         year: "1968–1998",
-        name: "Ford Mustang Boss 429 engine",
+        name: "Mustang Boss 429 engine",
         model: "ABC 8080",
         description: "",
         primaryImage: "/images/parts/6.jpg",
@@ -501,6 +539,8 @@ export const allPartsData = [
             "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
             "Weight: 1,200 kg (2,646 lb)",
             "Types: Michelin"
-        ]
+        ],
+        featuredPart: "no",
+        wasPrice: 120000,
     }
 ]

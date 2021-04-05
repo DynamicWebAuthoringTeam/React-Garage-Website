@@ -85,8 +85,7 @@ function App() {
         <Router>
           <Navbar sticky="top" className="justify-content-between nav-bar">
             <Navbar.Brand href="/">
-              Speed Fix Sales 
-              {<img src="/images/logolong.png" alt="SpeedFixSales Logo" width="100px" height="30px" className="d-inline-block align-top"/>}
+              {<img src="/images/logolong.png" alt="SpeedFixSales Logo" width="200px" height="70px" className="d-inline-block align-top"/>}
             </Navbar.Brand>
 
             {/* Hides search bar and its button for mobile devices is replaced by the one rendered in 'NavigationBar.js' */}

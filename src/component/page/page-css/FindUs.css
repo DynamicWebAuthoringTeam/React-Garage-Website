@@ -1,0 +1,12 @@
+.map-wrapper {
+    width: 1000px;
+}
+
+.online-wrapper {
+	width: 1000px;
+}
+
+hr {
+  border-top: 2px solid lightgrey;
+  width: 90%;
+}
