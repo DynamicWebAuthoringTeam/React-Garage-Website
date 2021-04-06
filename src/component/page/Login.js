@@ -1,6 +1,8 @@
 //React Imports
 import React, { useContext, useState } from 'react'
-import { Col, Button, Card, Form, Container, Alert} from 'react-bootstrap'
+import { Col, Button, Card, Form, Container, Alert } from 'react-bootstrap'
+
+//Import Routing Classes
 import { NavLink } from 'react-router-dom';
 import { useHistory } from "react-router"
 
@@ -16,8 +18,6 @@ import './page-css/Login.css';
 function Login() {
     //History allows for navigation
     let history = useHistory()
-
-    console.log(users)
 
     //create user state from Context
     const [user, setUser] = useContext(Context);
@@ -43,11 +43,13 @@ function Login() {
         const optionFoundUser = findUser(email)
         const loginSuccess = checkPassword(optionFoundUser, givenPassword)
 
+        // If the login is successful set the User Context to the selected User
         if (loginSuccess) {
             setDisplayInvalidLogin(false)
             setUser(optionFoundUser)
             return loginSuccess
         } else {
+            // If the login failed set the display of the InvalidLogin message so that it is rendered.
             setDisplayInvalidLogin(true)
             return loginSuccess
         }
@@ -63,6 +65,7 @@ function Login() {
             if (displayInvalidLogin) {
                 return (
                     <Container>
+                        {/* dismissible here allows the user to close the warning message  */}
                         <Alert variant="danger" onClose={
                             () => setDisplayInvalidLogin(false)
                         } dismissible
@@ -71,6 +74,8 @@ function Login() {
                             <p>
                                 Please try again, or register here if you do not have an account.
                             </p>
+
+                            {/* An Addition Prompt and link for the user to create an account if that havnt not. */}
                             <Button
                                 variant="danger"
                                 onClick={event => { history.push("/register") }}>Registration</Button>
@@ -78,6 +83,7 @@ function Login() {
                     </Container>
                 );
             }
+            // If no warning is required render an empty <div></div>
             return (<div></div>);
         }
     }
@@ -85,14 +91,19 @@ function Login() {
     return (
         <>
             <Container className="login-outer-container">
+
+                {/* AlertInvalidLogin an alert to inform the user if there login was invalid */}
                 <AlertInvalidLogin></AlertInvalidLogin>
+
                 <Container>
                     <h1>Login</h1>
                     <Card className="login-card-wrapper">
                         <Container className="login-inner-container-wrapper">
                             <Form>
+
+                                {/* Form.Row holding the form control for the users email input */}
                                 <Form.Row>
-                                    <Form.Group as={Col} controlId="formGridEmail">
+                                    <Form.Group as={Col} controlId="formEmail">
                                         <Form.Label>Email</Form.Label>
                                         <Form.Control
                                             type="email"
@@ -101,8 +112,10 @@ function Login() {
                                         />
                                     </Form.Group>
                                 </Form.Row>
+
+                                {/* Form.Row holding the form control for the users password input */}
                                 <Form.Row>
-                                    <Form.Group as={Col} controlId="formGridPassword">
+                                    <Form.Group as={Col} controlId="formPassword">
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control
                                             type="password"
@@ -111,10 +124,15 @@ function Login() {
                                         />
                                     </Form.Group>
                                 </Form.Row>
+                                {/* A Link to the registration page for users who do not yet have an Account */}
                                 <Form.Label className="login-dont-have-account" as={NavLink} to='/register'><h6>Dont have an Account? Click here to register.</h6></Form.Label>
+                                
+                                {/* A Submitt Button that calls authenicate, that determines if the login was valid or not. */}
                                 <Button
                                     onClick={event => {
                                         if (authenicate(inputEmail, inputPassword)) {
+                                            
+                                            //If login was valid, push the user to the home page.
                                             history.push("/home")
                                         }
                                     }}>Login</Button>

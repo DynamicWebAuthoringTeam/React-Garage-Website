@@ -1,5 +1,8 @@
 
-//Could load data from a file instead of this var but this works for now.
+// This Variable Represents all the Parts being sold by the website.
+// This Variable will be used to render content dynamically on pages by mapping through the
+// Elements with in the const Array.
+// Is Mock a Database containing part information
 export const allPartsData = [
     {
         id: "1",
