@@ -8,5 +8,23 @@
 
 hr {
   border-top: 2px solid lightgrey;
-  width: 90%;
+  width: 80%;
+}
+
+.column {
+  float: right;
+  width: 50%;
+  text-align: center;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 1100px) {
+  .column {
+    width: 100%;
+  }
 }
