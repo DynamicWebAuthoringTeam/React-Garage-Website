@@ -6,41 +6,98 @@ import { useHistory } from "react-router"
 //Import the Mock database.
 import { users } from '../../data/users';
 
-//A Function that validates the users input account deletes. returning true if valid.
-function validateRegistration(
-    city, county,
-    address, postcode,
-    password, firstName,
-    secondName, newsLetter,
-    agreeTerms, passwordCheck,
-    email) {
+function validateEmail(email) {
+    //Regex Taken from Stackoverflow
+    //Reference: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    var valid = false;
-    var validPassword = false;
-    var validNewUser = false;
-
-    //If no fields are empty
-    if (city != null || county != null || address != null || postcode != null ||
-        password != 0 || firstName != null || secondName != null || newsLetter != null ||
-        agreeTerms != null || passwordCheck != null || email != null) {
-
-        //Check password requirements greater than 7 chars and both password field are equal
-        if (password.length > 7 && password === passwordCheck) {
-            validPassword = true
-        }
-
-        //If email doesnt exist allready, we can add this user
-        if (users.filter(x => x.email) == null) {
-            validNewUser = true
-        }
-
-        //If all validation passed set valid to true
-        if (validPassword == true && validPassword == true) {
-            valid = true
-        }
+    if (emailRegex.test(String(email).toLowerCase())) {
+        console.log('test')
+        return true;
+    } else {
+        return false;
     }
-    return valid
 }
+
+function validateName(name) {
+    var valid = false;
+
+    if (name != null && typeof name === 'string') {
+        valid = true;
+    }
+
+    return valid;
+}
+
+function validateCity(city) {
+    var valid = false;
+
+    if (city != null && typeof city === 'string') {
+        valid = true;
+    }
+
+    return valid;
+}
+
+function validateCounty(county) {
+    var valid = false;
+
+    if (county != null && typeof county === 'string') {
+        valid = true;
+    }
+
+    return valid;
+}
+
+function validateAddress(address) {
+    var valid = false;
+
+    if (address != null && typeof address === 'string') {
+        console.log("work")
+        valid = true;
+    }
+
+    return valid;
+}
+
+function validatePostcode(postcode) {
+    var valid = false;
+
+    // Regex Taken from Wikipedia, for Uk post coes
+    // Reference https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom#Validation
+    const postCodeRegex = /^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})$/;
+
+    if (postCodeRegex.test(String(postcode).toLowerCase())) {
+        valid = true;
+    }
+
+    return valid;
+}
+
+function validatePassword(password, passwordCheck) {
+    var valid = false;
+
+    if (password != null && password.length > 7 && password === passwordCheck) {
+        valid = true;
+    }
+
+    return valid;
+}
+
+//Checks all Validation criteria and returns true if all is valid. 
+function validateRegistration(email, password, passwordCheck, city, county, address, postcode, firstName, secondName) {
+    return (
+        validateEmail(email) &&
+        validatePassword(password, passwordCheck) &&
+        validateCity(city) &&
+        validateCounty(county) &&
+        validateAddress(address) &&
+        validatePostcode(postcode) &&
+        validateName(firstName) &&
+        validateName(secondName)
+    )
+}
+
 
 function Register() {
 
@@ -60,7 +117,7 @@ function Register() {
     const [passwordCheck, setPasswordCheck] = useState(null);
 
     //Validation Message display toggle
-    const [displayValidationErrors, setDisplayValidationErrors] = useState(false);
+    const [displayValidationErrors, setDisplayValidationErrors] = useState(true);
 
     // A Class used to render the Passwords Strength, based on the number of characters the user has input.
     class PasswordStrength extends React.Component {
@@ -112,14 +169,55 @@ function Register() {
     // A class used to create a Validation Alert, and displayed using a toggle stored in a React State const
     class ValidationErrors extends React.Component {
         render() {
-            if (displayValidationErrors) {
+
+            //Holds Validation errors
+            var validationErrors = []
+
+            if(!validateEmail(email)){
+                validationErrors.push("Email - must be a standard email format example@google.com...");
+            }
+
+            if(!validatePassword(password, passwordCheck)){
+                validationErrors.push("Password - your passwords do not match or are too short...");
+            }
+
+            if(!validateCity(email)){
+                validationErrors.push("City - Must be a word...");
+            }
+
+            if(!validateCounty(email)){
+                validationErrors.push("County - Must be a word...");
+            }
+
+            if(!validateAddress(address)){
+                validationErrors.push("Address - Must be a word or words...");
+            }
+
+            if(!validatePostcode(postcode)){
+                validationErrors.push("Postcode - Must be a standard UK postcode address...");
+            }
+
+            if(!validateName(firstName)){
+                validationErrors.push("First Name -  Must be a word...");
+            }
+
+            if(!validateName(secondName)){
+                validationErrors.push("Second Name -  Must be a word...");
+            }
+
+            //If there are any validation errors a message will be displayed showing the issues.
+            if (validationErrors.length != 0) {
                 return (
                     <Container>
-                        <Alert variant="danger" onClose={() => setDisplayValidationErrors(false)} dismissible>
-                            <Alert.Heading>Sorry! Validation Error </Alert.Heading>
-                            <p>
-                                The following fields are invalid.
-                            </p>
+                        <Alert variant="danger" className="validation-errors-alert" onClose={() => setDisplayValidationErrors(false)} dismissible>
+                            <Alert.Heading>Please fix the following Validation Errors..</Alert.Heading>
+                            {
+                                validationErrors.map((error, key) => {
+                                    return (
+                                        <div>{error}</div>
+                                    );
+                                })
+                            }
                         </Alert>
                     </Container>
                 );
@@ -131,7 +229,6 @@ function Register() {
     return (
         <>
             <Container>
-
                 <Card className="register-card-wrapper">
 
                     {/* ValidationErrors Alert rendered near the top of the page  */}
@@ -223,8 +320,9 @@ function Register() {
                                 />
                             </Form.Group>
 
-                            {/* City input box */}
+
                             <Form.Row>
+                                {/* City input box */}
                                 <Form.Group lg as={Col} controlId="formCity">
                                     <Form.Label>City</Form.Label>
                                     <Form.Control
@@ -273,12 +371,9 @@ function Register() {
                             {/* if valid will navigate the user to the login page */}
                             <Button variant="primary" type="submit"
                                 onClick={e => {
-                                    if (validateRegistration(
-                                        city, county, address, postcode, password,
-                                        firstName, secondName, newsLetter, agreeTerms,
-                                        passwordCheck, email) == true) {
+                                    if (validateRegistration(email, password, passwordCheck, city, county, address, postcode, firstName, secondName)) {
 
-                                        //Create the new user
+                                        //user is valid so assemble new user variable
                                         var theNewUser = {
                                             city: city,
                                             email: email,
@@ -292,7 +387,8 @@ function Register() {
                                             agreeTerms: agreeTerms
                                         }
 
-                                        //Add the new user the Mock database at the next element
+                                        //Add the new user to the Mock database variable at the next element in the array
+                                        //This will allow the user to login from the login page.
                                         users[users.length] = theNewUser;
 
                                         //Push to login if the account was valid.
