@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap'
 
 // Home-made Components
 import HomeCarouselCar from '../HomeCarouselCar';
+import HomeCarouselPart from '../HomeCarouselPart';
 
 // CSS Imports
 import './page-css/Home.css';
@@ -18,10 +19,10 @@ function Home() {
                 <HomeCarouselCar />
             </Container>
 
-            {/* TODO Parts Carousel, either abstract Carousel to take input or make separate component for Parts */}
+            {/* Parts Carousel */}
             <Container className="home-carousel-wrapper">
                 <h1 className="home-header">Featured Parts</h1>
-                <HomeCarouselCar />
+                <HomeCarouselPart />
             </Container>
         </>
     )
