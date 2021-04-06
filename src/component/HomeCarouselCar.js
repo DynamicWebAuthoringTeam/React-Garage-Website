@@ -24,7 +24,7 @@ function HomeCarouselCar() {
                     <div class="column">
                         <h3>Was: £{featuredCars[0].wasPrice}</h3>
                         <h2 className="now-price">Now: £{featuredCars[0].price}</h2>
-                        <Button variant="primary" onClick={event => history.push("/singlecar?id=" + featuredCars[1].id )}>
+                        <Button variant="primary" onClick={event => history.push("/singlecar?id=" + featuredCars[0].id )}>
                             More Details
                         </Button>
                     </div>
