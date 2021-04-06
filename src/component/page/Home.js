@@ -1,7 +1,7 @@
 
 // React, Bootstrap Imports
 import React from 'react'
-import { Container} from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 // Home-made Components
 import HomeCarouselCar from '../HomeCarouselCar';

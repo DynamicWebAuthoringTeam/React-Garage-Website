@@ -8,27 +8,29 @@ import { useHistory } from "react-router"
 function CarListing() {
     let history = useHistory()
 
-    //State of variable that holds all the card parts to render
+    //State of variable that holds all the card parts to render on the page.
     const [filteredCars, setFilteredCars] = useState(singleCarsData);
+
+    //Boolean to toggle the display of the filtering options.
     const [filterDisplay, setFilterDisplay] = useState(false);
 
-    //State of user chosen filters
+    //State of user chosen Make and Model filters
     const [makeFilter, setMakeFilter] = useState('');
     const [modelFilter, setModelFilter] = useState('');
 
-    //Price Bounds
+    //State of Car Price Bounds
     const [lowerPrice, setLowerPrice] = useState(0);
     const [upperPrice, setUpperPrice] = useState(999999);
 
-    //Milage Bounds
+    //State of Car Milage Bounds
     const [lowerMiles, setLowerMiles] = useState(0);
     const [upperMiles, setUpperMiles] = useState(999999);
 
-    //Year Bounds
+    //State of Car Year Bounds
     const [lowerYear, setLowerYear] = useState(1900);
     const [upperYear, setUpperYear] = useState(2030);
 
-    //Function to filter the variable used to populate all the show cards.
+    //Function to apply the filters to the singleCarsData variable used to populate all the show cards.
     function applyFilter() {
         setFilteredCars(
             singleCarsData.filter(car =>
@@ -41,6 +43,7 @@ function CarListing() {
         )
     }
 
+    //A function to reset all filters back to there defaulted values.
     function resetFilters() {
         setMakeFilter('')
         setModelFilter('')
@@ -55,9 +58,9 @@ function CarListing() {
 
     return (
         <>
-         <Container className="carlisting-toggler-filters-container">
-            <Button onClick={() => setFilterDisplay(!filterDisplay)}>{`Toggle Filters >`}</Button>
-        </Container>
+            <Container className="carlisting-toggler-filters-container">
+                <Button onClick={() => setFilterDisplay(!filterDisplay)}>{`Toggle Filters >`}</Button>
+            </Container>
             { filterDisplay
                 ?
                 <Container className="carlisting-filters-container">
@@ -81,9 +84,13 @@ function CarListing() {
                             </Col>
                         </Row>
                     </Form>
+
+                    {/* Form Below holds all the Range controls(rangefilter), that are slider based */}
                     <Form>
                         <Form.Group controlId="rangefilter" as={Row}>
                             <Col>
+
+                                {/* Lower Year Bound Slider Filter */}
                                 <Row>
                                     <Col lg="1">
                                         <Form.Label>Lower Year</Form.Label>
@@ -99,6 +106,8 @@ function CarListing() {
                                             min={1900} max={2030} />
                                     </Col>
                                 </Row>
+
+                                {/* Upper Year Bound Slider Filter */}
                                 <Row>
                                     <Col lg="1">
                                         <Form.Label>Upper Year</Form.Label>
@@ -114,6 +123,8 @@ function CarListing() {
                                             min={1900} max={2030} />
                                     </Col>
                                 </Row>
+
+                                {/* Lower $ Bound Slider Filter */}
                                 <Row>
                                     <Col lg="1">
                                         <Form.Label>Lower $</Form.Label>
@@ -129,6 +140,8 @@ function CarListing() {
                                             min={0} max={999999} />
                                     </Col>
                                 </Row>
+
+                                {/* Upper $ Bound Slider Filter */}
                                 <Row>
                                     <Col lg="1">
                                         <Form.Label>Upper $</Form.Label>
@@ -144,6 +157,8 @@ function CarListing() {
                                             min={0} max={999999} />
                                     </Col>
                                 </Row>
+                                                                
+                                {/* Lower Milage Bound Slider Filter */}
                                 <Row>
                                     <Col lg="1">
                                         <Form.Label>Lower Miles</Form.Label>
@@ -159,6 +174,8 @@ function CarListing() {
                                             min={0} max={999999} />
                                     </Col>
                                 </Row>
+
+                                {/* Upper Milage Bound Slider Filter */}
                                 <Row>
                                     <Col lg="1">
                                         <Form.Label>Upper Miles</Form.Label>
@@ -177,16 +194,23 @@ function CarListing() {
                             </Col>
                         </Form.Group>
                     </Form>
-                    <Button onClick={ () => { resetFilters() }}>Reset Filters</Button>
+
+                    {/* A Button to reset the state of all filters. */}
+                    <Button onClick={() => { resetFilters() }}>Reset Filters</Button>
                 </Container>
                 : null
             }
+            
+            {/*
+                 A Row that loops through all the cars in filteredCars, creating a card for each Car.
+                If the car was filtered out by one of the user selected filter it will not be render on the page.
+            */}
             <Row className="row-wrapper">
                 {
-                    // loop through all the cars in singleCarsData, creating a card for each Car.
                     filteredCars.map((car, key) => {
                         return (
                             <Col lg="4">
+                                {/* An Individual Card holding all the Cars Import information */}
                                 <Card key={key} className="mb-3" style={{ color: "#000" }}>
                                     <Card.Img src={car.primaryImage}></Card.Img>
                                     <Card.Body>
@@ -196,7 +220,7 @@ function CarListing() {
                                         </Card.Text>
                                         {
                                             //Button will navigation the user to the singleCar page for this car. history.push("/singlecar?id=" + car.id)
-                                            <Button variant="primary" onClick={event => history.push("/singlecar?id=" + car.id )}>
+                                            <Button variant="primary" onClick={event => history.push("/singlecar?id=" + car.id)}>
                                                 Read More
                                             </Button>
                                         }

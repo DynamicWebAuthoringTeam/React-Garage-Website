@@ -6,6 +6,7 @@ import './page-css/PartListing.css';
 import { useHistory } from "react-router"
 
 function PartListing() {
+
     let history = useHistory()
 
     //State of variable that holds all the card parts to render
@@ -33,7 +34,7 @@ function PartListing() {
         )
     }
 
-    //TODO work out how to also reset the text of the text boxes
+    //A Function used to Reset the state of the filter value provided by the user.
     function resetFilters() {
         setNameFilter('')
         setMakeFilter('')
@@ -45,13 +46,21 @@ function PartListing() {
 
     return (
         <div>
+
+            {/* Renders the filter controls via the push of a button */}
             <Container className="partlisting-toggler-filters-container">
+
+                {/* If toggle is off display a button that on click will render the Filter Controls*/}
                 <Button onClick={() => setFilterDisplay(!filterDisplay)}>{`Toggle Filters >`}</Button>
             </Container>
+
+            {/* If the filterDisplay toggle is true render the filter controls below. */}
             { filterDisplay
                 ?
                 <Container className="partlisting-filters-container">
                     <Form>
+
+                        {/* A Part Name filter control */}
                         <Row className="part-listing-row-wrapper">
                             <Col lg="2"><Form.Label>Filter Name: {nameFilter}</Form.Label></Col>
                             <Col lg="4">
@@ -61,6 +70,8 @@ function PartListing() {
                                 />
                             </Col>
                         </Row>
+
+                        {/* A Part Make filter control */}
                         <Row className="part-listing-row-wrapper">
                             <Col lg="2"><Form.Label>Filter Make: {makeFilter} </Form.Label></Col>
                             <Col lg="4">
@@ -70,6 +81,8 @@ function PartListing() {
                                 />
                             </Col>
                         </Row>
+
+                         {/* A Part Model filter control */}
                         <Row className="part-listing-row-wrapper">
                             <Col lg="2"><Form.Label>Filter Model: {modelFilter} </Form.Label></Col>
                             <Col lg="4">
@@ -80,9 +93,13 @@ function PartListing() {
                             </Col>
                         </Row>
                     </Form>
+
+                    {/* A Form holding the Range Filters or slider controled filters */}
                     <Form>
                         <Form.Group controlId="rangefilter" as={Row}>
                             <Col>
+
+                                {/* Lower Price Range Slider Filter */}
                                 <Row>
                                     <Col lg="1">
                                         <Form.Label>Lower $</Form.Label>
@@ -98,6 +115,8 @@ function PartListing() {
                                             min={0} max={9999} />
                                     </Col>
                                 </Row>
+
+                                {/* Upper Price Range Slider Filter */}
                                 <Row>
                                     <Col lg="1">
                                         <Form.Label>Upper $</Form.Label>
@@ -117,15 +136,18 @@ function PartListing() {
                         </Form.Group>
                     </Form>
 
+                    {/* Render a button that the user can click to reset all there chosen filters */}
                     <Button onClick={
                         () => { resetFilters() }}>Reset Filters</Button>
 
                 </Container>
                 : null
             }
+
+            {/* The Row that will dynamically display all the select Parts, as an outcome of the users filters */}
             <Row className="row-wrapper">
                 {
-                    // loop through all the cars in singleCarsData, creating a card for each Car.
+                    // loop through all the part in filterdParts, creating a card for each Part.
                     filterdParts.map((part, key) => {
                         return (
                             <Col lg="3">
@@ -137,7 +159,7 @@ function PartListing() {
                                         <Card.Text>Model: {part.model}</Card.Text>
                                         <Card.Text>Price $: {part.price}</Card.Text>
                                         {
-                                            //Button will navigation the user to the singleCar page for this car.
+                                            //Button will navigation the user to the singlePart page for this part.
                                             <Button variant="primary" onClick={event => history.push("/singlepart?id=" + part.id )}>
                                                 Read More
                                             </Button>
