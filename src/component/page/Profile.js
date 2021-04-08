@@ -1,12 +1,16 @@
 import React, { useContext, useState } from 'react'
+
 //Import the Mock database.
 import { users } from '../../data/users';
 
 //Import Bootstrap-react
-import { Col, Button, Card, Form, Container, Alert} from 'react-bootstrap'
+import { Card, Container} from 'react-bootstrap'
 
 //Import Context.
 import { Context } from "../Context.js";
+
+//Import Css
+import './page-css/Profile.css';
 
 function Profile() {
     const [user, setUser] = useContext(Context)
@@ -14,26 +18,24 @@ function Profile() {
     return (
         <Container>
             <Card>
-                <h3>Your Profile</h3>
-                <p>
-                    {user.email}
+                <Container>
+                <h1>Your Profile and Account Details</h1>
+                <p className="profile-details">
+                    Email: {user.email}
                     <br></br>
-                    {user.password}
+                    Password: {user.password}
                     <br></br>
-                    {user.email}
+                    Name: {user.firstName} {user.secondName}
                     <br></br>
-                    {user.firstName}
+                    Address: {user.address}
                     <br></br>
-                    {user.secondName}
+                    City: {user.city}
                     <br></br>
-                    {user.address}
+                    Post Code: {user.postCode}
                     <br></br>
-                    {user.city}
-                    <br></br>
-                    {user.postCode}
-                    <br></br>
-                    {user.county}
+                    County: {user.county}
                 </p>
+                </Container>
             </Card>
         </Container>
     )

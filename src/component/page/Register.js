@@ -12,7 +12,6 @@ function validateEmail(email) {
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (emailRegex.test(String(email).toLowerCase())) {
-        console.log('test')
         return true;
     } else {
         return false;
@@ -53,7 +52,6 @@ function validateAddress(address) {
     var valid = false;
 
     if (address != null && typeof address === 'string') {
-        console.log("work")
         valid = true;
     }
 
@@ -63,7 +61,7 @@ function validateAddress(address) {
 function validatePostcode(postcode) {
     var valid = false;
 
-    // Regex Taken from Wikipedia, for Uk post coes
+    // Regex Taken from Wikipedia, for Uk post code, orginally supplied by gov.uk
     // Reference https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom#Validation
     const postCodeRegex = /^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})$/;
 
@@ -115,9 +113,6 @@ function Register() {
     const [newsLetter, setNewsLetter] = useState(false);
     const [agreeTerms, setAggreeTerms] = useState(false);
     const [passwordCheck, setPasswordCheck] = useState(null);
-
-    //Validation Message display toggle
-    const [displayValidationErrors, setDisplayValidationErrors] = useState(true);
 
     // A Class used to render the Passwords Strength, based on the number of characters the user has input.
     class PasswordStrength extends React.Component {
@@ -209,7 +204,7 @@ function Register() {
             if (validationErrors.length != 0) {
                 return (
                     <Container>
-                        <Alert variant="danger" className="validation-errors-alert" onClose={() => setDisplayValidationErrors(false)} dismissible>
+                        <Alert variant="danger" className="validation-errors-alert">
                             <Alert.Heading>Please fix the following Validation Errors..</Alert.Heading>
                             {
                                 validationErrors.map((error, key) => {
@@ -243,7 +238,6 @@ function Register() {
                             Resource Reference: https://react-bootstrap.netlify.app/components/forms/#forms-layout-form-row
 
                             This Form will take all the input of the user information such as their email and passwords.
-
                         */}
                         <Form id="register-form">
                             <Form.Row>
@@ -392,7 +386,7 @@ function Register() {
                                         users[users.length] = theNewUser;
 
                                         //Push to login if the account was valid.
-                                        history.push("/login")
+                                        history.push("/registersuccess")
                                     }
                                 }}>Submit</Button>
                         </Form>

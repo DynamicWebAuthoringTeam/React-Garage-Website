@@ -157,7 +157,7 @@ function PartListing() {
                                         <Card.Title>{part.name}</Card.Title>
                                         <Card.Text>Make: {part.make}</Card.Text>
                                         <Card.Text>Model: {part.model}</Card.Text>
-                                        <Card.Text>Price $: {part.price}</Card.Text>
+                                        <Card.Text>Price £: {part.price}</Card.Text>
                                         {
                                             //Button will navigation the user to the singlePart page for this part.
                                             <Button variant="primary" onClick={event => history.push("/singlepart?id=" + part.id )}>

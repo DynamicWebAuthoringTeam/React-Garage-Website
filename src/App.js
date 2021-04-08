@@ -23,6 +23,7 @@ import Contact from './component/page/Contact';
 import Login from './component/page/Login';
 import Register from './component/page/Register';
 import Profile from './component/page/Profile';
+import RegistrationSuccess from './component/page/RegistrationSuccess';
 import SiteFooter from './component/SiteFooter';
 
 //Import Context
@@ -135,17 +136,18 @@ function App() {
             Resource Reference: https://reactrouter.com/web/api/Switch
           */}
           <Switch>
-            <Route exact path='/'     component={Home}        />
-            <Route path='/home'       component={Home}        />
-            <Route path='/carlisting' component={CarListing}  />
-            <Route path='/partlisting'component={PartListing} />
-            <Route path='/contact'    component={Contact}     />
-            <Route path='/findus'     component={FindUs}      />
-            <Route path='/singlecar'  component={SingleCar}   />
-            <Route path='/singlepart' component={SinglePart}  />
-            <Route path='/login'      component={Login}       />
-            <Route path='/register'   component={Register}    />
-            <Route path='/profile'   component={Profile}      />
+            <Route exact path='/'         component={Home}               />
+            <Route path='/home'           component={Home}               />
+            <Route path='/carlisting'     component={CarListing}         />
+            <Route path='/partlisting'    component={PartListing}        />
+            <Route path='/contact'        component={Contact}            />
+            <Route path='/findus'         component={FindUs}             />
+            <Route path='/singlecar'      component={SingleCar}          />
+            <Route path='/singlepart'     component={SinglePart}         />
+            <Route path='/login'          component={Login}              />
+            <Route path='/register'       component={Register}           />
+            <Route path='/profile'        component={Profile}            />
+            <Route path='/registersuccess'component={RegistrationSuccess}/>
           </Switch>
         </Router>
         {/* <SiteFooter></SiteFooter> */}

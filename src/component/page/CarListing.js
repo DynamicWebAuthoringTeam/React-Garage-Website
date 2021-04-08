@@ -169,7 +169,7 @@ function CarListing() {
                                     <Col>
                                         <Form.Control
                                             type="range"
-                                            value={lowerPrice}
+                                            value={lowerMiles}
                                             onChange={e => { setLowerMiles(e.target.value); applyFilter() }}
                                             min={0} max={999999} />
                                     </Col>
