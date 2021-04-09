@@ -41,13 +41,6 @@ function NavigationBar() {
                 <Nav.Item>
                     <Nav.Link className="nav-link-text" eventKey="/findus" as={NavLink} to="/findus">Find Us</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
-                    <NavDropdown title="Misc" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                    </NavDropdown>
-                </Nav.Item>
                 </Nav>
             </Navbar.Collapse>
             
