@@ -25,6 +25,7 @@ import Register from './component/page/Register';
 import Profile from './component/page/Profile';
 import SiteFooter from './component/SiteFooter';
 
+
 //Import Context
 import { Context } from "./component/Context.js";
 
