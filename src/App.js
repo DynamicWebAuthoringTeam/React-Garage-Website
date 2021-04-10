@@ -219,18 +219,18 @@ function App() {
             Resource Reference: https://reactrouter.com/web/api/Switch
           */}
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/home' component={Home} />
-            <Route path='/carlisting' component={CarListing} />
-            <Route path='/partlisting' component={PartListing} />
-            <Route path='/contact' component={Contact} />
-            <Route path='/findus' component={FindUs} />
-            <Route path='/singlecar' component={SingleCar} />
-            <Route path='/singlepart' component={SinglePart} />
-            <Route path='/login' component={Login} />
-            <Route path='/register' component={Register} />
-            <Route path='/profile' component={Profile} />
-            <Route path='/registersuccess' component={RegistrationSuccess} />
+          <Route exact path='/'            component={Home}               />
+            <Route path='/home'            component={Home}               />
+            <Route path='/carlisting'      component={CarListing}         />
+            <Route path='/partlisting'     component={PartListing}        />
+            <Route path='/contact'         component={Contact}            />
+            <Route path='/findus'          component={FindUs}             />
+            <Route path='/singlecar'       component={SingleCar}          />
+            <Route path='/singlepart'      component={SinglePart}         />
+            <Route path='/login'           component={Login}              />
+            <Route path='/register'        component={Register}           />
+            <Route path='/profile'         component={Profile}            />
+            <Route path='/registersuccess' component={RegistrationSuccess}/>
           </Switch>
         </Router>
       </Context.Provider>
