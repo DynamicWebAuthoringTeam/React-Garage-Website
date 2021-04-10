@@ -4,7 +4,10 @@ import { Col, Button, Card, Form, Container, Alert } from 'react-bootstrap'
 
 //Import Routing Classes
 import { NavLink } from 'react-router-dom';
-import { useHistory } from "react-router"
+import { useHistory } from "react-router";
+
+//Import Customer Component
+import SiteFooter from '../SiteFooter';
 
 //Import the Mock database.
 import { users } from '../../data/users';
@@ -14,6 +17,7 @@ import { Context } from "../Context.js";
 
 //Import CSS
 import './page-css/Login.css';
+
 
 function Login() {
     //History allows for navigation
@@ -141,6 +145,7 @@ function Login() {
                     </Card>
                 </Container>
             </Container>
+            <SiteFooter></SiteFooter>
         </>
     )
 }

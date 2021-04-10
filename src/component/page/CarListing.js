@@ -67,7 +67,7 @@ function CarListing() {
                     <Form>
                         <Row className="car-listing-row-wrapper">
                             <Col lg="2"><Form.Label>Filter Make: {makeFilter} </Form.Label></Col>
-                            <Col lg="4">
+                            <Col>
                                 <Form.Control
                                     placeholder="add a make filter.."
                                     onChange={item => { setMakeFilter(item.target.value); applyFilter() }}
@@ -76,7 +76,7 @@ function CarListing() {
                         </Row>
                         <Row className="car-listing-row-wrapper">
                             <Col lg="2"><Form.Label>Filter Model: {modelFilter} </Form.Label></Col>
-                            <Col lg="4">
+                            <Col>
                                 <Form.Control
                                     placeholder="add a model filter.."
                                     onChange={item => { setModelFilter(item.target.value); applyFilter() }}
@@ -88,110 +88,111 @@ function CarListing() {
                     {/* Form Below holds all the Range controls(rangefilter), that are slider based */}
                     <Form>
                         <Form.Group controlId="rangefilter" as={Row}>
-                            <Col>
+                            <Container>
+                                <Col>
+                                    {/* Lower Year Bound Slider Filter */}
+                                    <Row>
+                                        <Col lg="2">
+                                            <Form.Label>Lower Year</Form.Label>
+                                        </Col>
+                                        <Col lg="2">
+                                            <Form.Control value={lowerYear} />
+                                        </Col>
+                                        <Col lg>
+                                            <Form.Control
+                                                type="range"
+                                                value={lowerYear}
+                                                onChange={e => { setLowerYear(e.target.value); applyFilter() }}
+                                                min={1900} max={2030} />
+                                        </Col>
+                                    </Row>
 
-                                {/* Lower Year Bound Slider Filter */}
-                                <Row>
-                                    <Col lg="1">
-                                        <Form.Label>Lower Year</Form.Label>
-                                    </Col>
-                                    <Col xs="3">
-                                        <Form.Control value={lowerYear} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control
-                                            type="range"
-                                            value={lowerYear}
-                                            onChange={e => { setLowerYear(e.target.value); applyFilter() }}
-                                            min={1900} max={2030} />
-                                    </Col>
-                                </Row>
+                                    {/* Upper Year Bound Slider Filter */}
+                                    <Row>
+                                        <Col lg="2">
+                                            <Form.Label>Upper Year</Form.Label>
+                                        </Col>
+                                        <Col lg="2">
+                                            <Form.Control value={upperYear} />
+                                        </Col>
+                                        <Col lg>
+                                            <Form.Control
+                                                type="range"
+                                                value={upperYear}
+                                                onChange={e => { setUpperYear(e.target.value); applyFilter() }}
+                                                min={1900} max={2030} />
+                                        </Col>
+                                    </Row>
 
-                                {/* Upper Year Bound Slider Filter */}
-                                <Row>
-                                    <Col lg="1">
-                                        <Form.Label>Upper Year</Form.Label>
-                                    </Col>
-                                    <Col xs="3">
-                                        <Form.Control value={upperYear} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control
-                                            type="range"
-                                            value={upperYear}
-                                            onChange={e => { setUpperYear(e.target.value); applyFilter() }}
-                                            min={1900} max={2030} />
-                                    </Col>
-                                </Row>
+                                    {/* Lower $ Bound Slider Filter */}
+                                    <Row>
+                                        <Col lg="2">
+                                            <Form.Label>Lower £</Form.Label>
+                                        </Col>
+                                        <Col lg="2">
+                                            <Form.Control value={lowerPrice} />
+                                        </Col>
+                                        <Col lg>
+                                            <Form.Control
+                                                type="range"
+                                                value={lowerPrice}
+                                                onChange={e => { setLowerPrice(e.target.value); applyFilter() }}
+                                                min={0} max={999999} />
+                                        </Col>
+                                    </Row>
 
-                                {/* Lower $ Bound Slider Filter */}
-                                <Row>
-                                    <Col lg="1">
-                                        <Form.Label>Lower $</Form.Label>
-                                    </Col>
-                                    <Col xs="3">
-                                        <Form.Control value={lowerPrice} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control
-                                            type="range"
-                                            value={lowerPrice}
-                                            onChange={e => { setLowerPrice(e.target.value); applyFilter() }}
-                                            min={0} max={999999} />
-                                    </Col>
-                                </Row>
+                                    {/* Upper $ Bound Slider Filter */}
+                                    <Row>
+                                        <Col lg="2">
+                                            <Form.Label>Upper £</Form.Label>
+                                        </Col>
+                                        <Col lg="2">
+                                            <Form.Control value={upperPrice} />
+                                        </Col>
+                                        <Col lg>
+                                            <Form.Control
+                                                type="range"
+                                                value={upperPrice}
+                                                onChange={e => { setUpperPrice(e.target.value); applyFilter() }}
+                                                min={0} max={999999} />
+                                        </Col>
+                                    </Row>
 
-                                {/* Upper $ Bound Slider Filter */}
-                                <Row>
-                                    <Col lg="1">
-                                        <Form.Label>Upper $</Form.Label>
-                                    </Col>
-                                    <Col xs="3">
-                                        <Form.Control value={upperPrice} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control
-                                            type="range"
-                                            value={upperPrice}
-                                            onChange={e => { setUpperPrice(e.target.value); applyFilter() }}
-                                            min={0} max={999999} />
-                                    </Col>
-                                </Row>
-                                                                
-                                {/* Lower Milage Bound Slider Filter */}
-                                <Row>
-                                    <Col lg="1">
-                                        <Form.Label>Lower Miles</Form.Label>
-                                    </Col>
-                                    <Col xs="3">
-                                        <Form.Control value={lowerMiles} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control
-                                            type="range"
-                                            value={lowerMiles}
-                                            onChange={e => { setLowerMiles(e.target.value); applyFilter() }}
-                                            min={0} max={999999} />
-                                    </Col>
-                                </Row>
+                                    {/* Lower Milage Bound Slider Filter */}
+                                    <Row>
+                                        <Col lg="2">
+                                            <Form.Label>Lower Miles</Form.Label>
+                                        </Col>
+                                        <Col lg="2">
+                                            <Form.Control value={lowerMiles} />
+                                        </Col>
+                                        <Col lg>
+                                            <Form.Control
+                                                type="range"
+                                                value={lowerMiles}
+                                                onChange={e => { setLowerMiles(e.target.value); applyFilter() }}
+                                                min={0} max={999999} />
+                                        </Col>
+                                    </Row>
 
-                                {/* Upper Milage Bound Slider Filter */}
-                                <Row>
-                                    <Col lg="1">
-                                        <Form.Label>Upper Miles</Form.Label>
-                                    </Col>
-                                    <Col xs="3">
-                                        <Form.Control value={upperMiles} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control
-                                            type="range"
-                                            value={upperMiles}
-                                            onChange={e => { setUpperMiles(e.target.value); applyFilter() }}
-                                            min={0} max={999999} />
-                                    </Col>
-                                </Row>
-                            </Col>
+                                    {/* Upper Milage Bound Slider Filter */}
+                                    <Row>
+                                        <Col lg="2">
+                                            <Form.Label>Upper Miles</Form.Label>
+                                        </Col>
+                                        <Col lg="2">
+                                            <Form.Control value={upperMiles} />
+                                        </Col>
+                                        <Col lg>
+                                            <Form.Control
+                                                type="range"
+                                                value={upperMiles}
+                                                onChange={e => { setUpperMiles(e.target.value); applyFilter() }}
+                                                min={0} max={999999} />
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Container>
                         </Form.Group>
                     </Form>
 
@@ -200,7 +201,7 @@ function CarListing() {
                 </Container>
                 : null
             }
-            
+
             {/*
                  A Row that loops through all the cars in filteredCars, creating a card for each Car.
                 If the car was filtered out by one of the user selected filter it will not be render on the page.
@@ -210,13 +211,22 @@ function CarListing() {
                     filteredCars.map((car, key) => {
                         return (
                             <Col lg="4">
-                                {/* An Individual Card holding all the Cars Import information */}
+
+                                {/* An Individual Card holding all the Cars Important information */}
                                 <Card key={key} className="mb-3" style={{ color: "#000" }}>
                                     <Card.Img src={car.primaryImage}></Card.Img>
                                     <Card.Body>
                                         <Card.Title>{car.make} - {car.model}</Card.Title>
                                         <Card.Text>
-                                            Year: {car.year}
+                                            <div className="carlisting-details">
+                                                Price: £{car.price}
+                                            </div>
+                                            <div className="carlisting-details">
+                                                Milage: {car.wasPrice} Miles <br></br>
+                                            </div>
+                                            <div className="carlisting-details">
+                                                Model Year: {car.year}<br></br>
+                                            </div>
                                         </Card.Text>
                                         {
                                             //Button will navigation the user to the singleCar page for this car. history.push("/singlecar?id=" + car.id)

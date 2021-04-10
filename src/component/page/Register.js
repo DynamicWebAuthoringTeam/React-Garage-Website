@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Col, Button, Card, Form, Container, ProgressBar, Row, Alert } from 'react-bootstrap'
 import './page-css/Register.css';
 import { useHistory } from "react-router"
+import SiteFooter from '../SiteFooter';
 
 //Import the Mock database.
 import { users } from '../../data/users';
@@ -393,6 +394,7 @@ function Register() {
                     </Container>
                 </Card>
             </Container>
+            <SiteFooter></SiteFooter>	
         </>
     )
 }

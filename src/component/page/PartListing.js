@@ -82,7 +82,7 @@ function PartListing() {
                             </Col>
                         </Row>
 
-                         {/* A Part Model filter control */}
+                        {/* A Part Model filter control */}
                         <Row className="part-listing-row-wrapper">
                             <Col lg="2"><Form.Label>Filter Model: {modelFilter} </Form.Label></Col>
                             <Col lg="4">
@@ -97,42 +97,43 @@ function PartListing() {
                     {/* A Form holding the Range Filters or slider controled filters */}
                     <Form>
                         <Form.Group controlId="rangefilter" as={Row}>
-                            <Col>
+                            <Container>
+                                <Col>
+                                    {/* Lower Price Range Slider Filter */}
+                                    <Row>
+                                        <Col lg="2">
+                                            <Form.Label>Lower £</Form.Label>
+                                        </Col>
+                                        <Col lg="2">
+                                            <Form.Control value={lowerPrice} />
+                                        </Col>
+                                        <Col lg>
+                                            <Form.Control
+                                                type="range"
+                                                value={lowerPrice}
+                                                onChange={e => { setLowerPrice(e.target.value); applyFilter() }}
+                                                min={0} max={9999} />
+                                        </Col>
+                                    </Row>
 
-                                {/* Lower Price Range Slider Filter */}
-                                <Row>
-                                    <Col lg="1">
-                                        <Form.Label>Lower $</Form.Label>
-                                    </Col>
-                                    <Col xs="3">
-                                        <Form.Control value={lowerPrice} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control
-                                            type="range"
-                                            value={lowerPrice}
-                                            onChange={e => { setLowerPrice(e.target.value); applyFilter() }}
-                                            min={0} max={9999} />
-                                    </Col>
-                                </Row>
-
-                                {/* Upper Price Range Slider Filter */}
-                                <Row>
-                                    <Col lg="1">
-                                        <Form.Label>Upper $</Form.Label>
-                                    </Col>
-                                    <Col xs="3">
-                                        <Form.Control value={upperPrice} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control
-                                            type="range"
-                                            value={upperPrice}
-                                            onChange={e => { setUpperPrice(e.target.value); applyFilter() }}
-                                            min={0} max={9999} />
-                                    </Col>
-                                </Row>
-                            </Col>
+                                    {/* Upper Price Range Slider Filter */}
+                                    <Row>
+                                        <Col lg="2">
+                                            <Form.Label>Upper £</Form.Label>
+                                        </Col>
+                                        <Col lg="2">
+                                            <Form.Control value={upperPrice} />
+                                        </Col>
+                                        <Col lg>
+                                            <Form.Control
+                                                type="range"
+                                                value={upperPrice}
+                                                onChange={e => { setUpperPrice(e.target.value); applyFilter() }}
+                                                min={0} max={9999} />
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Container>
                         </Form.Group>
                     </Form>
 
@@ -160,7 +161,7 @@ function PartListing() {
                                         <Card.Text>Price £: {part.price}</Card.Text>
                                         {
                                             //Button will navigation the user to the singlePart page for this part.
-                                            <Button variant="primary" onClick={event => history.push("/singlepart?id=" + part.id )}>
+                                            <Button variant="primary" onClick={event => history.push("/singlepart?id=" + part.id)}>
                                                 Read More
                                             </Button>
                                         }

@@ -14,6 +14,9 @@ import GoogleMapsLibraryComponent from '../GoogleMaps'
 //CSS Imports
 import './page-css/SingleCar.css';
 
+//Import Custom Componet
+import SiteFooter from '../SiteFooter';
+
 class SingleCar extends React.Component {
   render() {
 

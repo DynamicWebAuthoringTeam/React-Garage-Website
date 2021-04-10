@@ -2,6 +2,7 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import GoogleMapsLibraryComponent from '../GoogleMaps'
 import './page-css/FindUs.css';
+import SiteFooter from '../SiteFooter';
 
 function FindUs() {
 	return (
@@ -17,7 +18,7 @@ function FindUs() {
 				</Card>
 			</div>
 			<div class="blank-row-spacing">
-				<hr></hr>
+			<hr></hr>
 			</div>
 			<div class="col d-flex justify-content-center">
 				<Card className="online-wrapper">
@@ -54,7 +55,9 @@ function FindUs() {
 					</Card.Body>
 				</Card>
 			</div>
+		<SiteFooter></SiteFooter>	
 		</container>
+
 	)
 }
 
