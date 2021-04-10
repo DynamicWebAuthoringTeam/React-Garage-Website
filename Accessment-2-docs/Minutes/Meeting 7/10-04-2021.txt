@@ -1,0 +1,18 @@
+10-04-2021 Meeting 6
+
+Attendence (3/4)
+1.Adam    yes 
+2.Michael  yes 
+3.Patrick  no
+4.Lewis    yes
+
+Stuff to Complete for sunday
+
+Michael - Video, random stuff
+
+Lewis - Contact Page, DOM structure
+
+Adam - Manual Test Plan + some automated testing 
+
+Patrick - Standards complicent Sitemap Single Part Page (copy single car page)
+
