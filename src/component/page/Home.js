@@ -14,6 +14,13 @@ import './page-css/Home.css';
 function Home() {
     return (
         <>
+        
+          {/* Banner for Website */}
+          <img
+              className="d-block w-100"
+              src='../../../images/bannerSale.png'
+              alt="website banner"
+          />
             {/* Cars Carousel */}
             <Container className="home-carousel-wrapper">
                 <h1 className="home-header">Featured Cars</h1>
