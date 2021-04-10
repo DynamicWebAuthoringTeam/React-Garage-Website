@@ -8,7 +8,31 @@
     text-align: center;
     margin-bottom: 2%;
     color: black;
-    font-family: noto sans;
     font-weight: bold;
     font-style: oblique;
+}
+
+
+h3 {
+	color: red;
+	text-decoration: line-through;
+	font-weight: bold;
+}
+
+h2 {
+	color: black;
+	font-size: 28px;
+}
+
+hr {
+  border-top: 2px solid lightgrey;
+}
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(50%);
+}
+
+.now-price {
+	font-weight: bold;
 }

@@ -1,0 +1,55 @@
+05-04-2021 Meeting 6
+
+Attendence (4/4)
+1.Adam    yes 
+2.Michael  yes 
+3.Patrick  yes
+4.Lewis    yes
+
+
+What we need to do..
+
+1 . Standards complicent - needs to install libraries to do these checks
+2 . gathering and conditioning data
+3 . Dynamic interactive design and event handling techniques
+4 . slider to change text size
+5 . set up tabbing stuff
+6 . Make sure all images have ALT + longdesc= “URL to my description”
+7 . Dynamic interactive design and event handling techniques (for
+example, animations, banners, image effects, date/time, form validation, calculator, and
+cookies/LocalStorage) are required.
+8. testing process should be documented
+9. Background research into technology possibilities. (Note: Use of frameworks are
+permitted providing their are properly referenced and not claimed as own work)
+10. Justification of the selected technology.
+11. Evidence of a clear implementation and testing process (for example, including
+DOM structure, sitemap, implementation, testing plan, and evaluation
+12. • A copy of all your submitted code in an appendix
+13 Vido has to have code init
+
+
+
+Stuff to Complete for saturday
+Michael - Video, Footer, random stuff
+Lewis - Contact Page, DOM structure
+Adam - Manual Test Plan + some automated testing, Home page, find us page, testing
+Patrick - Standards complicent Sitemap Single Part Page (copy single car page)
+
+“TypeScript is an open-source language which builds on JavaScript, one of the world’s most used tools, by adding static type definitions.” [14].
+
+Rebase on master
+
+git add .
+git commit -m "doing stuff"
+git push origin <your branch>
+
+MAKE PYULL REQUEST
+
+git checkout main
+git pull
+git checkout AdamHomePage
+git merge main
+git add .
+git merge --continue
+ZZ
+git push

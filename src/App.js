@@ -2,8 +2,11 @@ import './App.css';
 
 //React Imports
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch, NavLink, useLocation, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
+import { useHistory } from "react-router"
 import Media from 'react-media';
+
+import { useCookies } from 'react-cookie';
 
 //BootStrap Imports
 import { FormControl, Button, Form, NavItem, Navbar, Alert, Container, Dropdown, DropdownButton, Row } from 'react-bootstrap';
@@ -23,15 +26,68 @@ import Contact from './component/page/Contact';
 import Login from './component/page/Login';
 import Register from './component/page/Register';
 import Profile from './component/page/Profile';
-import SiteFooter from './component/SiteFooter';
+import RegistrationSuccess from './component/page/RegistrationSuccess';
 
 
-//Import Context
+//Import Context and history
 import { Context } from "./component/Context.js";
 
 function App() {
+  let history = useHistory()
+
+  // Cookies get and hold state
+  const [cookiesName, setCookieName] = useCookies(['name']);
+  const [cookiesLastLogin, setCookieLastLogin] = useCookies(['lastLogin']);
+  const [cookiesAcceptCookies, setCookiesAcceptCookies] = useCookies(['acceptCookies']);
+
+  // State
   const [displayNotLoggedIn, setDisplayNotLoggedIn] = useState(true);
   const [user, setUser] = useState(null);
+  const [searchInput, setSearchInput] = useState(null);
+
+  function searchLogic(inputString) {
+
+    if (inputString === 'parts' || inputString === 'parts') {
+      return '/partlisting'
+    }
+
+  }
+
+  // This function prompts the user to accept or deny cookie usage
+  function CookiesAcceptAlert() {
+    const [dismissedAcceptCookies, setDismissedAcceptCookies] = useState(!cookiesAcceptCookies.acceptCookies);
+
+    var show = dismissedAcceptCookies
+
+    return (
+      <>
+        <Container>
+          <Alert show={show} variant="warning">
+            <Alert.Heading>Can we use cookies on the site?</Alert.Heading>
+            <p>Click Here to Confirm or Deny Cookie use</p>
+            <div >
+              <Button
+                variant="success"
+                onClick={() => {
+                  setDismissedAcceptCookies(false);
+                  setCookiesAcceptCookies('acceptCookies', true);
+                }}>
+                Accept!
+            </Button>
+              <Button
+                variant="danger"
+                onClick={() => {
+                  setDismissedAcceptCookies(false);
+                  setCookiesAcceptCookies('acceptCookies', false);
+                }}>
+                Deny!
+            </Button>
+            </div>
+          </Alert>
+        </Container>
+      </>
+    );
+  }
 
   /*
     Class LoginStatus
@@ -42,17 +98,17 @@ function App() {
 
     render() {
       if (this.context[0] === null) {
-        return <NavItem><Navbar.Text style={{color:"white"}} as={NavLink} to="/login" >Sign in</Navbar.Text></NavItem>;
+        return <NavItem><Navbar.Text style={{ color: "white" }} as={NavLink} to="/login" >Sign in</Navbar.Text></NavItem>;
       } else {
         return <NavItem className="app-user-controls">
-                  <Row>
-                    <Navbar.Text className="app-nav-bar-text" style={{color:"white"}}>Signed in as: </Navbar.Text>
-                    <DropdownButton id="dropdown-basic-button" title={this.context[0].firstName}>
-                    <Dropdown.Item as={NavLink} to="/profile">view profile</Dropdown.Item>
-                    <Dropdown.Item href="home">logout</Dropdown.Item>
-                    </DropdownButton>
-                  </Row>
-          </NavItem>;
+          <Row>
+            <Navbar.Text className="app-nav-bar-text" style={{ color: "white" }}>Signed in as: </Navbar.Text>
+            <DropdownButton id="dropdown-basic-button" title={this.context[0].firstName}>
+              <Dropdown.Item as={NavLink} to="/profile">view profile</Dropdown.Item>
+              <Dropdown.Item href="home">logout</Dropdown.Item>
+            </DropdownButton>
+          </Row>
+        </NavItem>;
       }
     }
   }
@@ -61,23 +117,29 @@ function App() {
     Class AlertNotLoggedIn
     Renders a notification to the user to login if, they are not logged in.
     Resource Reference: https://react-bootstrap.netlify.app/components/alerts/#additional-content
+
+    Also uses cookies to, display the users name and last login date.
+
   */
   class AlertNotLoggedIn extends React.Component {
     static contextType = Context;
-    
+
     render() {
       //display if not logged in, but not when on the login or register parge.
       if (displayNotLoggedIn && this.context[0] === null) {
         return (
           <Container>
-            <Alert variant="info" onClose={ () => setDisplayNotLoggedIn(false) } dismissible>
-              <Alert.Heading>You are not logged in!</Alert.Heading>
+            <Alert variant="info" onClose={() => setDisplayNotLoggedIn(false)} dismissible>
+              <Alert.Heading>You are not logged in {cookiesName.name} !</Alert.Heading>
               <p>
-                Welcome to SpeedFixSales website, we noticed you are not logged in! 
-                <br></br> 
+                Welcome to SpeedFixSales website, we noticed you are not logged in!
+                <br></br>
                 Please login or register with the buttons below!
               </p>
               <hr />
+              <p>
+                You last logged in on: {cookiesLastLogin.lastLogin}
+              </p>
               <p className="mb-0">Click Here to Login/Register</p>
               <Button variant="info" className="app-alert-button" as={NavLink} to="/login">Login</Button>
               <Button variant="info" className="app-alert-button" as={NavLink} to="/register">Register</Button>
@@ -85,6 +147,7 @@ function App() {
           </Container>
         );
       }
+
       return (<div></div>);
     }
   }
@@ -101,10 +164,10 @@ function App() {
             Class <Navbar></Navbar>
             Resource Reference: https://react-bootstrap.netlify.app/components/navbar/
           */}
+
           <Navbar sticky="top" className="justify-content-between nav-bar">
-            <Navbar.Brand style={{color:"white"}}>
-              Speed Fix Sales
-              {<img src="/images/logolong.png" alt="SpeedFixSales Logo" width="100px" height="30px" className="d-inline-block align-top"/>}
+            <Navbar.Brand style={{ color: "white" }}>
+              {<img src="/images/logolong.png" alt="SpeedFixSales Logo" width="200px" height="70px" className="d-inline-block align-top" />}
             </Navbar.Brand>
             {/* Hides search bar and its button for mobile devices is replaced by the one rendered in 'NavigationBar.js' */}
             <Media query="(max-width: 987px)">
@@ -112,20 +175,39 @@ function App() {
                 isMatch ? (
                   <div></div>
                 ) : (
-                      <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button type="submit">Search</Button>
-                      </Form>
-                    )
+                  <Form inline>
+                    <FormControl
+                      type="text"
+                      placeholder="Search"
+                      className="mr-sm-2"
+                      value={searchInput}
+                      onChange={e => { setSearchInput(e.target.value) }}
+                    />
+                    <Button variant="primary"
+                      onClick={event => {
+                        console.log(searchInput);
+                        // history.push("/home")
+                      }
+                      }
+                    >
+                      Search
+                        </Button>
+                  </Form>
+                )
               }
             </Media>
 
-            { /* Displays the logged in user in the header bar. */ }
-              <LoginStatus></LoginStatus>
+            { /* Displays the logged in user in the header bar. */}
+            <LoginStatus></LoginStatus>
           </Navbar>
 
-          { /* The NavigationBar is a traditional tab navigation */ }
+          { /* The NavigationBar is a traditional tab navigation */}
           <NavigationBar />
+
+          {/* Prompt/Alert to confirm or deny cookie useage  */}
+          <Container>
+            <CookiesAcceptAlert></CookiesAcceptAlert>
+          </Container>
 
           {/* An Alert at the top of every page to inform the user they are not logged in */}
           <Container>
@@ -137,20 +219,20 @@ function App() {
             Resource Reference: https://reactrouter.com/web/api/Switch
           */}
           <Switch>
-            <Route exact path='/'     component={Home}        />
-            <Route path='/home'       component={Home}        />
-            <Route path='/carlisting' component={CarListing}  />
-            <Route path='/partlisting'component={PartListing} />
-            <Route path='/contact'    component={Contact}     />
-            <Route path='/findus'     component={FindUs}      />
-            <Route path='/singlecar'  component={SingleCar}   />
-            <Route path='/singlepart' component={SinglePart}  />
-            <Route path='/login'      component={Login}       />
-            <Route path='/register'   component={Register}    />
-            <Route path='/profile'   component={Profile}      />
+          <Route exact path='/'            component={Home}               />
+            <Route path='/home'            component={Home}               />
+            <Route path='/carlisting'      component={CarListing}         />
+            <Route path='/partlisting'     component={PartListing}        />
+            <Route path='/contact'         component={Contact}            />
+            <Route path='/findus'          component={FindUs}             />
+            <Route path='/singlecar'       component={SingleCar}          />
+            <Route path='/singlepart'      component={SinglePart}         />
+            <Route path='/login'           component={Login}              />
+            <Route path='/register'        component={Register}           />
+            <Route path='/profile'         component={Profile}            />
+            <Route path='/registersuccess' component={RegistrationSuccess}/>
           </Switch>
         </Router>
-        {/* <SiteFooter></SiteFooter> */}
       </Context.Provider>
     </>
   );

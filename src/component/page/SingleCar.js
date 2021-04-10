@@ -14,13 +14,16 @@ import GoogleMapsLibraryComponent from '../GoogleMaps'
 //CSS Imports
 import './page-css/SingleCar.css';
 
+//Import Custom Componet
+import SiteFooter from '../SiteFooter';
+
 class SingleCar extends React.Component {
   render() {
 
-    //Collect any query param and their value with 'id'
+    //Collect any query params and their value with 'id'
     const id = queryString.parse(this.props.location.search).id;
 
-    //Find car data by the given id in the query param
+    //Find car data by the given id
     const carData = singleCarsData.find(car => car.id === id)
 
     //Check if a car exists for the given id, if not redirect to /carlisting
@@ -125,11 +128,13 @@ class SingleCar extends React.Component {
           {/* Sidebar Column */}
           <Col lg={5} className="sidebar-column">
             <Container>
+              
               {/* other Car images */}
               <Card className="side-bar-item-wrapper">
                 <Card.Header as="h5">Other Images of this car</Card.Header>
                 <Card.Body>
                   <Carousel>
+                    
                     {/* Loop through 'otherImages' and create a Carousel.Item for each image found*/}
                     {
                       carData.otherImages.map((data, key) => {
