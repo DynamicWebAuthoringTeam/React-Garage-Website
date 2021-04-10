@@ -12,10 +12,13 @@ import { Context } from "../Context.js";
 //Import Css
 import './page-css/Profile.css';
 
+import SiteFooter from '../SiteFooter';
+
 function Profile() {
     const [user, setUser] = useContext(Context)
 
     return (
+        <>
         <Container>
             <Card>
                 <Container>
@@ -38,6 +41,8 @@ function Profile() {
                 </Container>
             </Card>
         </Container>
+        <SiteFooter></SiteFooter>
+        </>
     )
 }
 

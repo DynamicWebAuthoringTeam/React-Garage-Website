@@ -2,7 +2,8 @@ import './App.css';
 
 //React Imports
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch, NavLink, useLocation, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
+import { useHistory } from "react-router"
 import Media from 'react-media';
 
 //BootStrap Imports
@@ -24,14 +25,26 @@ import Login from './component/page/Login';
 import Register from './component/page/Register';
 import Profile from './component/page/Profile';
 import RegistrationSuccess from './component/page/RegistrationSuccess';
-import SiteFooter from './component/SiteFooter';
 
-//Import Context
+
+//Import Context and history
 import { Context } from "./component/Context.js";
 
 function App() {
+  let history = useHistory()
   const [displayNotLoggedIn, setDisplayNotLoggedIn] = useState(true);
   const [user, setUser] = useState(null);
+  const [searchInput, setSearchInput] = useState(null);
+  
+
+  function searchLogic(inputString){
+  
+    if(inputString === 'parts' || inputString === 'parts'){
+      return '/partlisting'
+    }
+
+  }
+  
 
   /*
     Class LoginStatus
@@ -112,8 +125,22 @@ function App() {
                   <div></div>
                 ) : (
                       <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button type="submit">Search</Button>
+                        <FormControl 
+                          type="text" 
+                          placeholder="Search" 
+                          className="mr-sm-2" 
+                          value={searchInput}
+                          onChange={e => { setSearchInput(e.target.value) }}
+                        />
+                        <Button variant="primary" 
+                          onClick={event => {
+                            console.log(searchInput);
+                            // history.push("/home")
+                          }
+                          }
+                        >
+                          Search
+                        </Button>
                       </Form>
                     )
               }
@@ -150,7 +177,6 @@ function App() {
             <Route path='/registersuccess'component={RegistrationSuccess}/>
           </Switch>
         </Router>
-        {/* <SiteFooter></SiteFooter> */}
       </Context.Provider>
     </>
   );

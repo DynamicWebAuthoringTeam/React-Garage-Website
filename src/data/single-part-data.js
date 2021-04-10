@@ -24,8 +24,10 @@ export const allPartsData = [
         year: "1968–1998",
         name: "Kenwood Axle Shaft",
         model: "ABC 8080",
-        description: "",
-        fullSpec:[],
+        description: "An Axle Shaft for a Kenwood automatic transmission",
+        fullSpec:[
+            "No further information is given"
+        ],
         primaryImage: "/images/parts/2.png",
         featuredPart: "yes",
         wasPrice: 1050,    
@@ -37,8 +39,10 @@ export const allPartsData = [
         year: "2010",
         name: "Standard Rim and tires, set of 4",
         model: "XPR 123d",
-        description: "",
-        fullSpec:[],
+        description: "Tires for a standard IEE123 wheel fit",
+        fullSpec:[
+            "No further information is given"
+        ],
         primaryImage: "/images/parts/3.jpg",
         featuredPart: "yes",
         wasPrice: 4000,
@@ -48,12 +52,12 @@ export const allPartsData = [
         price: "1000",
         make : "Ford",
         year: "1998",
-        name: "Ford Escort Door right side rear",
+        name: "Rear door",
         model: "ABC 8080",
-        description: "",
+        description: "Ford Escort Door right side rear",
         primaryImage: "/images/parts/4.jpg",
         fullSpec: [
-
+            "No further information is given"
         ],
         featuredPart: "no",
         wasPrice: 1200,
@@ -65,7 +69,7 @@ export const allPartsData = [
         year: "1968–1998",
         name: "Halfords 12V Battery",
         model: "096AGM",
-        description: "",
+        description: "Halfords 12V Battery 70Ah",
         primaryImage: "/images/parts/5.jpg",
         fullSpec: [
             "Engine Starts Number 360000",
@@ -87,7 +91,7 @@ export const allPartsData = [
         year: "1968–1998",
         name: "470L Black Roof Box",
         model: "AX928",
-        description: "",
+        description: "Halfords 470L Black Roof Box",
         primaryImage: "/images/parts/6.jpg",
         fullSpec: [
             "Type Roof Box",
@@ -108,7 +112,7 @@ export const allPartsData = [
         year: "1968–1998",
         name: "Steering Wheel Lock",
         model: "Double Bar",
-        description: "",
+        description: "Steering Wheel Lock for Standard Car",
         primaryImage: "/images/parts/7.jpg",
         fullSpec: [
             "Type Steering Wheel Lock"
@@ -123,7 +127,7 @@ export const allPartsData = [
         year: "1968–1998",
         name: "Number Plate Parking Sensor",
         model: "KX 0284",
-        description: "",
+        description: "Parking Sensor",
         primaryImage: "/images/parts/8.jpg",
         fullSpec: [
             "Type Parking Sensor",
