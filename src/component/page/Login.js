@@ -18,6 +18,9 @@ import { Context } from "../Context.js";
 //Import CSS
 import './page-css/Login.css';
 
+//Cookie Imports
+import { useCookies } from 'react-cookie';
+
 
 function Login() {
     //History allows for navigation
@@ -30,6 +33,10 @@ function Login() {
     const [inputEmail, setInputEmail] = useState(null);
     const [inputPassword, setInputPassword] = useState(null);
     const [displayInvalidLogin, setDisplayInvalidLogin] = useState(false);
+
+    //Cookies
+    const [cookiesName, setCookieName] = useCookies(['name']);
+    const [cookiesLastLogin, setCookieLastLogin] = useCookies(['lastLogin']);
 
     //Mocking find user from a database.
     function findUser(email) {
@@ -49,8 +56,14 @@ function Login() {
 
         // If the login is successful set the User Context to the selected User
         if (loginSuccess) {
+            var date = new Date();
+
             setDisplayInvalidLogin(false)
             setUser(optionFoundUser)
+
+            // Set Cookies for the last login and remeber users name.
+            setCookieName('name', optionFoundUser.firstName);
+            setCookieLastLogin('lastLogin', date.toString());
             return loginSuccess
         } else {
             // If the login failed set the display of the InvalidLogin message so that it is rendered.
