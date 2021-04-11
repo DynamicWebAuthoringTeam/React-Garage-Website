@@ -137,5 +137,58 @@ export const allPartsData = [
         ],
         featuredPart: "no",
         wasPrice: 74.99,
+    },
+    {
+        id: "9",
+        price: "30",
+        make : "Shell",
+        year: "N/A",
+        name: "Helix 5W-30 Ultra Professional AF Ford Fully Syn M2C 913D",
+        model: "Ford",
+        description: "Parking Sensor",
+        primaryImage: "/images/parts/9.jpg",
+        fullSpec: [
+            "Type Oil",
+            "5 Ltrs",
+        ],
+        featuredPart: "no",
+        wasPrice: 54,
+        },
+        {
+        id: "10",
+        price: "34.54",
+        make : "Philips",
+        year: "2016",
+        name: "Philips 12V H7 Racing Vision GT200 +200% Brighter Upgrade - twin pack",
+        model: "All",
+        description: "Light Upgrades",
+        primaryImage: "/images/parts/10.jpg",
+        fullSpec: [
+            "Type Car Bulbs",
+            "twin pack",
+            "GT200 +200% Brighter Upgrade",
+            "Fully road legal for an enjoyable drive",
+            "Extend your beam by 80 metres"
+        ],
+        featuredPart: "no",
+        wasPrice: 37.88,
+    },
+    {
+        id: "11",
+        price: "49.03",
+        make : "Pioneer",
+        year: "2016",
+        name: "Pioneer TS-G6930F Speaker Unit",
+        model: "All",
+        description: "Speaker Unit",
+        primaryImage: "/images/parts/11.jpg",
+        fullSpec: [
+            "400 Watts Max. Power",
+	    "Injected Molded Polypropylene (IMPP) composite Cone Woofer",
+	    "Patented Pioneer P.F.S.S Spider",
+        "2 Cone midrange and 3/8 Dome tweeter"
+        ],
+        featuredPart: "no",
+        wasPrice: 55, 
     }
 ]
