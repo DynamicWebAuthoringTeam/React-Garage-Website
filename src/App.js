@@ -9,7 +9,7 @@ import Media from 'react-media';
 import { useCookies } from 'react-cookie';
 
 //BootStrap Imports
-import { FormControl, Button, Form, NavItem, Navbar, Alert, Container, Dropdown, DropdownButton, Row } from 'react-bootstrap';
+import { FormControl, Button, Form, NavItem, Navbar, Alert, Container, Dropdown, DropdownButton, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Home Made Component imports
@@ -66,6 +66,8 @@ function App() {
             <Alert.Heading>Can we use cookies on the site?</Alert.Heading>
             <p>Click Here to Confirm or Deny Cookie use</p>
             <div >
+              <Row>
+              <Col lg="1">
               <Button
                 variant="success"
                 onClick={() => {
@@ -74,6 +76,8 @@ function App() {
                 }}>
                 Accept!
             </Button>
+            </Col>
+            <Col lg="1">
               <Button
                 variant="danger"
                 onClick={() => {
@@ -82,6 +86,8 @@ function App() {
                 }}>
                 Deny!
             </Button>
+            </Col>
+            </Row>
             </div>
           </Alert>
         </Container>
