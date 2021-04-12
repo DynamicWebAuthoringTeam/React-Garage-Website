@@ -1,31 +1,38 @@
 
 // React, Bootstrap Imports
 import React from 'react'
-import { Container, Alert, Button } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 // Home-made Components
 import HomeCarouselCar from '../HomeCarouselCar';
+import HomeCarouselPart from '../HomeCarouselPart';
+import SiteFooter from '../SiteFooter';
 
 // CSS Imports
 import './page-css/Home.css';
 
-
 function Home() {
-
     return (
         <>
         
+          {/* Banner for Website */}
+          <img
+              className="d-block w-100"
+              src='../../../images/bannerSale.png'
+              alt="website banner"
+          />
             {/* Cars Carousel */}
             <Container className="home-carousel-wrapper">
                 <h1 className="home-header">Featured Cars</h1>
                 <HomeCarouselCar />
             </Container>
 
-            {/* TODO Parts Carousel, either abstract Carousel to take input or make separate component for Parts */}
+            {/* Parts Carousel */}
             <Container className="home-carousel-wrapper">
                 <h1 className="home-header">Featured Parts</h1>
-                <HomeCarouselCar />
+                <HomeCarouselPart />
             </Container>
+            <SiteFooter></SiteFooter>
         </>
     )
 

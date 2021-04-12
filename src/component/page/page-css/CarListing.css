@@ -1,0 +1,19 @@
+.car-listing-row-wrapper {
+    padding: 1%;
+}
+
+.carlisting-details {
+    font-size: x-large;
+}
+
+.carlisting-toggler-filters-container {
+    margin: 0;
+    padding: 1% 0 10px 2%;
+}
+.carlisting-filters-container {
+    font-size: large;
+    padding-left: 2%;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
