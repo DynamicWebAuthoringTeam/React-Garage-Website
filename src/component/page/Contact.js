@@ -2,7 +2,6 @@ import React from 'react'
 import { Col, Container, Form, Button, Card } from 'react-bootstrap';
 import './page-css/Contact.css';
 
-
 function Contact() {
     return (
         <>
@@ -16,18 +15,24 @@ function Contact() {
                         <p>Email: info@speedfixsales.com</p>
                     </Card.Text>
                     <Form className="Cform" style={{padding: '3px'}}>
-                        <Form.Row>
+                        <Form.Row className="row">
                             <Col>
-                                <Form.Control type="name" placeholder="Name" />
+                                <Form.Control id="nameInput" type="name" placeholder="Name" />
                             </Col>
                             <Col>
-                                <Form.Control typer="Email" placeholder="Email Address" />  
+                                <Form.Control id="emailInput" typer="Email" placeholder="Email Address" />  
                             </Col>
                         </Form.Row>    
-                        <Form.Row>
-                            <Form.Control as="textarea" rows={3} placeholder="Message" />
+                        <Form.Row className="row">
+                            <Form.Control id="textInput" as="textarea" rows={3} placeholder="Message" />
                         </Form.Row>
-                            <Button as="input" type="submit" value="Submit" />  
+                            <Button
+                                    onClick={event => {
+                                        document.getElementById("nameInput").value = ''
+                                        document.getElementById("emailInput").value = ''
+                                        document.getElementById("textInput").value = ''
+                                        alert("Thank you for contacting us! \n We aim to get back to you within 3 working days.");
+                                    }}>Submit</Button>  
                     </Form> 
              </Card.Body>
             </Card>    

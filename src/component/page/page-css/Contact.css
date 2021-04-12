@@ -2,5 +2,11 @@ Contact-page{
     text-align: center;
 }
 
+.Cform {
+  width: 50%;
+  display: inline-block;
+}
 
-
+.row {
+	margin: 10px;
+}
