@@ -10,3 +10,8 @@ Contact-page{
 .row {
 	margin: 10px;
 }
+
+.popup {
+	margin: 10px;
+	display: none;
+}
