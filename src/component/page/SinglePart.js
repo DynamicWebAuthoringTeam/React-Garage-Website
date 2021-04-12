@@ -21,7 +21,7 @@ class SinglePart extends React.Component {
     const id = queryString.parse(this.props.location.search).id;
 
     //Find car data by the given id in the query param
-    const partData = allPartsData.find(car => car.id === id)
+    const partData = allPartsData.find(part => part.id === id)
 
     //Check if a car exists for the given id, if not redirect to /carlisting
     if (partData == null) {
@@ -55,7 +55,7 @@ class SinglePart extends React.Component {
                         {<Card.Header as="h5">Manufacturer</Card.Header>}
                         <Card.Body>
                           {<Card.Title>{partData.make}</Card.Title>}
-                          {<Card.Text> - The Manufacturer of this car.</Card.Text>}
+                          {<Card.Text> - The Manufacturer of this part.</Card.Text>}
                         </Card.Body>
                       </Card>
                     </Col>
@@ -85,11 +85,11 @@ class SinglePart extends React.Component {
                         <Card.Body>
                           {<Card.Title> Milage: {partData.miles} miles</Card.Title>}
                           <Card.Text>
-                            - The number of miles the car has driven.
+                            - The number of miles the part has driven.
                           </Card.Text>
                           {<Card.Title className="title-red"> State of Repair: {partData.condition}</Card.Title>}
                           <Card.Text>
-                            - State of repair the car is in asessed by a SpeedFixSales Employee.
+                            - State of repair the part is in asessed by a SpeedFixSales Employee.
                           </Card.Text>
                         </Card.Body>
                       </Card>
@@ -97,7 +97,7 @@ class SinglePart extends React.Component {
                   </Row>
                   <blockquote className="blockquote mb-0">
                     <footer className="blockquote-footer">
-                      See full car spec below for more details.
+                      See full part spec below for more details.
                     </footer>
                   </blockquote>
                 </Card.Body>
@@ -105,7 +105,7 @@ class SinglePart extends React.Component {
 
               {/* Full Car Spec */}
               <Card className="key-details-wrapper">
-                <Card.Header as="h5">Full Car Specification</Card.Header>
+                <Card.Header as="h5">Full Part Specification</Card.Header>
                 <Card.Body>
                   {
                     partData.fullSpec.map((data, key) => {
@@ -159,7 +159,7 @@ class SinglePart extends React.Component {
 
               {/* Google Api Maps Location */}
               <Card className="side-bar-item-wrapper">
-                <Card.Header as="h5">Car Location</Card.Header>
+                <Card.Header as="h5">Part Location</Card.Header>
                 <Card.Body>
                   <Card.Text>Address: {partData.sellerAddress}</Card.Text>
                   <GoogleMapsLibraryComponent></GoogleMapsLibraryComponent>
