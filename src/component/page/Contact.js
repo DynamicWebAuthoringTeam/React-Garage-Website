@@ -35,14 +35,6 @@ function Contact() {
                     </Form> 
              </Card.Body>
             </Card>   
-            <Card id="popup" className="popup"> 
-                <Card.Text style={{display : 'none' }}>
-                    Please feel free to contact us with any queries or issues, or you can leave a message bellow and someone from our team will reply.<p></p>
-                        <p>Address: 10 Mc Clure St, Belfast BT7 2FB</p>
-                        <p>Phone: 0044 (0)28 9901 6210</p>
-                        <p>Email: info@speedfixsales.com</p>
-                    </Card.Text>
-            </Card> 
             <SiteFooter></SiteFooter> 
         </>
                    
