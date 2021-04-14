@@ -139,8 +139,8 @@ class SingleCar extends React.Component {
                     {
                       carData.otherImages.map((data, key) => {
                         return (
-                          <Carousel.Item key={key}>
-                            <img className="d-block w-100" src={data} />
+                          <Carousel.Item key={key} alt={key}>
+                            <img className="d-block w-100" src={data} alt={"image key:" + key} />
                           </Carousel.Item>
                         );
                       })

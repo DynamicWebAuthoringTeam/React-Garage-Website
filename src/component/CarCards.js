@@ -17,7 +17,7 @@ function CarCards() {
                         return (
                             <Col lg="4">
                                 <Card key={key} className="mb-3" style={{color: "#000"}}>
-                                    <Card.Img src={car.primaryImage}></Card.Img>
+                                    <Card.Img alt={car.make} src={car.primaryImage}></Card.Img>
                                     <Card.Body>
                                         <Card.Title>{car.make} - {car.model}</Card.Title>
                                         <Card.Text>

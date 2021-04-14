@@ -79,7 +79,7 @@ function HomeCarouselCar() {
                 </Carousel.Item>
                 <Carousel.Item>
                 <div class="CarImage">
-                    <img className="d-block w-100" src={featuredCars[3].primaryImage} alt="Third slide"/>
+                    <img className="d-block w-100" src={featuredCars[3].primaryImage} alt="Fourth slide"/>
                 </div>
                 <div class="row">
                     <div class="column">
@@ -101,7 +101,7 @@ function HomeCarouselCar() {
                 </Carousel.Item>
                 <Carousel.Item>
                 <div class="CarImage">
-                    <img className="d-block w-100" src={featuredCars[4].primaryImage} alt="Third slide"/>
+                    <img className="d-block w-100" src={featuredCars[4].primaryImage} alt="Fifth slide"/>
                 </div>
                 <div class="row">
                     <div class="column">
