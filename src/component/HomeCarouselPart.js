@@ -34,7 +34,7 @@ function HomeCarouselPart() {
                 </Carousel.Item>
                 <Carousel.Item>
                 <div class="CarImage">
-                     <img className="d-block w-100" src={featuredParts[1].primaryImage} alt="First slide"/>
+                     <img className="d-block w-100" src={featuredParts[1].primaryImage} alt="Second slide"/>
                 </div>
                 <div class="row">
                     <div class="column">
@@ -56,7 +56,7 @@ function HomeCarouselPart() {
                 </Carousel.Item>
                 <Carousel.Item>
                 <div class="CarImage">
-                     <img className="d-block w-100" src={featuredParts[2].primaryImage} alt="First slide"/>
+                     <img className="d-block w-100" src={featuredParts[2].primaryImage} alt="Third slide"/>
                 </div>
                 <div class="row">
                     <div class="column">
@@ -78,7 +78,7 @@ function HomeCarouselPart() {
                 </Carousel.Item>
                 <Carousel.Item>
                 <div class="CarImage">
-                     <img className="d-block w-100" src={featuredParts[3].primaryImage} alt="First slide"/>
+                     <img className="d-block w-100" src={featuredParts[3].primaryImage} alt="fourth slide"/>
                 </div>
                 <div class="row">
                     <div class="column">
@@ -100,7 +100,7 @@ function HomeCarouselPart() {
                 </Carousel.Item>
                 <Carousel.Item>
                 <div class="CarImage">
-                     <img className="d-block w-100" src={featuredParts[4].primaryImage} alt="First slide"/>
+                     <img className="d-block w-100" src={featuredParts[4].primaryImage} alt="fith slide"/>
                 </div>
                 <div class="row">
                     <div class="column">

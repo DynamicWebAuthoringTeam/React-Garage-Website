@@ -214,7 +214,7 @@ function CarListing() {
 
                                 {/* An Individual Card holding all the Cars Important information */}
                                 <Card key={key} className="mb-3" style={{ color: "#000" }}>
-                                    <Card.Img src={car.primaryImage}></Card.Img>
+                                    <Card.Img src={car.primaryImage} alt={car.model}></Card.Img>
                                     <Card.Body>
                                         <Card.Title>{car.make} - {car.model}</Card.Title>
                                         <Card.Text>
