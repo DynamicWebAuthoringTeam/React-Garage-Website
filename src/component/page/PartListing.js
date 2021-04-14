@@ -153,7 +153,7 @@ function PartListing() {
                         return (
                             <Col lg="3">
                                 <Card key={key} className="mb-3" style={{ color: "#000" }}>
-                                    <Card.Img src={part.primaryImage}></Card.Img>
+                                    <Card.Img alt={part.name} src={part.primaryImage}></Card.Img>
                                     <Card.Body>
                                         <Card.Title>{part.name}</Card.Title>
                                         <Card.Text>Make: {part.make}</Card.Text>

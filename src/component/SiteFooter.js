@@ -42,17 +42,17 @@ function SiteFooter() {
                             <Row>
                                 <Col>
                                     <a href="https://twitter.com/home">
-                                        <Card.Img height="60px" src='../../../images/twitter.png'></Card.Img>
+                                        <Card.Img height="60px" alt='twitter icon' src='../../../images/twitter.png'></Card.Img>
                                     </a>
                                 </Col>
                                 <Col>
                                     <a href="https://www.instagram.com/">
-                                        <Card.Img height="50px" src='../../../images/instagram.png'></Card.Img>
+                                        <Card.Img height="50px" alt='instagram icon' src='../../../images/instagram.png'></Card.Img>
                                     </a>
                                 </Col>
                                 <Col>
                                     <a href="https://www.facebook.com/FacebookBusinessEMEA/">
-                                        <Card.Img height="50px" src='../../../images/facebook.png'></Card.Img>
+                                        <Card.Img height="50px" alt='facebook icon' src='../../../images/facebook.png'></Card.Img>
                                     </a>
                                 </Col>
                             </Row>
