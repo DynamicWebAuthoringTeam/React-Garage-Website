@@ -14,6 +14,11 @@ export const allPartsData = [
         description: "Mustang Boss 429 engine",
         primaryImage: "/images/parts/1.jpg",
         fullSpec: [],
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
         featuredPart: "yes",
         wasPrice: 111,
     },
@@ -27,6 +32,11 @@ export const allPartsData = [
         description: "An Axle Shaft for a Kenwood automatic transmission",
         fullSpec:[
             "No further information is given"
+        ],
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
         ],
         primaryImage: "/images/parts/2.png",
         featuredPart: "yes",
@@ -43,6 +53,11 @@ export const allPartsData = [
         fullSpec:[
             "No further information is given"
         ],
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
         primaryImage: "/images/parts/3.jpg",
         featuredPart: "yes",
         wasPrice: 4000,
@@ -58,6 +73,11 @@ export const allPartsData = [
         primaryImage: "/images/parts/4.jpg",
         fullSpec: [
             "No further information is given"
+        ],
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
         ],
         featuredPart: "no",
         wasPrice: 1200,
@@ -81,6 +101,11 @@ export const allPartsData = [
             "Dimensions (LxDxH) 278x175x190mm",
             "Weight (kg) 20.5"
         ],
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
         featuredPart: "yes",
         wasPrice: 200,
     },
@@ -93,27 +118,280 @@ export const allPartsData = [
         model: "AX928",
         description: "Halfords 470L Black Roof Box",
         primaryImage: "/images/parts/6.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
         fullSpec: [
-            "Type Roof Box",
-            "Volume 470 Litres",
-            "Weight 14.2kg",
-            "Width across Roof 750mm",
-            "Type of Opening Dual",
-            "Locking Mechanism KeyLock",
-            "Colour Black"
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    {
+        id: "7",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/1.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
         ],
         featuredPart: "yes",
         wasPrice: 300,
     },
     {
-        id: "7",
-        price: "19.99",
-        make : "Halfords",
+        id: "8",
+        price: "1000",
+        make : "Kenwood",
         year: "1968–1998",
-        name: "Steering Wheel Lock",
-        model: "Double Bar",
-        description: "Steering Wheel Lock for Standard Car",
-        primaryImage: "/images/parts/7.jpg",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/2.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
+        fullSpec: [
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    {
+        id: "9",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/3.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
+        fullSpec: [
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    {
+        id: "10",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/4.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
+        fullSpec: [
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    {
+        id: "11",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/5.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
+        fullSpec: [
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    {
+        id: "12",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/6.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
+        fullSpec: [
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    {
+        id: "13",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/1.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
+        fullSpec: [
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    ,
+    {
+        id: "14",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/2.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
+        fullSpec: [
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    ,
+    {
+        id: "15",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/3.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
+        fullSpec: [
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    {
+        id: "16",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/4.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
+        fullSpec: [
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    {
+        id: "17",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/5.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
         fullSpec: [
             "Type Steering Wheel Lock"
         ],
@@ -125,15 +403,39 @@ export const allPartsData = [
         price: "49.99",
         make : "Veba",
         year: "1968–1998",
-        name: "Number Plate Parking Sensor",
-        model: "KX 0284",
-        description: "Parking Sensor",
-        primaryImage: "/images/parts/8.jpg",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/1.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
+        ],
         fullSpec: [
-            "Type Parking Sensor",
-            "Mounting Numberplate",
-            "Number of Sensors 3",
-            "Audio Warning Yes"
+            "Chassis: Reinforced body with welded, multi-point roll cage",
+            "Length: 3,963 mm (156.0 in)",
+            "Width: 1,820 mm (72 in)",
+            "Wheelbase: 2,480 mm (98 in)",
+            "Engine: Ford EcoBoost engine 1.6 L (98 cu in) 4-cylinder, 16-valve turbocharged",
+            "Transmission: 6-speed M-Sport / X-Trac six-speed semi-automatic transmission gearbox with hydraulic shift",
+            "Weight: 1,200 kg (2,646 lb)",
+            "Types: Michelin"
+        ]
+    },
+    {
+        id: "20",
+        price: "1000",
+        make : "Kenwood",
+        year: "1968–1998",
+        name: "Ford Mustang Boss 429 engine",
+        model: "ABC 8080",
+        description: "",
+        primaryImage: "/images/parts/2.jpg",
+        otherImages: [
+            "/images/cars/1-1.jpg",
+            "/images/cars/1-2.jpg",
+            "/images/cars/1-3.jpg",
         ],
         featuredPart: "no",
         wasPrice: 74.99,
