@@ -22,6 +22,7 @@ https://trello.com/b/acQ75Uvj/dynamicwebauth
 Libraries we used (we do not take credit for these libraries)
 
 If you need to see the licences for each, run 'yarn' in the terminal in root of the project:
+```
 "@fortawesome/fontawesome-svg-core": "^1.2.34",
 "@fortawesome/free-brands-svg-icons": "^5.15.2",
 "@fortawesome/free-regular-svg-icons": "^5.15.2",
@@ -47,4 +48,5 @@ If you need to see the licences for each, run 'yarn' in the terminal in root of 
 "react-twitter-embed": "^3.0.3",
 "styled-components": "^5.2.1",
 "web-vitals": "^1.0.1"
+```
 
